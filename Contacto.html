@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - JG Soluciones</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function mostrarMensajeExito() {
+      const mensaje = document.getElementById('mensaje-exito');
+      mensaje.style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <a href="index.html">
+        <img src="Logo.png" alt="JG Soluciones Logo" class="logo-img">
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Contactanos</h2>
+      <p>¿Tenés una consulta? ¡Escribinos!</p>
+    </div>
+  </section>
+
+  <section class="container" style="padding: 2rem 0;">
+    <form action="https://formspree.io/f/mvgkwlvj" method="POST" onsubmit="mostrarMensajeExito()" style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: auto;">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono">
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Enviar mensaje</button>
+    </form>
+
+    <p id="mensaje-exito" style="display: none; color: green; text-align: center; margin-top: 1rem; font-weight: bold;">
+      ¡Gracias por tu mensaje! Me pondré en contacto lo antes posible.
+    </p>
+  </section>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 JG Soluciones Informáticas - Todos los derechos reservados.</p>
+    <p>
+      <a href="https://www.linkedin.com/in/javier-gutierrez-433096106/" target="_blank" style="color: #ffeb3b; text-decoration: none;">LinkedIn</a> |
+      <a href="https://wa.me/59898335277" target="_blank" style="color: #ffeb3b; text-decoration: none;">WhatsApp</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

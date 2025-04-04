@@ -1,0 +1,150 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Header */
+  .main-header {
+    background-color: #1a237e;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo-img {
+    height: 100px;
+    vertical-align: middle;
+  }
+  
+  .logo-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: -50px;
+  }
+  
+  .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #ffeb3b;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #3f51b5, #1a237e);
+    color: white;
+    padding: 5rem 1rem;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    background-color: #ffeb3b;
+    color: #1a237e;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #fdd835;
+  }
+  
+  /* Footer */
+  .main-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1a237e;
+    color: white;
+    margin-top: 3rem;
+  }
+  
+  /* Animación */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+  
+    .hero h2 {
+      font-size: 2rem;
+    }
+  
+    .btn {
+      padding: 0.7rem 1.2rem;
+    }
+  
+    .logo-img {
+      height: 80px;
+    }
+  }
+  
+  /* Slider de contacto con transición suave y sin parpadeo */
+  .slider-contacto {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: 250px;
+  }
+  
+  .slider-contacto .slide {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slider-contacto .slide.active {
+    opacity: 1;
+    position: relative;
+  }
+  
