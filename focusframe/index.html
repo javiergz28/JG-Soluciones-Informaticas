@@ -332,14 +332,16 @@
                 </div>
                 
                 <select class="category-selector" id="category-filter">
-                    <option value="Todas">Todas las categorías</option>
-                    <option value="Disciplina">Disciplina</option>
-                    <option value="Estoicismo">Estoicismo</option>
-                    <option value="Enfoque">Enfoque</option>
-                    <option value="Finanzas">Finanzas</option>
-                    <option value="Coraje">Coraje</option>
-                    <option value="Humildad">Humildad</option>
-                </select>
+    <option value="Todas">Todas las categorías</option>
+    <option value="Disciplina">Disciplina</option>
+    <option value="Estoicismo">Estoicismo</option>
+    <option value="Enfoque">Enfoque</option>
+    <option value="Finanzas">Finanzas</option>
+    <option value="Coraje">Coraje</option>
+    <option value="Humildad">Humildad</option>
+    <option value="Resiliencia">Resiliencia</option>
+    <option value="Liderazgo">Liderazgo</option>
+</select>
 
                 <span class="app-quote-icon">“</span>
                 <p class="app-quote-text" id="interactive-quote">Maná, poné al pie la voluntad y entrená hasta que el cuerpo lo devuelva.</p>
@@ -383,36 +385,29 @@
             { t: "No esperés a estar motivado para moverte. Movete y la motivación te va a encontrar trabajando.", c: "Disciplina" },
             { t: "El éxito es la suma de pequeños esfuerzos repetidos día tras día, sin excusas.", c: "Disciplina" },
             { t: "Hacé lo que tenés que hacer, aunque no tengas ganas. Ahí es donde se marca la diferencia.", c: "Disciplina" },
-            
             { t: "Si te da miedo, es por ahí. El crecimiento está justo detrás de lo que te incomoda.", c: "Coraje" },
             { t: "El coraje no es la falta de miedo, es el juicio de que algo más es más importante que el miedo.", c: "Coraje" },
-            
             { t: "La humildad no es ser menos que nadie, es entender que siempre tenés algo nuevo que aprender.", c: "Humildad" },
             { t: "Cuanto más sabés, más te das cuenta de lo poco que sabés. Mantené la mente abierta.", c: "Humildad" },
-            
             { t: "Tu mente es el marco de tu realidad. Si el marco está sucio, no vas a ver el camino claro.", c: "Enfoque" },
             { t: "Donde va tu atención, fluye tu energía. Elegí bien en qué te enfocás hoy.", c: "Enfoque" },
-            
             { t: "No sufras por lo que todavía no pasó. Si tiene solución, ocupate. Si no, aceptalo.", c: "Estoicismo" },
             { t: "Tenés poder sobre tu mente, no sobre los eventos externos. Entendé esto y vas a encontrar fuerza.", c: "Estoicismo" },
-            
             { t: "Invertí en vos mismo antes que en cualquier otra cosa. Sos tu activo más valioso.", c: "Finanzas" },
-            { t: "El dinero es una herramienta, no el fin. Aprendé a dominarlo para que no te domine a vos.", c: "Finanzas" }
-
+            { t: "El dinero es una herramienta, no el fin. Aprendé a dominarlo para que no te domine a vos.", c: "Finanzas" }, // <-- Acá faltaba la coma
             { t: "La constancia le gana al talento cuando el talento se duerme. No pares ahora.", c: "Disciplina" },
-{ t: "No podés controlar lo que te pasa, pero sí cómo reaccionás a eso. Ahí está tu libertad.", c: "Estoicismo" },
-{ t: "Tu atención es tu moneda más cara. No la gastes en cosas que no te hacen crecer.", c: "Enfoque" },
-{ t: "El miedo es una brújula: el camino correcto es el que más te asusta caminar.", c: "Coraje" },
-{ t: "No hables de tus planes, mostrá tus resultados. Que el éxito haga el ruido.", c: "Humildad" },
-    { t: "No te preguntés si tenés ganas. La pregunta es si lo tenés que hacer. Punto.", c: "Disciplina" },
-{ t: "Si te ofendés por lo que alguien dijo, le regalás las llaves de tu paz.", c: "Estoicismo" },
-{ t: "Estar ocupado no es lo mismo que ser productivo. No confundas movimiento con avance.", c: "Enfoque" },
-{ t: "El obstáculo no está en el camino; el obstáculo es el camino. Usalo.", c: "Estoicismo" },
-{ t: "Si estás pasando por un infierno, seguí caminando. No te frenes.", c: "Resiliencia" },
-{ t: "Nada grande se construyó en la comodidad. Agradecé la presión.", c: "Resiliencia" },
-{ t: "Tu ejemplo habla tan fuerte que no deja escuchar lo que decís.", c: "Liderazgo" },
+            { t: "No podés controlar lo que te pasa, pero sí cómo reaccionás a eso. Ahí está tu libertad.", c: "Estoicismo" },
+            { t: "Tu atención es tu moneda más cara. No la gastes en cosas que no te hacen crecer.", c: "Enfoque" },
+            { t: "El miedo es una brújula: el camino correcto es el que más te asusta caminar.", c: "Coraje" },
+            { t: "No hables de tus planes, mostrá tus resultados. Que el éxito haga el ruido.", c: "Humildad" },
+            { t: "No te preguntés si tenés ganas. La pregunta es si lo tenés que hacer. Punto.", c: "Disciplina" },
+            { t: "Si te ofendés por lo que alguien dijo, le regalás las llaves de tu paz.", c: "Estoicismo" },
+            { t: "Estar ocupado no es lo mismo que ser productivo. No confundas movimiento con avance.", c: "Enfoque" },
+            { t: "El obstáculo no está en el camino; el obstáculo es el camino. Usalo.", c: "Estoicismo" },
+            { t: "Si estás pasando por un infierno, seguí caminando. No te frenes.", c: "Resiliencia" },
+            { t: "Nada grande se construyó en la comodidad. Agradecé la presión.", c: "Resiliencia" },
+            { t: "Tu ejemplo habla tan fuerte que no deja escuchar lo que decís.", c: "Liderazgo" }
         ];
-
         function generarFraseWeb() {
             const textElem = document.getElementById('interactive-quote');
             const catElem = document.getElementById('interactive-category');
