@@ -42,6 +42,22 @@
             box-shadow: 0 0 50px rgba(127, 119, 221, 0.1);
         }
 
+        /* Selector de Categoría Estilizado */
+        .category-selector {
+            background: #111;
+            border: 1px solid #222;
+            color: #7F77DD;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin-bottom: 20px;
+            width: 100%;
+            outline: none;
+            cursor: pointer;
+            appearance: none;
+            text-align: center;
+        }
+
         #btn-demo:active {
             transform: scale(0.95);
             background-color: #6a62c4;
@@ -228,17 +244,7 @@
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 10px;
-        }
-
-        .app-button-Compartir {
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            text-align: center;
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 300;
-            opacity: 0.8;
+            transition: 0.2s;
         }
 
         .info-block { margin-bottom: 120px; }
@@ -322,15 +328,29 @@
             <div class="app-mockup interactive-phone">
                 <div class="app-header-ui">
                     <span>✕</span>
-                    <span id="demo-time">12:00</span>
                     <span>♥</span>
                 </div>
+                
+                <select class="category-selector" id="category-filter">
+                    <option value="Todas">Todas las categorías</option>
+                    <option value="Disciplina">Disciplina</option>
+                    <option value="Estoicismo">Estoicismo</option>
+                    <option value="Enfoque">Enfoque</option>
+                    <option value="Finanzas">Finanzas</option>
+                    <option value="Coraje">Coraje</option>
+                    <option value="Humildad">Humildad</option>
+                </select>
+
                 <span class="app-quote-icon">“</span>
                 <p class="app-quote-text" id="interactive-quote">Maná, poné al pie la voluntad y entrená hasta que el cuerpo lo devuelva.</p>
+                
                 <div class="app-bottom-ui">
-                    <div class="app-meta-line"><span><span class="app-category-pill" id="interactive-category">Filosófico</span> • ES</span></div>
-                    <div class="app-button-Nuevafrase" style="cursor: pointer;" onclick="generarFraseWeb()" id="btn-demo">Nueva frase</div>
-                    <div class="app-button-Compartir" style="opacity: 0.4;">Compartir</div>
+                    <div class="app-meta-line">
+                        <span><span class="app-category-pill" id="interactive-category">Filosófico</span> • ES</span>
+                    </div>
+                    <div class="app-button-Nuevafrase" style="cursor: pointer;" onclick="generarFraseWeb()" id="btn-demo">
+                        Nueva frase
+                    </div>
                 </div>
             </div>
         </div>
@@ -359,33 +379,58 @@
     <script>
         AOS.init({ duration: 1000, once: true, easing: 'ease-in-out-cubic' });
 
-        function updateTime() {
-            const now = new Date();
-            const timeStr = now.getHours() + ":" + now.getMinutes().toString().padStart(2, '0');
-            const el = document.getElementById('demo-time');
-            if(el) el.innerText = timeStr;
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
-
         const frasesWeb = [
             { t: "No esperés a estar motivado para moverte. Movete y la motivación te va a encontrar trabajando.", c: "Disciplina" },
-            { t: "Si te da miedo, es por ahí. El crecimiento está justo detrás de lo que te incomoda.", c: "Coraje" },
-            { t: "La humildad no es ser menos que nadie, es entender que siempre tenés algo nuevo que aprender.", c: "Humildad" },
-            { t: "Tu mente es el marco de tu realidad. Si el marco está sucio, no vas a ver el camino claro.", c: "Enfoque" },
-            { t: "Dejá de compararte con el resto. Tu única competencia es el que viste ayer en el espejo.", c: "Ego" },
             { t: "El éxito es la suma de pequeños esfuerzos repetidos día tras día, sin excusas.", c: "Disciplina" },
-            { t: "Hacé lo que tenés que hacer, aunque no tengas ganas. Ahí es donde se marca la diferencia.", c: "Estoicismo" },
-            { t: "Invertí en vos mismo antes que en cualquier otra cosa. Sos tu activo más valioso.", c: "Finanzas" }
+            { t: "Hacé lo que tenés que hacer, aunque no tengas ganas. Ahí es donde se marca la diferencia.", c: "Disciplina" },
+            
+            { t: "Si te da miedo, es por ahí. El crecimiento está justo detrás de lo que te incomoda.", c: "Coraje" },
+            { t: "El coraje no es la falta de miedo, es el juicio de que algo más es más importante que el miedo.", c: "Coraje" },
+            
+            { t: "La humildad no es ser menos que nadie, es entender que siempre tenés algo nuevo que aprender.", c: "Humildad" },
+            { t: "Cuanto más sabés, más te das cuenta de lo poco que sabés. Mantené la mente abierta.", c: "Humildad" },
+            
+            { t: "Tu mente es el marco de tu realidad. Si el marco está sucio, no vas a ver el camino claro.", c: "Enfoque" },
+            { t: "Donde va tu atención, fluye tu energía. Elegí bien en qué te enfocás hoy.", c: "Enfoque" },
+            
+            { t: "No sufras por lo que todavía no pasó. Si tiene solución, ocupate. Si no, aceptalo.", c: "Estoicismo" },
+            { t: "Tenés poder sobre tu mente, no sobre los eventos externos. Entendé esto y vas a encontrar fuerza.", c: "Estoicismo" },
+            
+            { t: "Invertí en vos mismo antes que en cualquier otra cosa. Sos tu activo más valioso.", c: "Finanzas" },
+            { t: "El dinero es una herramienta, no el fin. Aprendé a dominarlo para que no te domine a vos.", c: "Finanzas" }
+
+            { t: "La constancia le gana al talento cuando el talento se duerme. No pares ahora.", c: "Disciplina" },
+{ t: "No podés controlar lo que te pasa, pero sí cómo reaccionás a eso. Ahí está tu libertad.", c: "Estoicismo" },
+{ t: "Tu atención es tu moneda más cara. No la gastes en cosas que no te hacen crecer.", c: "Enfoque" },
+{ t: "El miedo es una brújula: el camino correcto es el que más te asusta caminar.", c: "Coraje" },
+{ t: "No hables de tus planes, mostrá tus resultados. Que el éxito haga el ruido.", c: "Humildad" },
+    { t: "No te preguntés si tenés ganas. La pregunta es si lo tenés que hacer. Punto.", c: "Disciplina" },
+{ t: "Si te ofendés por lo que alguien dijo, le regalás las llaves de tu paz.", c: "Estoicismo" },
+{ t: "Estar ocupado no es lo mismo que ser productivo. No confundas movimiento con avance.", c: "Enfoque" },
+{ t: "El obstáculo no está en el camino; el obstáculo es el camino. Usalo.", c: "Estoicismo" },
+{ t: "Si estás pasando por un infierno, seguí caminando. No te frenes.", c: "Resiliencia" },
+{ t: "Nada grande se construyó en la comodidad. Agradecé la presión.", c: "Resiliencia" },
+{ t: "Tu ejemplo habla tan fuerte que no deja escuchar lo que decís.", c: "Liderazgo" },
         ];
 
         function generarFraseWeb() {
             const textElem = document.getElementById('interactive-quote');
             const catElem = document.getElementById('interactive-category');
+            const filter = document.getElementById('category-filter').value;
+            
+            // Filtrar frases según la categoría seleccionada
+            let frasesFiltradas = filter === "Todas" 
+                ? frasesWeb 
+                : frasesWeb.filter(f => f.c === filter);
+
+            // Si por alguna razón no hay frases (no debería pasar), usar todas
+            if (frasesFiltradas.length === 0) frasesFiltradas = frasesWeb;
+
             textElem.style.opacity = 0;
             textElem.style.transform = "translateY(10px)";
+            
             setTimeout(() => {
-                const random = frasesWeb[Math.floor(Math.random() * frasesWeb.length)];
+                const random = frasesFiltradas[Math.floor(Math.random() * frasesFiltradas.length)];
                 textElem.innerText = random.t;
                 catElem.innerText = random.c;
                 textElem.style.opacity = 1;
