@@ -433,26 +433,42 @@
             { t: "Nada grande se construyó en la comodidad. Agradecé la presión.", c: "Resiliencia" },
             { t: "Tu ejemplo habla tan fuerte que no deja escuchar lo que decís.", c: "Liderazgo" }
         ];
-        function generarFraseWeb() {
+function generarFraseWeb() {
             const textElem = document.getElementById('interactive-quote');
             const catElem = document.getElementById('interactive-category');
-            const filter = document.getElementById('category-filter').value;
+            const filterElem = document.getElementById('category-filter');
+            
+            // Verificación de seguridad: si no existen los elementos, salimos para evitar errores
+            if (!textElem || !catElem || !filterElem) return;
+
+            const filter = filterElem.value;
             
             // Filtrar frases según la categoría seleccionada
             let frasesFiltradas = filter === "Todas" 
                 ? frasesWeb 
                 : frasesWeb.filter(f => f.c === filter);
 
-            // Si por alguna razón no hay frases (no debería pasar), usar todas
-            if (frasesFiltradas.length === 0) frasesFiltradas = frasesWeb;
+            // Si por alguna razón no hay frases en esa categoría, volvemos al total
+            if (frasesFiltradas.length === 0) {
+                frasesFiltradas = frasesWeb;
+            }
 
+            // Efecto de salida (Fade out)
             textElem.style.opacity = 0;
             textElem.style.transform = "translateY(10px)";
             
             setTimeout(() => {
-                const random = frasesFiltradas[Math.floor(Math.random() * frasesFiltradas.length)];
-                textElem.innerText = random.t;
-                catElem.innerText = random.c;
+                // Selección aleatoria
+                const indiceAleatorio = Math.floor(Math.random() * frasesFiltradas.length);
+                const fraseSeleccionada = frasesFiltradas[indiceAleatorio];
+
+                // Solo actualizamos si la frase existe (evita el error de undefined)
+                if (fraseSeleccionada) {
+                    textElem.innerText = fraseSeleccionada.t;
+                    catElem.innerText = fraseSeleccionada.c;
+                }
+
+                // Efecto de entrada (Fade in)
                 textElem.style.opacity = 1;
                 textElem.style.transform = "translateY(0)";
             }, 300);
