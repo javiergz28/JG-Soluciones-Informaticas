@@ -8,7 +8,7 @@
     <style>
         :root {
             --bg-color: #050505;
-            --app-bg: #000000; /* Negro puro como en la app */
+            --app-bg: #000000;
             --card-bg: #111111;
             --accent-color: #7F77DD;
             --text-main: #ffffff;
@@ -27,7 +27,31 @@
             line-height: 1.5;
         }
 
-        /* --- radial background effect --- */
+        /* --- DEMO STYLES --- */
+        .demo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 150px;
+        }
+
+        .interactive-phone {
+            width: 100%;
+            max-width: 350px;
+            border: 4px solid #1a1a1a;
+            background: #000;
+            box-shadow: 0 0 50px rgba(127, 119, 221, 0.1);
+        }
+
+        #btn-demo:active {
+            transform: scale(0.95);
+            background-color: #6a62c4;
+        }
+
+        #interactive-quote {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        /* --- GLOW EFFECT --- */
         .bg-glow {
             position: fixed;
             top: -10%;
@@ -45,7 +69,6 @@
             padding: 0 20px;
         }
 
-        /* --- HERO SECTION --- */
         header {
             height: 100vh;
             display: flex;
@@ -89,10 +112,8 @@
             color: var(--text-dim);
             max-width: 550px;
             font-weight: 300;
-            letter-spacing: -0.2px;
         }
 
-        /* --- SCROLL DOWN INDICATOR --- */
         .scroll-down {
             position: absolute;
             bottom: 40px;
@@ -108,7 +129,6 @@
             100% { transform: translateY(20px); opacity: 0; }
         }
 
-        /* --- APP PREVIEW SECTION (The 4 Quotes) --- */
         .preview-title-block {
             text-align: center;
             margin-bottom: 80px;
@@ -131,7 +151,6 @@
             margin-bottom: 150px;
         }
 
-        /* Recreating the app interface as a web mockup */
         .app-mockup {
             background-color: var(--app-bg);
             border: 1px solid var(--border-color);
@@ -142,17 +161,15 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            min-height: 380px; /* To make room for features */
+            min-height: 380px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .app-mockup:hover {
             border-color: var(--accent-color);
             transform: translateY(-8px) scale(1.01);
-            box-shadow: 0 25px 50px rgba(127, 119, 221, 0.15);
         }
 
-        /* Recreating app UI elements from image_9.png */
         .app-header-ui {
             display: flex;
             justify-content: space-between;
@@ -168,7 +185,6 @@
             font-size: 32px;
             font-family: Georgia, serif;
             margin-bottom: 15px;
-            display: block;
         }
 
         .app-quote-text {
@@ -176,8 +192,7 @@
             font-weight: 300;
             line-height: 1.35;
             color: var(--text-main);
-            letter-spacing: -0.3px;
-            margin-bottom: auto; /* Push bottom UI down */
+            margin-bottom: auto;
         }
 
         .app-bottom-ui {
@@ -204,7 +219,7 @@
             border-radius: 4px;
         }
 
-        .app-button- Nuevafrase {
+        .app-button-Nuevafrase {
             background-color: var(--accent-color);
             color: var(--app-bg);
             text-align: center;
@@ -226,27 +241,10 @@
             opacity: 0.8;
         }
 
-        /* --- INFO SECTION --- */
-        .info-block {
-            margin-bottom: 120px;
-        }
+        .info-block { margin-bottom: 120px; }
+        .info-block h2 { font-size: 36px; font-weight: 200; margin-bottom: 25px; }
+        .info-block p { color: var(--text-dim); font-size: 18px; font-weight: 300; max-width: 750px; }
 
-        .info-block h2 {
-            font-size: 36px;
-            font-weight: 200;
-            margin-bottom: 25px;
-            letter-spacing: -1px;
-        }
-
-        .info-block p {
-            color: var(--text-dim);
-            font-size: 18px;
-            font-weight: 300;
-            margin-bottom: 40px;
-            max-width: 750px;
-        }
-
-        /* --- PRIVACY PANEL --- */
         .privacy-box {
             background: #0a0a0a;
             border: 1px solid #1a1a1a;
@@ -255,19 +253,8 @@
             margin-bottom: 120px;
         }
 
-        .privacy-box h3 {
-            color: var(--accent-color);
-            font-size: 24px;
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-
-        .privacy-box p {
-            font-size: 15px;
-            color: var(--text-dim);
-            margin-bottom: 18px;
-            line-height: 1.6;
-        }
+        .privacy-box h3 { color: var(--accent-color); font-size: 24px; margin-bottom: 25px; font-weight: 300; }
+        .privacy-box p { font-size: 15px; color: var(--text-dim); margin-bottom: 18px; }
 
         footer {
             text-align: center;
@@ -276,15 +263,11 @@
             font-size: 11px;
             letter-spacing: 2.5px;
             color: var(--text-dim);
-            text-transform: uppercase;
         }
 
         @media (max-width: 600px) {
             .logo-symbol { width: 70px; height: 70px; }
-            .logo-symbol span { font-size: 36px; }
             .app-mockup { padding: 25px 20px; min-height: 320px; }
-            .app-quote-text { font-size: 18px; }
-            .privacy-box { padding: 30px; }
         }
     </style>
 </head>
@@ -294,12 +277,10 @@
 
     <div class="container">
         <header>
-            <div class="logo-symbol" data-aos="zoom-in">
-                <span>F</span>
-            </div>
+            <div class="logo-symbol" data-aos="zoom-in"><span>F</span></div>
             <h1 data-aos="fade-up" data-aos-delay="200">Tu mente,<br>enmarcada.</h1>
             <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
-                Eliminá el ruido. Recuperá el enfoque. FocusFrame utiliza IA para darte la dirección que necesitás, sin distracciones.
+                Eliminá el ruido. Recuperá el enfoque. FocusFrame utiliza IA para darte la dirección que necesitás.
             </p>
             <div class="scroll-down"></div>
         </header>
@@ -310,64 +291,107 @@
         </div>
         
         <div class="quote-grid">
-            <div class="app-mockup" data-aos="fade-up" data-aos-delay="300">
+            <div class="app-mockup" data-aos="fade-up">
                 <div class="app-header-ui"><span>✕</span><span>♥</span></div>
                 <span class="app-quote-icon">“</span>
                 <p class="app-quote-text">Hacé que el esfuerzo sea tu estándar. No necesitás motivación, necesitás compromiso.</p>
-                <div class="app-bottom-ui">
-                    <div class="app-meta-line"><span><span class="app-category-pill">Disciplina</span> • ES</span></div>
-                    </div>
+                <div class="app-bottom-ui"><div class="app-meta-line"><span><span class="app-category-pill">Disciplina</span> • ES</span></div></div>
             </div>
 
-            <div class="app-mockup" data-aos="fade-up" data-aos-delay="300">
+            <div class="app-mockup" data-aos="fade-up" data-aos-delay="100">
                 <div class="app-header-ui"><span>✕</span><span>♥</span></div>
                 <span class="app-quote-icon">“</span>
                 <p class="app-quote-text">La humildad es el suelo donde crece la sabiduría. Si creés que ya lo sabés todo, dejaste de avanzar.</p>
-                <div class="app-bottom-ui">
-                    <div class="app-meta-line"><span><span class="app-category-pill">Humildad</span> • ES</span></div>
-                    </div>
+                <div class="app-bottom-ui"><div class="app-meta-line"><span><span class="app-category-pill">Humildad</span> • ES</span></div></div>
             </div>
-            <div class="app-mockup" data-aos="fade-up" data-aos-delay="400">
+
+            <div class="app-mockup" data-aos="fade-up" data-aos-delay="200">
                 <div class="app-header-ui"><span>✕</span><span>♥</span></div>
                 <span class="app-quote-icon">“</span>
                 <p class="app-quote-text">Si tenés miedo, hacelo igual. El coraje no es la ausencia de temor, es moverte a pesar de él.</p>
+                <div class="app-bottom-ui"><div class="app-meta-line"><span><span class="app-category-pill">Coraje</span> • ES</span></div></div>
+            </div>
+        </div>
+
+        <div class="preview-title-block" data-aos="fade-in">
+            <span class="section-tag">Demo en vivo</span>
+            <h2>Probá FocusFrame ahora</h2>
+        </div>
+
+        <div class="demo-container" data-aos="zoom-in">
+            <div class="app-mockup interactive-phone">
+                <div class="app-header-ui">
+                    <span>✕</span>
+                    <span id="demo-time">12:00</span>
+                    <span>♥</span>
+                </div>
+                <span class="app-quote-icon">“</span>
+                <p class="app-quote-text" id="interactive-quote">Maná, poné al pie la voluntad y entrená hasta que el cuerpo lo devuelva.</p>
                 <div class="app-bottom-ui">
-                    <div class="app-meta-line"><span><span class="app-category-pill">Coraje</span> • ES</span></div>
-                    
+                    <div class="app-meta-line"><span><span class="app-category-pill" id="interactive-category">Filosófico</span> • ES</span></div>
+                    <div class="app-button-Nuevafrase" style="cursor: pointer;" onclick="generarFraseWeb()" id="btn-demo">Nueva frase</div>
+                    <div class="app-button-Compartir" style="opacity: 0.4;">Compartir</div>
                 </div>
             </div>
         </div>
 
         <div class="info-block" data-aos="fade-right">
             <h2>Diseño Puro.</h2>
-            <p>FocusFrame está construida sobre un fondo negro absoluto. Sin anuncios, sin feeds infinitos, sin distracciones. Solo vos y tu enfoque.</p>
+            <p>Construida sobre un fondo negro absoluto. Sin anuncios ni distracciones. Solo vos y tu enfoque.</p>
         </div>
 
         <div class="info-block" data-aos="fade-left" style="text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
             <h2>Identidad Local.</h2>
-            <p>Configurada con voseo uruguayo para una comunicación directa y auténtica. Porque la disciplina se entiende mejor cuando te hablan claro.</p>
+            <p>Configurada con voseo uruguayo para una comunicación directa y auténtica.</p>
         </div>
 
         <div class="privacy-box" data-aos="fade-up" id="privacy">
             <h3>Privacidad y Transparencia</h3>
-            <p><strong>Cero rastreo:</strong> No recopilamos datos personales, correos ni identificadores de dispositivo. Tus favoritos se quedan en tu iPhone.</p>
-            <p><strong>IA Ética:</strong> Las peticiones de frases son anónimas. No compartimos tu perfil ni metadatos con modelos de terceros.</p>
-            <p><strong>Seguridad y Moderación:</strong> Sistema de reporte integrado para garantizar contenido de alta calidad y respetuoso.</p>
+            <p><strong>Cero rastreo:</strong> No recopilamos datos personales. Tus favoritos se quedan en tu iPhone.</p>
+            <p><strong>IA Ética:</strong> Peticiones anónimas. No compartimos tu perfil con terceros.</p>
             <p>Desarrollado con pasión por Javier GZ.</p>
         </div>
 
-        <footer>
-            &copy; 2026 FOCUSFRAME | URUGUAY
-        </footer>
+        <footer>&copy; 2026 FOCUSFRAME | URUGUAY</footer>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            easing: 'ease-in-out-cubic'
-        });
+        AOS.init({ duration: 1000, once: true, easing: 'ease-in-out-cubic' });
+
+        function updateTime() {
+            const now = new Date();
+            const timeStr = now.getHours() + ":" + now.getMinutes().toString().padStart(2, '0');
+            const el = document.getElementById('demo-time');
+            if(el) el.innerText = timeStr;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        const frasesWeb = [
+            { t: "No esperés a estar motivado para moverte. Movete y la motivación te va a encontrar trabajando.", c: "Disciplina" },
+            { t: "Si te da miedo, es por ahí. El crecimiento está justo detrás de lo que te incomoda.", c: "Coraje" },
+            { t: "La humildad no es ser menos que nadie, es entender que siempre tenés algo nuevo que aprender.", c: "Humildad" },
+            { t: "Tu mente es el marco de tu realidad. Si el marco está sucio, no vas a ver el camino claro.", c: "Enfoque" },
+            { t: "Dejá de compararte con el resto. Tu única competencia es el que viste ayer en el espejo.", c: "Ego" },
+            { t: "El éxito es la suma de pequeños esfuerzos repetidos día tras día, sin excusas.", c: "Disciplina" },
+            { t: "Hacé lo que tenés que hacer, aunque no tengas ganas. Ahí es donde se marca la diferencia.", c: "Estoicismo" },
+            { t: "Invertí en vos mismo antes que en cualquier otra cosa. Sos tu activo más valioso.", c: "Finanzas" }
+        ];
+
+        function generarFraseWeb() {
+            const textElem = document.getElementById('interactive-quote');
+            const catElem = document.getElementById('interactive-category');
+            textElem.style.opacity = 0;
+            textElem.style.transform = "translateY(10px)";
+            setTimeout(() => {
+                const random = frasesWeb[Math.floor(Math.random() * frasesWeb.length)];
+                textElem.innerText = random.t;
+                catElem.innerText = random.c;
+                textElem.style.opacity = 1;
+                textElem.style.transform = "translateY(0)";
+            }, 300);
+        }
     </script>
 </body>
 </html>
