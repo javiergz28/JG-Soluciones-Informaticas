@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FocusFrame | Tu mente, enmarcada.</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         :root {
             --bg-color: #050505;
@@ -28,47 +28,6 @@
             line-height: 1.5;
         }
 
-        /* --- DEMO STYLES --- */
-        .demo-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 150px;
-        }
-
-        .interactive-phone {
-            width: 100%;
-            max-width: 350px;
-            border: 4px solid #1a1a1a;
-            background: #000;
-            box-shadow: 0 0 50px rgba(127, 119, 221, 0.1);
-        }
-
-        /* Selector de Categoría Estilizado */
-        .category-selector {
-            background: #111;
-            border: 1px solid #222;
-            color: #7F77DD;
-            padding: 8px 12px;
-            border-radius: 10px;
-            font-size: 12px;
-            margin-bottom: 20px;
-            width: 100%;
-            outline: none;
-            cursor: pointer;
-            appearance: none;
-            text-align: center;
-        }
-
-        #btn-demo:active {
-            transform: scale(0.95);
-            background-color: #6a62c4;
-        }
-
-        #interactive-quote {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        /* --- GLOW EFFECT --- */
         .bg-glow {
             position: fixed;
             top: -10%;
@@ -131,69 +90,73 @@
             font-weight: 300;
         }
 
-        .scroll-down {
-            position: absolute;
-            bottom: 40px;
-            width: 2px;
-            height: 50px;
-            background: linear-gradient(to bottom, var(--accent-color), transparent);
-            animation: scroll-anim 2s infinite;
-        }
-
-        @keyframes scroll-anim {
-            0% { transform: translateY(0); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(20px); opacity: 0; }
-        }
-
-        .preview-title-block {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        
         .section-tag {
             font-size: 11px;
             letter-spacing: 5px;
             color: var(--accent-color);
             text-transform: uppercase;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: block;
         }
 
-        .quote-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 150px;
+        .info-block { 
+            margin-bottom: 180px; 
         }
 
-        .app-mockup {
-            background-color: var(--app-bg);
-            border: 1px solid var(--border-color);
-            padding: 35px 30px;
-            border-radius: 28px;
-            position: relative;
-            transition: var(--transition-smooth);
+        .info-block h2 { 
+            font-size: clamp(32px, 5vw, 48px); 
+            font-weight: 200; 
+            margin-bottom: 25px; 
+            letter-spacing: -1px;
+        }
+
+        .info-block p { 
+            color: var(--text-dim); 
+            font-size: 18px; 
+            font-weight: 300; 
+            max-width: 750px; 
+            line-height: 1.6;
+        }
+
+        /* --- DEMO --- */
+        .demo-container {
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            min-height: 380px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            justify-content: center;
+            margin-bottom: 180px;
         }
 
-        .app-mockup:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-8px) scale(1.01);
+        .interactive-phone {
+            width: 100%;
+            max-width: 350px;
+            border: 4px solid #1a1a1a;
+            background: #000;
+            box-shadow: 0 0 50px rgba(127, 119, 221, 0.1);
+            border-radius: 40px;
+            padding: 35px 25px;
+        }
+
+        .category-selector {
+            background: #111;
+            border: 1px solid #222;
+            color: #7F77DD;
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-bottom: 25px;
+            width: 100%;
+            outline: none;
+            cursor: pointer;
+            appearance: none;
+            text-align: center;
         }
 
         .app-header-ui {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             color: var(--text-dim);
             font-size: 18px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             opacity: 0.5;
         }
 
@@ -201,63 +164,39 @@
             color: var(--accent-color);
             font-size: 32px;
             font-family: Georgia, serif;
-            margin-bottom: 15px;
         }
 
         .app-quote-text {
-            font-size: 21px;
+            font-size: 20px;
             font-weight: 300;
-            line-height: 1.35;
+            line-height: 1.4;
             color: var(--text-main);
-            margin-bottom: auto;
+            min-height: 140px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        .app-bottom-ui {
-            margin-top: 30px;
-            border-top: 1px solid #1a1a1a;
-            padding-top: 15px;
-        }
-
-        .app-meta-line {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-dim);
-            margin-bottom: 15px;
+        .app-button-Nuevafrase {
+            background-color: var(--accent-color);
+            color: #000;
+            text-align: center;
+            padding: 14px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 25px;
+            cursor: pointer;
         }
 
         .app-category-pill {
             color: var(--accent-color);
             border: 1px solid rgba(127, 119, 221, 0.4);
-            padding: 3px 9px;
+            padding: 2px 8px;
             border-radius: 4px;
+            font-size: 10px;
+            text-transform: uppercase;
         }
 
-        .app-button-Nuevafrase {
-            background-color: var(--accent-color);
-            color: var(--app-bg);
-            text-align: center;
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            transition: 0.2s;
-        }
-
-        .info-block { margin-bottom: 120px; }
-        .info-block h2 { font-size: 36px; font-weight: 200; margin-bottom: 25px; }
-        .info-block p { color: var(--text-dim); font-size: 18px; font-weight: 300; max-width: 750px; }
-        .privacy-box h4 {
-    letter-spacing: 1px;
-    font-weight: 500;
-}
-.privacy-box p {
-    line-height: 1.6;
-}
+        /* --- PRIVACY --- */
         .privacy-box {
             background: #0a0a0a;
             border: 1px solid #1a1a1a;
@@ -266,21 +205,9 @@
             margin-bottom: 120px;
         }
 
-        .privacy-box h3 { color: var(--accent-color); font-size: 24px; margin-bottom: 25px; font-weight: 300; }
-        .privacy-box p { font-size: 15px; color: var(--text-dim); margin-bottom: 18px; }
-
-        footer {
-            text-align: center;
-            padding: 80px 0;
-            border-top: 1px solid var(--border-color);
-            font-size: 11px;
-            letter-spacing: 2.5px;
-            color: var(--text-dim);
-        }
-
         @media (max-width: 600px) {
-            .logo-symbol { width: 70px; height: 70px; }
-            .app-mockup { padding: 25px 20px; min-height: 320px; }
+            .info-block { text-align: center !important; align-items: center !important; }
+            .info-block p { margin: 0 auto; }
         }
     </style>
 </head>
@@ -295,180 +222,125 @@
             <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
                 Eliminá el ruido. Recuperá el enfoque. FocusFrame utiliza IA para darte la dirección que necesitás.
             </p>
-            <div class="scroll-down"></div>
         </header>
 
-        <div class="preview-title-block" data-aos="fade-in">
-            <span class="section-tag">La experiencia</span>
-            <p style="color: var(--text-dim); font-weight: 300;">Explorá cómo se ve tu enfoque diario.</p>
-        </div>
-        
-        <div class="quote-grid">
-            <div class="app-mockup" data-aos="fade-up">
-                <div class="app-header-ui"><span>✕</span><span>♥</span></div>
-                <span class="app-quote-icon">“</span>
-                <p class="app-quote-text">Hacé que el esfuerzo sea tu estándar. No necesitás motivación, necesitás compromiso.</p>
-                <div class="app-bottom-ui"><div class="app-meta-line"><span><span class="app-category-pill">Disciplina</span> • ES</span></div></div>
-            </div>
-
-            <div class="app-mockup" data-aos="fade-up" data-aos-delay="100">
-                <div class="app-header-ui"><span>✕</span><span>♥</span></div>
-                <span class="app-quote-icon">“</span>
-                <p class="app-quote-text">La humildad es el suelo donde crece la sabiduría. Si creés que ya lo sabés todo, dejaste de avanzar.</p>
-                <div class="app-bottom-ui"><div class="app-meta-line"><span><span class="app-category-pill">Humildad</span> • ES</span></div></div>
-            </div>
-
-            <div class="app-mockup" data-aos="fade-up" data-aos-delay="200">
-                <div class="app-header-ui"><span>✕</span><span>♥</span></div>
-                <span class="app-quote-icon">“</span>
-                <p class="app-quote-text">Si tenés miedo, hacelo igual. El coraje no es la ausencia de temor, es moverte a pesar de él.</p>
-                <div class="app-bottom-ui"><div class="app-meta-line"><span><span class="app-category-pill">Coraje</span> • ES</span></div></div>
-            </div>
-        </div>
-
-        <div class="preview-title-block" data-aos="fade-in">
-            <span class="section-tag">Demo en vivo</span>
-            <h2>Probá FocusFrame ahora</h2>
-        </div>
-
         <div class="demo-container" data-aos="zoom-in">
-            <div class="app-mockup interactive-phone">
-                <div class="app-header-ui">
-                    <span>✕</span>
-                    <span>♥</span>
-                </div>
-                
+            <div class="interactive-phone">
+                <div class="app-header-ui"><span>✕</span><span>♥</span></div>
                 <select class="category-selector" id="category-filter">
-    <option value="Todas">Todas las categorías</option>
-    <option value="Disciplina">Disciplina</option>
-    <option value="Estoicismo">Estoicismo</option>
-    <option value="Enfoque">Enfoque</option>
-    <option value="Finanzas">Finanzas</option>
-    <option value="Coraje">Coraje</option>
-    <option value="Humildad">Humildad</option>
-    <option value="Resiliencia">Resiliencia</option>
-    <option value="Liderazgo">Liderazgo</option>
-</select>
-
+                    <option value="Todas">Todas las categorías</option>
+                    <option value="Disciplina">Disciplina</option>
+                    <option value="Estoicismo">Estoicismo</option>
+                    <option value="Enfoque">Enfoque</option>
+                    <option value="Finanzas">Finanzas</option>
+                    <option value="Coraje">Coraje</option>
+                    <option value="Humildad">Humildad</option>
+                    <option value="Resiliencia">Resiliencia</option>
+                    <option value="Liderazgo">Liderazgo</option>
+                </select>
                 <span class="app-quote-icon">“</span>
-                <p class="app-quote-text" id="interactive-quote">Maná, poné al pie la voluntad y entrená hasta que el cuerpo lo devuelva.</p>
-                
-                <div class="app-bottom-ui">
-                    <div class="app-meta-line">
-                        <span><span class="app-category-pill" id="interactive-category">Filosófico</span> • ES</span>
-                    </div>
-                    <div class="app-button-Nuevafrase" style="cursor: pointer;" onclick="generarFraseWeb()" id="btn-demo">
-                        Nueva frase
-                    </div>
+                <p class="app-quote-text" id="interactive-quote">Entrená hasta que tu cuerpo no tenga más opción que obedecer.</p>
+                <div style="margin-top: 10px;">
+                    <span class="app-category-pill" id="interactive-category">Disciplina</span>
                 </div>
+                <div class="app-button-Nuevafrase" onclick="generarFraseWeb()">Nueva frase</div>
             </div>
         </div>
 
         <div class="info-block" data-aos="fade-right">
-            <h2>Diseño Puro.</h2>
-            <p>Construida sobre un fondo negro absoluto. Sin anuncios ni distracciones. Solo vos y tu enfoque.</p>
+            <span class="section-tag">Deep Work</span>
+            <h2>Minimalismo Radical.</h2>
+            <p>Diseñada sobre un negro absoluto para eliminar la fatiga visual. En FocusFrame no existen los anuncios ni el ruido. Es un santuario digital creado para una sola cosa: <strong>tu claridad mental.</strong></p>
         </div>
 
         <div class="info-block" data-aos="fade-left" style="text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
-            <h2>Identidad Local.</h2>
-            <p>Configurada con voseo uruguayo para una comunicación directa y auténtica.</p>
+            <span class="section-tag">Cognitive Priming</span>
+            <h2>Programá tu subconsciente.</h2>
+            <p>Lo que ves al desbloquear tu teléfono determina tu enfoque. Utilizamos el <strong>priming cognitivo</strong> para filtrar tus pensamientos, sustituyendo el caos por una intención clara.</p>
+        </div>
+
+        <div class="info-block" data-aos="fade-right">
+            <span class="section-tag">Authentic Voice</span>
+            <h2>Carácter en cada palabra.</h2>
+            <p>Olvidate de las frases vacías. Usamos el voseo uruguayo porque la verdad suena mejor cuando es directa. Una comunicación <strong>cruda y honesta</strong> que te empuja a actuar.</p>
+        </div>
+
+        <div class="info-block" data-aos="fade-left" style="text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
+            <span class="section-tag">OLED Optimized</span>
+            <h2>Eficiencia en cada píxel.</h2>
+            <p>Optimizada para pantallas de última generación. Los negros puros no solo descansan tu vista, sino que <strong>reducen el consumo de batería</strong> al mínimo absoluto.</p>
+        </div>
+
+        <div class="info-block" data-aos="fade-up" style="text-align: center;">
+            <span class="section-tag">Time Management</span>
+            <h2>Recuperá tus horas.</h2>
+            <p style="margin: 0 auto;">El usuario promedio busca gratificación en redes sociales. FocusFrame te devuelve el control de tu atención en <strong>menos de 5 segundos</strong>. Entrá, enfocate y volvé a lo importante.</p>
         </div>
 
         <div class="privacy-box" data-aos="fade-up" id="privacy">
-    <span class="section-tag" style="letter-spacing: 2px;">Data Transparency</span>
-    <h3>Privacidad y Seguridad</h3>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
-        <div>
-            <h4 style="color: var(--accent-color); font-size: 14px; text-transform: uppercase; margin-bottom: 10px;">Datos no vinculados</h4>
-            <p style="font-size: 14px;">FocusFrame no recolecta identificadores personales. Tu actividad en la app (frases favoritas y filtros) se almacena localmente en tu dispositivo mediante <strong>Local Storage</strong>. No tenemos servidores que guarden tu identidad.</p>
+            <span class="section-tag">Data Transparency</span>
+            <h3>Privacidad y Seguridad</h3>
+            <p style="margin-bottom: 20px;"><strong>Cero Seguimiento:</strong> No recolectamos identificadores personales. Tus favoritos se almacenan localmente en tu dispositivo.</p>
+            <p><strong>IA Ética:</strong> Las peticiones son anónimas. No compartimos tu perfil con terceros. Tu enfoque es privado y tu información nunca deja tu bolsillo.</p>
         </div>
-        <div>
-            <h4 style="color: var(--accent-color); font-size: 14px; text-transform: uppercase; margin-bottom: 10px;">IA y Procesamiento</h4>
-            <p style="font-size: 14px;">Las peticiones de IA para generación de contenido son anónimas. No enviamos metadatos del dispositivo ni ubicación a los modelos de lenguaje. Tu "Frame" es solo tuyo.</p>
-        </div>
-        <div>
-            <h4 style="color: var(--accent-color); font-size: 14px; text-transform: uppercase; margin-bottom: 10px;">Cero Seguimiento</h4>
-            <p style="font-size: 14px;">Cumplimos estrictamente con las políticas de Apple. No compartimos datos con brokers ni redes de anuncios. Sin SDKs de terceros que rastreen tu comportamiento fuera de la app.</p>
-        </div>
-    </div>
-
-    <p style="margin-top: 30px; font-size: 12px; opacity: 0.8; border-top: 1px solid #222; padding-top: 20px;">
-        Responsable del tratamiento: <strong>Javier GZ</strong>. <br>
-        Al usar FocusFrame, aceptás que el procesamiento de datos se realiza exclusivamente para mejorar tu experiencia de enfoque, bajo las normativas de la App Store de Apple.
-    </p>
-</div>
 
         <footer>&copy; 2026 FOCUSFRAME | URUGUAY</footer>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true, easing: 'ease-in-out-cubic' });
+        AOS.init({ duration: 1000, once: true });
 
         const frasesWeb = [
             { t: "No esperés a estar motivado para moverte. Movete y la motivación te va a encontrar trabajando.", c: "Disciplina" },
             { t: "El éxito es la suma de pequeños esfuerzos repetidos día tras día, sin excusas.", c: "Disciplina" },
             { t: "Hacé lo que tenés que hacer, aunque no tengas ganas. Ahí es donde se marca la diferencia.", c: "Disciplina" },
             { t: "Si te da miedo, es por ahí. El crecimiento está justo detrás de lo que te incomoda.", c: "Coraje" },
-            { t: "El coraje no es la falta de miedo, es el juicio de que algo más es más importante que el miedo.", c: "Coraje" },
+            { t: "El coraje no es la falta de miedo, es el juicio de que algo más es más importante.", c: "Coraje" },
             { t: "La humildad no es ser menos que nadie, es entender que siempre tenés algo nuevo que aprender.", c: "Humildad" },
             { t: "Cuanto más sabés, más te das cuenta de lo poco que sabés. Mantené la mente abierta.", c: "Humildad" },
             { t: "Tu mente es el marco de tu realidad. Si el marco está sucio, no vas a ver el camino claro.", c: "Enfoque" },
             { t: "Donde va tu atención, fluye tu energía. Elegí bien en qué te enfocás hoy.", c: "Enfoque" },
             { t: "No sufras por lo que todavía no pasó. Si tiene solución, ocupate. Si no, aceptalo.", c: "Estoicismo" },
-            { t: "Tenés poder sobre tu mente, no sobre los eventos externos. Entendé esto y vas a encontrar fuerza.", c: "Estoicismo" },
+            { t: "Tenés poder sobre tu mente, no sobre los eventos externos. Encontrá tu fuerza.", c: "Estoicismo" },
             { t: "Invertí en vos mismo antes que en cualquier otra cosa. Sos tu activo más valioso.", c: "Finanzas" },
-            { t: "El dinero es una herramienta, no el fin. Aprendé a dominarlo para que no te domine a vos.", c: "Finanzas" }, // <-- Acá faltaba la coma
+            { t: "El dinero es una herramienta, no el fin. Dominá el dinero para que no te domine a vos.", c: "Finanzas" },
             { t: "La constancia le gana al talento cuando el talento se duerme. No pares ahora.", c: "Disciplina" },
             { t: "No podés controlar lo que te pasa, pero sí cómo reaccionás a eso. Ahí está tu libertad.", c: "Estoicismo" },
             { t: "Tu atención es tu moneda más cara. No la gastes en cosas que no te hacen crecer.", c: "Enfoque" },
-            { t: "El miedo es una brújula: el camino correcto es el que más te asusta caminar.", c: "Coraje" },
-            { t: "No hables de tus planes, mostrá tus resultados. Que el éxito haga el ruido.", c: "Humildad" },
+            { t: "El miedo es una brújula: generalmente el camino correcto es el que más te asusta.", c: "Coraje" },
+            { t: "No hables de tus planes, mostrá tus resultados. Que el éxito haga el ruido por vos.", c: "Humildad" },
             { t: "No te preguntés si tenés ganas. La pregunta es si lo tenés que hacer. Punto.", c: "Disciplina" },
-            { t: "Si te ofendés por lo que alguien dijo, le regalás las llaves de tu paz.", c: "Estoicismo" },
+            { t: "Si te ofendés por lo que alguien dijo, le estás regalando las llaves de tu ánimo.", c: "Estoicismo" },
+            { t: "No te quejés del viento. Ajustá las velas. Sos el capitán, no la víctima.", c: "Estoicismo" },
             { t: "Estar ocupado no es lo mismo que ser productivo. No confundas movimiento con avance.", c: "Enfoque" },
-            { t: "El obstáculo no está en el camino; el obstáculo es el camino. Usalo.", c: "Estoicismo" },
-            { t: "Si estás pasando por un infierno, seguí caminando. No te frenes.", c: "Resiliencia" },
-            { t: "Nada grande se construyó en la comodidad. Agradecé la presión.", c: "Resiliencia" },
-            { t: "Tu ejemplo habla tan fuerte que no deja escuchar lo que decís.", c: "Liderazgo" }
+            { t: "El obstáculo no está en el camino; el obstáculo es el camino. Usalo para subir.", c: "Estoicismo" },
+            { t: "Si te caés siete veces, levantate ocho. No es una frase hecha, es una orden.", c: "Resiliencia" },
+            { t: "El fracaso es solo información. Aprendé la lección y volvé a intentar con más datos.", c: "Resiliencia" },
+            { t: "Nada grande se construyó en la comodidad. Agradecé la presión; el carbón se hace diamante.", c: "Resiliencia" },
+            { t: "Si estás pasando por un infierno, seguí caminando. No te frenes a mirar el fuego.", c: "Resiliencia" },
+            { t: "Liderar no es mandar, es servir. Si querés que te sigan, dales una razón.", c: "Liderazgo" },
+            { t: "No busques culpables, buscá soluciones. Los problemas se resuelven, no se lamentan.", c: "Liderazgo" },
+            { t: "Tu ejemplo habla tan fuerte que no deja escuchar lo que decís. Sé coherente.", c: "Liderazgo" },
+            { t: "Rico no es el que más tiene, sino el que menos necesita para ser libre.", c: "Finanzas" },
+            { t: "El ahorro sin inversión es solo dinero perdiendo valor. Invertí en conocimiento.", c: "Finanzas" }
         ];
-function generarFraseWeb() {
+
+        function generarFraseWeb() {
             const textElem = document.getElementById('interactive-quote');
             const catElem = document.getElementById('interactive-category');
-            const filterElem = document.getElementById('category-filter');
+            const filter = document.getElementById('category-filter').value;
             
-            // Verificación de seguridad: si no existen los elementos, salimos para evitar errores
-            if (!textElem || !catElem || !filterElem) return;
+            let filtradas = filter === "Todas" ? frasesWeb : frasesWeb.filter(f => f.c === filter);
+            if (filtradas.length === 0) filtradas = frasesWeb;
 
-            const filter = filterElem.value;
-            
-            // Filtrar frases según la categoría seleccionada
-            let frasesFiltradas = filter === "Todas" 
-                ? frasesWeb 
-                : frasesWeb.filter(f => f.c === filter);
-
-            // Si por alguna razón no hay frases en esa categoría, volvemos al total
-            if (frasesFiltradas.length === 0) {
-                frasesFiltradas = frasesWeb;
-            }
-
-            // Efecto de salida (Fade out)
             textElem.style.opacity = 0;
             textElem.style.transform = "translateY(10px)";
             
             setTimeout(() => {
-                // Selección aleatoria
-                const indiceAleatorio = Math.floor(Math.random() * frasesFiltradas.length);
-                const fraseSeleccionada = frasesFiltradas[indiceAleatorio];
-
-                // Solo actualizamos si la frase existe (evita el error de undefined)
-                if (fraseSeleccionada) {
-                    textElem.innerText = fraseSeleccionada.t;
-                    catElem.innerText = fraseSeleccionada.c;
-                }
-
-                // Efecto de entrada (Fade in)
+                const random = filtradas[Math.floor(Math.random() * filtradas.length)];
+                textElem.innerText = random.t;
+                catElem.innerText = random.c;
                 textElem.style.opacity = 1;
                 textElem.style.transform = "translateY(0)";
             }, 300);
