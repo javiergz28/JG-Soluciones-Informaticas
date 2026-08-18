@@ -1,0 +1,8 @@
+# Visual Studio local workspace files (machine-specific, never useful to commit)
+.vs/
+
+# Understand Anything analysis data (local tooling, regenerable)
+.ua/
+
+# Superpowers brainstorming session data (local tooling)
+.superpowers/

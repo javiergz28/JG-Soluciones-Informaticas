@@ -39,11 +39,22 @@ document.querySelectorAll('.nav-links a').forEach(link => {
       }
   
       showSlide(currentIndex);
-  
+
       setInterval(() => {
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
       }, 3000);
     }
+
+    // Acordeón de preguntas frecuentes
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const question = item.querySelector('.faq-question');
+      if (!question) return;
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(open => open.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
   });
   

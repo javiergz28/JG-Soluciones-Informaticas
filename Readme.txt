@@ -1,29 +1,23 @@
 # JG Soluciones Informáticas - Estructura del sitio web
 
-Este proyecto está desarrollado con HTML, CSS y JavaScript.
-Organizado por secciones en archivos individuales, pensado para ser moderno, responsivo y fácil de mantener.
+Landing page de una sola página (HTML, CSS y JavaScript puro, sin build tooling),
+con tema oscuro violeta/cian. Todo el contenido vive en index.html, navegado por
+anclas: Inicio, Servicios, Precios, Contacto.
 
-## Estructura de carpetas:
+## Estructura de archivos:
 
-JG Soluciones Informaticas\WEB\
-├── index.html               # Página principal
-├── servicios.html           # Sección de servicios
-├── contacto.html            # Formulario de contacto
-├── styles.css               # Estilos globales
-├── script.js                # Interacciones en JS
-├── Logo.png                 # Logo principal (ubicado en la raíz de /WEB)
+JG Soluciones Informaticas\
+├── index.html    # Landing completa: hero, servicios, precios, FAQ, contacto
+├── styles.css    # Tema oscuro (variables CSS, cards, precios, acordeón FAQ, formulario)
+├── script.js     # Scroll suave, slider de contacto, acordeón FAQ
+├── Logo.png      # Logo principal
 
-## Recomendaciones:
-- Asegurate de mantener los nombres de archivos y rutas tal como están.
-- Para publicar gratis el sitio, podés usar:
-  - GitHub Pages
-  - Netlify
-  - Vercel
+## Publicación:
+Publicado en GitHub Pages desde la rama main.
 
-## Futuras mejoras sugeridas:
-- Agregar favicon
-- Integrar formulario de contacto con Formspree o Google Forms
-- Añadir una sección de testimonios o casos de éxito
-- Optimizar imágenes para mejorar velocidad de carga
-
-¡Gracias por visitar JG Soluciones! 🚀
+## Notas:
+- Los precios (sección #precios) están en pesos uruguayos y son orientativos;
+  actualizalos directamente en index.html si cambian las tarifas.
+- El formulario de contacto usa Formspree (sin backend propio).
+- El proyecto FocusFrame (privacy.html, /focusframe) es un proyecto aparte,
+  sin relación con JG Soluciones — no tocar al editar este sitio.
