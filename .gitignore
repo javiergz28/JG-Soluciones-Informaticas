@@ -1,8 +1,16 @@
-# Visual Studio local workspace files (machine-specific, never useful to commit)
+# Visual Studio
 .vs/
+*.suo
+*.user
+*.sln.docstates
 
-# Understand Anything analysis data (local tooling, regenerable)
-.ua/
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
 
-# Superpowers brainstorming session data (local tooling)
-.superpowers/
+# Editores
+.vscode/
+*.swp
+*~

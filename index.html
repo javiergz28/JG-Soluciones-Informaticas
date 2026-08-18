@@ -1,233 +1,593 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-UY">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JG Soluciones Informáticas</title>
-  <meta name="description" content="Soporte técnico a domicilio en Montevideo: reparación de PC y notebooks, redes, backup y mantenimiento preventivo.">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soporte técnico y reparación de PC a domicilio en Montevideo | JG Soluciones Informáticas</title>
+  <meta name="description" content="Soporte técnico y reparación de PC y notebooks a domicilio en Montevideo, para hogares y empresas. Diagnóstico desde $800, tarifas claras. Escribinos por WhatsApp.">
+  <meta name="author" content="JG Soluciones Informáticas">
+  <meta name="theme-color" content="#1E40AF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111A2B" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://javiergz28.github.io/JG-Soluciones-Informaticas/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:site_name" content="JG Soluciones Informáticas">
+  <meta property="og:title" content="Soporte técnico y reparación de PC a domicilio en Montevideo | JG Soluciones Informáticas">
+  <meta property="og:description" content="Reparación de PC y notebooks, redes, backup y mantenimiento a domicilio en Montevideo. Tarifas publicadas, diagnóstico desde $800.">
+  <meta property="og:url" content="https://javiergz28.github.io/JG-Soluciones-Informaticas/">
+  <meta property="og:image" content="https://javiergz28.github.io/JG-Soluciones-Informaticas/Logo.png">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
   <link rel="stylesheet" href="styles.css">
-  <script>
-    function mostrarMensajeExito() {
-      const mensaje = document.getElementById('mensaje-exito');
-      mensaje.style.display = 'block';
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://javiergz28.github.io/JG-Soluciones-Informaticas/#business",
+    "name": "JG Soluciones Informáticas",
+    "description": "Soporte técnico, reparación de PC y notebooks, instalación de redes, backup y mantenimiento preventivo a domicilio en Montevideo, para hogares y empresas.",
+    "url": "https://javiergz28.github.io/JG-Soluciones-Informaticas/",
+    "image": "https://javiergz28.github.io/JG-Soluciones-Informaticas/Logo.png",
+    "telephone": "+59898335277",
+    "priceRange": "$800 - $1500",
+    "address": { "@type": "PostalAddress", "addressCountry": "UY", "addressRegion": "Montevideo" },
+    "areaServed": { "@type": "City", "name": "Montevideo", "addressCountry": "UY" },
+    "paymentAccepted": "Efectivo, transferencia bancaria, Mercado Pago",
+    "sameAs": [ "https://www.linkedin.com/in/javier-gutierrez-433096106/" ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00", "closes": "19:00"
+    }],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog", "name": "Servicios",
+      "itemListElement": [
+        { "@type": "Offer", "price": "800",  "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Diagnóstico / revisión general" } },
+        { "@type": "Offer", "price": "1000", "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Mantenimiento preventivo" } },
+        { "@type": "Offer", "price": "1200", "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Limpieza física interna" } },
+        { "@type": "Offer", "price": "1200", "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Backup / respaldo de datos" } },
+        { "@type": "Offer", "price": "1500", "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Formateo e instalación de sistema operativo" } },
+        { "@type": "Offer", "price": "1500", "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Instalación y configuración de red WiFi" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soporte en la nube (Microsoft 365 y Google Workspace)" } }
+      ]
     }
+  }
   </script>
 </head>
 <body>
-  <header class="main-header">
-    <div class="container">
-      <a href="#inicio">
-        <img src="Logo.png" alt="JG Soluciones Logo" class="logo-img">
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<!-- Sprite de iconos (Lucide, stroke 1.75) -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <g id="i-whatsapp"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Z"/><path d="M8.5 8.7c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.8 1.8c.1.3 0 .5-.1.7l-.4.5c-.1.2-.2.4 0 .7a7 7 0 0 0 3.1 2.6c.3.1.5.1.7-.1l.5-.6c.2-.2.4-.2.6-.1l1.7.8c.3.1.4.3.4.5v.6c0 .5-.5 1.1-1 1.3-.5.2-1.2.3-3.2-.5a11 11 0 0 1-5.2-4.6c-.7-1.2-.8-2.3-.6-2.9Z"/></g>
+    <g id="i-phone"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.8 2.1Z"/></g>
+    <g id="i-monitor"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></g>
+    <g id="i-network"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4M5 16v-2h14v2"/></g>
+    <g id="i-cloud"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6 1.4A3.8 3.8 0 0 0 7 19Z"/></g>
+    <g id="i-shield"><path d="M12 22s8-3.4 8-10V5l-8-3-8 3v7c0 6.6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></g>
+    <g id="i-tool"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 21H3l7.5-9a4 4 0 0 1 4.2-5.7Z"/></g>
+    <g id="i-check"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></g>
+    <g id="i-clock"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></g>
+    <g id="i-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g>
+    <g id="i-file"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></g>
+    <g id="i-plus"><path d="M12 5v14M5 12h14"/></g>
+    <g id="i-arrow-right"><path d="M5 12h14m-6-7 7 7-7 7"/></g>
+    <g id="i-menu"><path d="M4 7h16M4 12h16M4 17h16"/></g>
+    <g id="i-mail"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></g>
+    <g id="i-linkedin"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4"/></g>
+    <g id="i-alert"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16v.01"/></g>
+  </defs>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="container site-header__inner">
+    <a class="site-header__logo" href="#top" aria-label="JG Soluciones Informáticas — Inicio">
+      <img src="Logo.png" alt="JG Soluciones Informáticas" width="106" height="34">
+    </a>
+
+    <div class="nav">
+      <button class="nav__toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Abrir menú de navegación">
+        <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+
+      <ul class="nav__list" id="navList">
+        <li><a class="nav__link" href="#servicios">Servicios</a></li>
+        <li><a class="nav__link" href="#tarifas">Tarifas</a></li>
+        <li><a class="nav__link" href="#proceso">Cómo trabajamos</a></li>
+        <li><a class="nav__link" href="#zona">Zona</a></li>
+        <li><a class="nav__link" href="#faq">Preguntas</a></li>
+        <li><a class="nav__link" href="#contacto">Contacto</a></li>
+        <li><a class="nav__link" href="tel:+59898335277">098 335 277</a></li>
+      </ul>
+
+      <a class="btn btn--whatsapp nav__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">
+        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        Escribinos por WhatsApp
       </a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#precios">Precios</a></li>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero__badge"><span class="dot"></span> Tarifas publicadas, sin sorpresas</p>
+      <h1>Tu PC funcionando de nuevo, sin vueltas</h1>
+      <p class="hero__lead">
+        Trabajo a domicilio en Montevideo, para hogares y empresas: reparación, redes, backup y mantenimiento.
+        Las tarifas están <strong>publicadas más abajo</strong>: sabés lo que cuesta antes de escribir.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn--whatsapp" href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20un%20presupuesto.%20Mi%20problema%20es%3A%20" target="_blank" rel="noopener">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+          Pedir presupuesto por WhatsApp
+        </a>
+        <a class="btn btn--on-dark" href="tel:+59898335277">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-phone"/></svg>
+          Llamar ahora
+        </a>
+      </div>
+      <p class="hero__note">A domicilio en Montevideo · Hogares y empresas</p>
+    </div>
+  </section>
+
+  <!-- 2. TRUST BAR -->
+  <section class="trustbar" aria-label="Por qué elegirnos">
+    <div class="container">
+      <ul class="trustbar__list">
+        <li class="trustbar__item">
+          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-file"/></svg>
+          <span><span class="trustbar__value">Tarifas publicadas</span><span class="trustbar__label">Diagnóstico desde $800</span></span>
+        </li>
+        <li class="trustbar__item">
+          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-shield"/></svg>
+          <span><span class="trustbar__value">Todo con garantía</span><span class="trustbar__label">El plazo se confirma al coordinar</span></span>
+        </li>
+        <li class="trustbar__item">
+          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-clock"/></svg>
+          <span><span class="trustbar__value">48 a 72 horas</span><span class="trustbar__label">Tiempo de resolución habitual</span></span>
+        </li>
+        <li class="trustbar__item">
+          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-map-pin"/></svg>
+          <span><span class="trustbar__value">A domicilio</span><span class="trustbar__label">Montevideo, hogares y empresas</span></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. SERVICIOS -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">Servicios</p>
+        <h2>En qué te podemos ayudar</h2>
+        <p class="section__lead">Trabajamos con equipos de casa y con la infraestructura de pymes. Si no estás seguro de qué necesitás, escribinos y lo vemos juntos.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="card reveal">
+          <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-monitor"/></svg></span>
+          <h3>Reparación de PC y notebooks</h3>
+          <p>Diagnóstico de hardware, cambio de componentes, formateo, instalación de software y recuperación de datos.</p>
+          <a class="card__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20consulto%20por%20reparaci%C3%B3n%20de%20PC%2Fnotebook." target="_blank" rel="noopener">Consultar por este servicio
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-network"/></svg></span>
+          <h3>Instalación de redes</h3>
+          <p>Redes domésticas y empresariales: WiFi, cableado estructurado, routers, repetidores y segmentación de invitados.</p>
+          <a class="card__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20consulto%20por%20instalaci%C3%B3n%20de%20redes." target="_blank" rel="noopener">Consultar por este servicio
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-cloud"/></svg></span>
+          <h3>Soporte en la nube</h3>
+          <p>Microsoft 365 y Google Workspace: altas de usuarios, correo corporativo, migraciones y sincronización de archivos.</p>
+          <a class="card__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20consulto%20por%20soporte%20en%20la%20nube%20(Microsoft%20365%20%2F%20Google%20Workspace)." target="_blank" rel="noopener">Consultar por este servicio
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-shield"/></svg></span>
+          <h3>Backup y respaldo de datos</h3>
+          <p>Copias de seguridad de tus archivos antes de cualquier intervención, y respaldos periódicos configurados para que no dependas de la suerte.</p>
+          <a class="card__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20consulto%20por%20backup%20y%20respaldo%20de%20datos." target="_blank" rel="noopener">Consultar por este servicio
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </article>
+
+        <article class="card reveal">
+          <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-tool"/></svg></span>
+          <h3>Mantenimiento preventivo</h3>
+          <p>Limpieza física, cambio de pasta térmica, actualizaciones y optimización. Para que el equipo no falle justo cuando lo necesitás.</p>
+          <a class="card__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20consulto%20por%20mantenimiento%20preventivo." target="_blank" rel="noopener">Consultar por este servicio
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </article>
+
+     </div>
+    </div>
+  </section>
+
+  <!-- 4. PROCESO -->
+  <section class="section section--muted" id="proceso">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">Cómo trabajamos</p>
+        <h2>Tres pasos, sin sorpresas</h2>
+      </div>
+      <div class="grid grid--3 steps">
+        <div class="step reveal">
+          <h3>Contanos qué pasa</h3>
+          <p>Por WhatsApp o teléfono. Con una descripción del problema ya te podemos orientar y coordinar la visita a domicilio.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Diagnóstico y presupuesto</h3>
+          <p>Revisamos el equipo y te confirmamos qué tiene y cuánto cuesta. La tarifa de diagnóstico es $800 y está publicada, igual que el resto.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Reparación y entrega</h3>
+          <p>Aprobás y trabajamos. El plazo habitual de resolución es de 48 a 72 horas según la complejidad, y el trabajo sale con garantía.</p>
+        </div>
+      </div>
+      <div class="btn-row" style="margin-top: var(--space-xl)">
+        <a class="btn btn--accent" href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20empezar%20el%20diagn%C3%B3stico." target="_blank" rel="noopener">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          Empezar el diagnóstico
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 5. TARIFAS (precios reales, tomados de la versión publicada) -->
+  <section class="section" id="tarifas">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">Tarifas</p>
+        <h2>Lo que sale cada servicio</h2>
+        <p class="section__lead">Precios de referencia en pesos uruguayos. Si el trabajo requiere repuestos o sale de lo habitual, te lo confirmo antes de empezar.</p>
+      </div>
+
+      <ul class="pricing reveal">
+        <li class="pricing__row">
+          <span class="pricing__name">Diagnóstico / revisión general</span>
+          <span class="pricing__dots" aria-hidden="true"></span>
+          <span class="pricing__price">$800</span>
+        </li>
+        <li class="pricing__row">
+          <span class="pricing__name">Mantenimiento preventivo</span>
+          <span class="pricing__dots" aria-hidden="true"></span>
+          <span class="pricing__price">$1.000</span>
+        </li>
+        <li class="pricing__row">
+          <span class="pricing__name">Limpieza física interna</span>
+          <span class="pricing__dots" aria-hidden="true"></span>
+          <span class="pricing__price">$1.200</span>
+        </li>
+        <li class="pricing__row">
+          <span class="pricing__name">Backup / respaldo de datos</span>
+          <span class="pricing__dots" aria-hidden="true"></span>
+          <span class="pricing__price">$1.200</span>
+        </li>
+        <li class="pricing__row">
+          <span class="pricing__name">Formateo + instalación de sistema operativo</span>
+          <span class="pricing__dots" aria-hidden="true"></span>
+          <span class="pricing__price">$1.500</span>
+        </li>
+        <li class="pricing__row">
+          <span class="pricing__name">Instalación y configuración de red WiFi</span>
+          <span class="pricing__dots" aria-hidden="true"></span>
+          <span class="pricing__price">$1.500</span>
+        </li>
+      </ul>
+
+      <p class="pricing__note reveal">Formas de pago: efectivo, transferencia bancaria y Mercado Pago.</p>
+
+      <div class="btn-row" style="margin-top: var(--space-lg)">
+        <a class="btn btn--accent" href="https://wa.me/59898335277?text=Hola%20JG%2C%20vi%20las%20tarifas%20y%20quiero%20coordinar%20una%20visita." target="_blank" rel="noopener">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+          Coordinar una visita
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. GARANTÍA -->
+  <section class="section section--muted" id="garantia">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">Garantía y respaldo</p>
+        <h2>Por qué podés dejarnos tu equipo</h2>
+        <p class="section__lead">Dejar una computadora en manos de alguien que no conocés es un riesgo. Estas son las condiciones con las que trabajamos.</p>
+      </div>
+      <div class="guarantee">
+        <div class="guarantee__item reveal">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-shield"/></svg>
+          <div><h3>Todo con garantía</h3><p>Todos los trabajos tienen garantía. El plazo depende del tipo de servicio y te lo confirmo al coordinar.</p></div>
+        </div>
+        <div class="guarantee__item reveal">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-file"/></svg>
+          <div><h3>Tarifas a la vista</h3><p>Los precios de cada servicio están publicados en esta misma página. Nada se repara sin tu aprobación.</p></div>
+        </div>
+        <div class="guarantee__item reveal">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg>
+          <div><h3>Tus datos, tuyos</h3><p>No accedemos a tu información personal salvo que la tarea lo requiera, y nunca sin avisarte antes.</p></div>
+        </div>
+        <div class="guarantee__item reveal">
+          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-linkedin"/></svg>
+          <div><h3>Perfil verificable</h3><p>Detrás de JG hay una persona con nombre y trayectoria pública. <a href="https://www.linkedin.com/in/javier-gutierrez-433096106/" target="_blank" rel="noopener">Ver perfil en LinkedIn</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    TESTIMONIOS — bloque listo para cuando tengas reseñas reales.
+    El motor marca "Hidden reviews" como anti-patrón: publicá testimonios con
+    nombre, empresa y problema resuelto. No pongas testimonios inventados.
+
+    <section class="section section--muted" id="testimonios">
+      <div class="container">
+        <div class="section__head"><p class="section__eyebrow">Clientes</p><h2>Qué dicen de nuestro trabajo</h2></div>
+        <div class="grid grid--3">
+          <blockquote class="card"><p>"..."</p><footer><strong>Nombre</strong><br><span>Cargo, Empresa</span></footer></blockquote>
+        </div>
+      </div>
+    </section>
+  -->
+
+  <!-- 6. ZONA -->
+  <section class="section" id="zona">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">Cobertura</p>
+        <h2>¿Llegamos a tu zona?</h2>
+        <p class="section__lead">Trabajo a domicilio en Montevideo, para hogares y empresas. Si estás fuera de Montevideo, escribime igual y vemos si podemos coordinar.</p>
+      </div>
+      <ul class="zone__list reveal">
+        <li class="zone__tag">Montevideo — todos los barrios</li>
+        <li class="zone__tag">Hogares</li>
+        <li class="zone__tag">Empresas</li>
+        <li class="zone__tag">Atención a domicilio</li>
+      </ul>
+      <div class="btn-row" style="margin-top: var(--space-lg)">
+        <a class="btn btn--ghost" href="https://wa.me/59898335277?text=Hola%20JG%2C%20%C2%BFllegan%20a%20mi%20zona%3F%20Estoy%20en%3A%20" target="_blank" rel="noopener">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-map-pin"/></svg>
+          ¿Llegamos a tu zona? Preguntanos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="section section--muted" id="faq">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">Preguntas frecuentes</p>
+        <h2>Lo que más nos preguntan</h2>
+      </div>
+      <div class="faq reveal">
+        <details class="faq__item" name="faq">
+          <summary>¿Cuánto sale el diagnóstico?
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
+          </summary>
+          <div><p>El diagnóstico o revisión general sale $800. Las tarifas de todos los servicios están publicadas más arriba, así que no hay sorpresas al final.</p></div>
+        </details>
+        <details class="faq__item" name="faq">
+          <summary>¿Cuánto tarda una reparación?
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
+          </summary>
+          <div><p>El tiempo de resolución habitual es de 48 a 72 horas, dependiendo de la complejidad del trabajo. Si hace falta un repuesto puntual, te aviso el plazo antes de que apruebes.</p></div>
+        </details>
+        <details class="faq__item" name="faq">
+          <summary>¿En qué zona trabajás?
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
+          </summary>
+          <div><p>Trabajo a domicilio en Montevideo, para hogares y empresas. Coordinamos día y horario por WhatsApp.</p></div>
+        </details>
+        <details class="faq__item" name="faq">
+          <summary>¿Qué formas de pago aceptás?
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
+          </summary>
+          <div><p>Efectivo, transferencia bancaria y Mercado Pago.</p></div>
+        </details>
+        <details class="faq__item" name="faq">
+          <summary>¿Se pierden mis archivos si formatean?
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
+          </summary>
+          <div><p>No. Antes de cualquier formateo hago el respaldo de tus datos y te lo confirmo. Si el disco está dañado, te aviso qué se puede recuperar antes de avanzar.</p></div>
+        </details>
+        <details class="faq__item" name="faq">
+          <summary>¿Atienden urgencias?
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
+          </summary>
+          <div><p>Si tu empresa quedó sin operar, escribime por WhatsApp con la palabra <strong>URGENTE</strong> y priorizo el caso.</p></div>
+        </details>
+      </div>
+      <div class="btn-row" style="margin-top: var(--space-lg)">
+        <a class="btn btn--ghost" href="https://wa.me/59898335277?text=Hola%20JG%2C%20sigo%20con%20dudas%3A%20" target="_blank" rel="noopener">Sigo con dudas: escribir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">Contacto</p>
+        <h2>Escribinos y lo resolvemos</h2>
+        <p class="section__lead">La vía más rápida es WhatsApp. Si preferís dejarnos el detalle por escrito, usá el formulario y te respondemos por correo.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="form reveal" id="contactForm" action="https://formspree.io/f/mvgkwlvj" method="POST" novalidate>
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required aria-describedby="err-nombre">
+            <p class="error" id="err-nombre">
+              <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-alert"/></svg>
+              Necesitamos tu nombre para responderte.
+            </p>
+          </div>
+
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="err-email">
+            <p class="error" id="err-email">
+              <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-alert"/></svg>
+              Revisá el correo: falta el @ o el dominio.
+            </p>
+          </div>
+
+          <div class="field">
+            <label for="telefono">Teléfono <span class="hint">(opcional, acelera la respuesta)</span></label>
+            <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel">
+          </div>
+
+          <div class="field">
+            <label for="mensaje">¿Qué le pasa a tu equipo?</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required aria-describedby="err-mensaje" placeholder="Ej.: la notebook enciende pero la pantalla queda en negro"></textarea>
+            <p class="error" id="err-mensaje">
+              <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-alert"/></svg>
+              Contanos brevemente el problema.
+            </p>
+          </div>
+
+          <button class="btn btn--primary" type="submit">Enviar consulta</button>
+
+          <p class="form__status" id="formStatus" role="status" hidden>
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg>
+            <span id="formStatusText"></span>
+          </p>
+        </form>
+
+        <div class="contact-aside reveal">
+          <div class="contact-aside__item">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            <div><strong>WhatsApp</strong>
+              <a href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">098 335 277</a>
+              <span>La vía más rápida. Respondemos en el día.</span>
+            </div>
+          </div>
+          <div class="contact-aside__item">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-phone"/></svg>
+            <div><strong>Teléfono</strong>
+              <a href="tel:+59898335277">+598 98 335 277</a>
+              <span>Lunes a viernes, 9:00 a 19:00.</span>
+            </div>
+          </div>
+          <div class="contact-aside__item">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-linkedin"/></svg>
+            <div><strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/in/javier-gutierrez-433096106/" target="_blank" rel="noopener">Javier Gutiérrez</a>
+              <span>Perfil profesional y trayectoria.</span>
+            </div>
+          </div>
+          <div class="contact-aside__item">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-map-pin"/></svg>
+            <div><strong>Zona</strong>
+              <span>A domicilio en Montevideo, para hogares y empresas.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CTA FINAL -->
+  <section class="section cta-final">
+    <div class="container">
+      <h2>Contanos qué pasa y te decimos qué cuesta</h2>
+      <p>Diagnóstico $800 y tarifas publicadas. Sin sorpresas al final del trabajo.</p>
+      <div class="btn-row">
+        <a class="btn btn--whatsapp" href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20contactarlos." target="_blank" rel="noopener">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+          Contactar a JG Soluciones
+        </a>
+        <a class="btn btn--on-dark" href="tel:+59898335277">
+          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-phone"/></svg>
+          Llamar al 098 335 277
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <img src="Logo.png" alt="JG Soluciones Informáticas" width="119" height="38" style="margin-bottom: var(--space-xs)">
+        <p>Soporte técnico, reparación y mantenimiento informático a domicilio en Montevideo, para hogares y empresas.</p>
+      </div>
+      <nav aria-labelledby="f-serv">
+        <h2 id="f-serv">Servicios</h2>
+        <ul>
+          <li><a href="#servicios">Reparación de PC y notebooks</a></li>
+          <li><a href="#servicios">Instalación de redes</a></li>
+          <li><a href="#servicios">Soporte en la nube</a></li>
+          <li><a href="#servicios">Backup y respaldo de datos</a></li>
+          <li><a href="#servicios">Mantenimiento preventivo</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-sitio">
+        <h2 id="f-sitio">Sitio</h2>
+        <ul>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#tarifas">Tarifas</a></li>
+          <li><a href="#garantia">Garantía</a></li>
+          <li><a href="#zona">Zona de cobertura</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-    </div>
-  </header>
-
-  <section class="hero" id="inicio">
-    <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
-    <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
-    <div class="hero-content">
-      <h2>Soporte técnico <span class="gradient-text">confiable</span></h2>
-      <p>Reparación, mantenimiento y asistencia personalizada para tu hogar o empresa, a domicilio en Montevideo.</p>
-      <div class="hero-actions">
-        <a href="#servicios" class="btn">Ver servicios</a>
-        <a href="#contacto" class="btn-outline">Contactanos</a>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="https://wa.me/59898335277" target="_blank" rel="noopener">WhatsApp 098 335 277</a></li>
+          <li><a href="tel:+59898335277">Teléfono +598 98 335 277</a></li>
+          <li><a href="https://www.linkedin.com/in/javier-gutierrez-433096106/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li>Lunes a viernes, 9:00 a 19:00</li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <section class="section" id="servicios">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Qué hacemos</span>
-        <h2>Soluciones para cada problema técnico</h2>
-        <p>Desde una PC que no arranca hasta la red de toda una oficina.</p>
-      </div>
-      <div class="cards-grid">
-        <div class="card reveal">
-          <div class="card-icon">🛠</div>
-          <h3>Reparación de PC y notebooks</h3>
-          <p>Formateo, instalación de software y recuperación de datos.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🔌</div>
-          <h3>Instalación de redes</h3>
-          <p>Configuración de redes domésticas y empresariales (WiFi y cableado).</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">☁</div>
-          <h3>Soporte en la nube</h3>
-          <p>Asistencia con plataformas como Office 365 y Google Workspace.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🔐</div>
-          <h3>Seguridad y backup</h3>
-          <p>Antivirus, firewalls y copias de seguridad automatizadas.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🖥</div>
-          <h3>Mantenimiento preventivo</h3>
-          <p>Limpieza física y de software para mayor rendimiento.</p>
-        </div>
-      </div>
+    <div class="site-footer__bottom">
+      <p>&copy; <span id="year">2026</span> JG Soluciones Informáticas. Todos los derechos reservados.</p>
+      <p>Montevideo, Uruguay</p>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <section class="section" id="precios" style="padding-top:0;">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Precios</span>
-        <h2>Tarifas de servicios</h2>
-        <p>Precios en pesos uruguayos (UYU). Pueden variar según el estado del equipo — te confirmo el presupuesto antes de empezar.</p>
-      </div>
-      <div class="price-list">
-        <div class="price-row reveal">
-          <span class="price-name">Diagnóstico / revisión general</span>
-          <span class="price-value">$800</span>
-        </div>
-        <div class="price-row reveal">
-          <span class="price-name">Formateo + instalación de sistema operativo</span>
-          <span class="price-value">$1.500</span>
-        </div>
-        <div class="price-row reveal">
-          <span class="price-name">Limpieza física (interna)</span>
-          <span class="price-value">$1.200</span>
-        </div>
-        <div class="price-row reveal">
-          <span class="price-name">Instalación y configuración de red WiFi</span>
-          <span class="price-value">$1.500</span>
-        </div>
-        <div class="price-row reveal">
-          <span class="price-name">Backup / respaldo de datos</span>
-          <span class="price-value">$1.200</span>
-        </div>
-        <div class="price-row reveal">
-          <span class="price-name">Mantenimiento preventivo</span>
-          <span class="price-value">$1.000</span>
-        </div>
-      </div>
-      <p class="price-note">¿Necesitás algo que no está en la lista? Escribime y te paso un presupuesto a medida.</p>
-      <div style="text-align:center; margin-top: 2rem;">
-        <a href="#contacto" class="btn">Pedir presupuesto</a>
-      </div>
-    </div>
-  </section>
+<!-- Barra fija mobile: contacto siempre a un toque (contra-antipatrón "Hidden contact info") -->
+<div class="mobile-bar">
+  <a class="btn btn--whatsapp" href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">
+    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+    WhatsApp
+  </a>
+  <a class="btn btn--primary" href="tel:+59898335277">
+    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-phone"/></svg>
+    Llamar
+  </a>
+</div>
 
-  <section class="slider-contacto" id="slider-contacto">
-    <div class="slide hero">
-      <div class="hero-content">
-        <h2>¿Querés ver mi perfil profesional?</h2>
-        <a href="https://www.linkedin.com/in/javier-gutierrez-433096106/" class="btn" target="_blank">LinkedIn</a>
-      </div>
-    </div>
-    <div class="slide hero">
-      <div class="hero-content">
-        <h2>¿Preferís escribirme por WhatsApp?</h2>
-        <a href="https://wa.me/59898335277" class="btn" target="_blank">WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Dudas frecuentes</span>
-        <h2>Preguntas frecuentes</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item reveal">
-          <button class="faq-question" type="button">
-            <span>¿En qué zona trabajás?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Trabajo a domicilio en Montevideo, para hogares y empresas.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question" type="button">
-            <span>¿Cuánto tardás en responder o resolver un problema?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>El tiempo de resolución habitual es de 48 a 72 horas, dependiendo de la complejidad del trabajo.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question" type="button">
-            <span>¿Qué formas de pago aceptás?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Efectivo, transferencia bancaria y Mercado Pago.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question" type="button">
-            <span>¿Los trabajos tienen garantía?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sí, todos los trabajos tienen garantía. El plazo depende del tipo de servicio realizado — te lo confirmo al coordinar.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contacto" style="padding-top:0;">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Contacto</span>
-        <h2>¿Tenés una consulta?</h2>
-        <p>Escribime y te respondo a la brevedad.</p>
-      </div>
-      <div class="form-card reveal">
-        <form action="https://formspree.io/f/mvgkwlvj" method="POST" onsubmit="mostrarMensajeExito()">
-          <div>
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required>
-          </div>
-          <div>
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div>
-            <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono">
-          </div>
-          <div>
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn">Enviar mensaje</button>
-        </form>
-        <p id="mensaje-exito" class="success-message" style="display: none;">
-          ¡Gracias por tu mensaje! Me pondré en contacto lo antes posible.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="main-footer">
-    <p>&copy; 2025 JG Soluciones Informáticas - Todos los derechos reservados.</p>
-    <p>
-      <a href="https://www.linkedin.com/in/javier-gutierrez-433096106/" target="_blank">LinkedIn</a> |
-      <a href="https://wa.me/59898335277" target="_blank">WhatsApp</a>
-    </p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
