@@ -31,6 +31,19 @@ Coordinar de forma segura el proyecto JG Next Gen entre varios chats, sin reinic
 - No suponer que imágenes conceptuales son modelos 3D editables. Evitar introducir bibliotecas o plugins que no resuelvan una necesidad medida.
 - Nunca copiar elementos protegidos de la referencia ni publicar secretos, datos privados o claims técnicos no verificados.
 
+
+## Control de pushes y sincronización de GitHub (obligatorio)
+
+**Esto es una política de verificación en cada sesión, NO monitoreo automático en tiempo real.**
+
+1. **Antes de cambios locales:** identificar repositorio, rama, SHA remoto HEAD, último commit y estado del árbol local; si existe clon, ejecutar `git fetch --prune` antes de comparar y no empezar sobre ramas desactualizadas. Nunca ejecutar `git pull` indiscriminadamente sobre cambios sin confirmar.
+2. **Antes de commit/push:** comprobar `git status`, `git diff`, archivos afectados y SHA de referencia; detectar cambios de terceros, conflictos y divergencias antes de integrar. No usar `git push --force` ni sobrescribir trabajo ajeno sin autorización.
+3. **Canal autorizado:** commits funcionales solo en repositorio DEV o rama feature aprobada; nunca `main` LIVE por defecto. No asumir que cambios en una rama ya están desplegados en Pages.
+4. **Después de push:** leer **GitHub remoto** (SHA de la rama, commit, diff y estado del despliegue si existe) y comparar contra lo que se envió. Un `git push` exitoso no prueba que Pages desplegó, ni que la web esté sana.
+5. **Registro único:** actualizar el Issue #1 con `repo`, `branch`, `base_sha`, `new_sha`, archivos, pruebas, despliegue DEV y resultado del control de producción. Registrar explícitamente si falta algún dato de verificación.
+6. **Entre chats:** el siguiente chat debe revalidar GitHub antes de confiar en el Issue; si hay discrepancias, suspender escrituras y reconciliar diferencias, preservando el trabajo de otros.
+7. **Automatización opcional:** GitHub Actions/webhooks o comprobaciones programadas requieren implementación independiente, pruebas y acceso; **no afirmar vigilancia continua** hasta verla activa y probada.
+
 ## Definición de terminado (DoD)
 
 Un checkpoint solo pasa a **VERIFICADO** si existen:
