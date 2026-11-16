@@ -31,6 +31,14 @@ Coordinar de forma segura el proyecto JG Next Gen entre varios chats, sin reinic
 - No suponer que imágenes conceptuales son modelos 3D editables. Evitar introducir bibliotecas o plugins que no resuelvan una necesidad medida.
 - Nunca copiar elementos protegidos de la referencia ni publicar secretos, datos privados o claims técnicos no verificados.
 
+## Registro visual — poco, comparable y de buena calidad
+
+- Cuando haya un cambio visual significativo, conservar una comparativa **antes/después**; normalmente basta una lámina o 2–3 capturas seleccionadas. Si el avance depende del movimiento, preferir un clip breve del recorrido real de ida/vuelta. Sin cambios visuales, reutilizar la última evidencia.
+- Capturar el sitio o la escena reales con nitidez, encuadre útil y condiciones comparables: mismo viewport, cámara y punto del scroll cuando corresponda. Incluir móvil si el cambio lo afecta. Revisar los archivos antes de entregarlos; no inventar estados, ampliar artificialmente ni retocar la evidencia.
+- Identificar checkpoint, fecha UYT, versión y origen (commit/URL o archivo de escena), distinguir prototipo de DEV publicado y añadir una frase sobre **qué cambió y qué debe evaluarse**. Una captura no equivale a aprobación.
+- Aplicar `creative-library`: reutilizar el proyecto en `/Users/javiergutierrez/Documents/Creaciones IA`, guardar capturas/comparativas en `04_Revisiones` y registrar la selección entregada en `01_Entregas`, con versiones incrementales. Conservar las versiones anteriores; no subir material visual a GitHub por defecto.
+- Al cerrar, mostrar en el chat la evidencia más útil y enlazar la entrega. Anotar su ruta/enlace y versión junto al resultado en el **mismo Issue #1**, sin crear otro informe de seguimiento ni galerías redundantes.
+
 
 ## Control de pushes y sincronización de GitHub (obligatorio)
 
