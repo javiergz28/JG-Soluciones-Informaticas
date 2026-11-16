@@ -1,0 +1,111 @@
+name: JG Next Gen - Quality Gate
+
+on:
+  push:
+    branches:
+      - meta/jg-nextgen-skill
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  issues: read
+
+concurrency:
+  group: jg-nextgen-guard-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate skill, master issue and production isolation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out current commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate JG Next Gen safeguards
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import datetime as dt
+          import json
+          import os
+          from pathlib import Path
+          import re
+          import subprocess
+          import sys
+          from urllib.request import Request, urlopen
+
+          def die(message):
+              print("::error::" + message)
+              sys.exit(1)
+
+          def git(*args):
+              return subprocess.check_output(["git", *args], text=True).strip()
+
+          skill_path = Path("skills/jg-nextgen/SKILL.md")
+          if not skill_path.is_file():
+              die("The canonical JG Next Gen skill is missing")
+          skill = skill_path.read_text(encoding="utf-8")
+          if not re.search(r"\A---\s*\nname:\s*jg-nextgen\s*\n", skill):
+              die("Invalid skill frontmatter or name")
+          for required in (
+              "Documento maestro canónico",
+              "Control de pushes y sincronización",
+              "Definición de terminado",
+              "No tocar la rama",
+          ):
+              if required not in skill:
+                  die("Missing skill guardrail: " + required)
+
+          try:
+              git("fetch", "--quiet", "origin", "main")
+              base_sha = git("rev-parse", "origin/main")
+              index_blob = git("rev-parse", "origin/main:index.html")
+          except subprocess.CalledProcessError as error:
+              die("Could not verify production main: " + str(error))
+          expected_index = "8b6498bde48d9d161c769ba0519fb9da73f714ed"
+          if index_blob != expected_index:
+              die("LIVE index.html changed since approved baseline; reconcile before continuing")
+
+          changes = git("diff", "--name-only", "origin/main...HEAD").splitlines()
+          allowed = ("skills/jg-nextgen/", ".github/workflows/jg-nextgen-")
+          unexpected = [name for name in changes if not name.startswith(allowed)]
+          if unexpected:
+              die("Unexpected files in isolated branch: " + ", ".join(unexpected))
+
+          url = "https://api.github.com/repos/" + os.environ["GITHUB_REPOSITORY"] + "/issues/1"
+          req = Request(url, headers={
+              "Authorization": "Bearer " + os.environ["GH_TOKEN"],
+              "Accept": "application/vnd.github+json",
+              "User-Agent": "jg-nextgen-quality-gate",
+          })
+          try:
+              with urlopen(req, timeout=12) as response:
+                  issue = json.load(response)
+          except Exception as error:
+              die("Unable to read the master issue: " + str(error))
+
+          body = issue.get("body") or ""
+          if issue.get("state") != "open" or "JG NEXT GEN" not in body:
+              die("Canonical Issue #1 was closed or has unexpected content")
+          matches = re.findall(r"^\*\*Checkpoint activo:\*\*\s*(.+)$", body, re.M)
+          if len(matches) != 1:
+              die("Expected exactly one active checkpoint in Issue #1")
+          if "Protocolo de sincronización GitHub" not in body:
+              die("Missing mandatory push synchronization protocol in Issue #1")
+
+          print("Skill syntax and guardrails: OK")
+          print("Master Issue #1: OK | active checkpoint:", matches[0])
+          print("LIVE main:", base_sha[:12], "| index blob:", index_blob[:12])
+          print("Isolated branch changes:", len(changes))
+          print("No deployment, merges, commercial clicks or production writes performed.")
+          PY
