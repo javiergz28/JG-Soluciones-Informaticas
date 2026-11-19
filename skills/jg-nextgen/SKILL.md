@@ -40,6 +40,14 @@ Coordinar de forma segura el proyecto JG Next Gen entre varios chats, sin reinic
 - Al cerrar, mostrar en el chat la evidencia más útil y enlazar la entrega. Anotar su ruta/enlace y versión junto al resultado en el **mismo Issue #1**, sin crear otro informe de seguimiento ni galerías redundantes.
 
 
+## Higiene de sesiones Blender — regla obligatoria (2026-11-19)
+
+- **Una sola instancia gráfica Blender de JG Next Gen como máximo.** Antes de abrir un archivo, buscar procesos Blender existentes y sus argumentos; si la instancia del maestro vigente ya está abierta, reutilizarla y llevarla al frente, **no** lanzar `open -n` ni crear otra ventana.
+- La fuente editable es únicamente `03_Proyecto/CORE-01-BOOT.blend`. Comprobar ruta y hash contra el Issue, y conservar backups fuera del directorio maestro antes de cambios de geometría o materiales.
+- Los renders de prueba se ejecutan en modo `-b` (headless) y **se espera a su terminación**; no dejar procesos renderizando o instancias temporales abiertas. Contabilizar todos los PIDs antes y después de cada tarea.
+- Antes de cerrar un Blender sobrante, **verificar PID, ruta del proyecto, sesión a reemplazar, existencia de respaldo y posibilidad de cambios sin guardar**. No cerrar ventanas Blender de otros proyectos ni matar procesos por coincidencia de nombre. Priorizar cierre normal; evitar `SIGKILL`. Si hay trabajo sin guardar/no identificable, no forzar cierre: advertir al usuario.
+- Al finalizar: **0 instancias** si no se requiere revisión en Blender; **1 instancia**, y solo la del maestro verificado, si se deja abierta para inspección. Comprobar conteo real, SHA del maestro y que el archivo no se modificó involuntariamente. Registrar limpieza y cualquier excepción en el Issue. No declarar completada una sesión mientras queden ventanas sobrantes.
+
 ## Control de pushes y sincronización de GitHub (obligatorio)
 
 **Esto es una política de verificación en cada sesión, NO monitoreo automático en tiempo real.**
