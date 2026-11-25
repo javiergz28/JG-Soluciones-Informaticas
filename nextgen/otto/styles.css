@@ -1,0 +1,1453 @@
+:host{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-synthesis:none;background:#070b12;color:#f0f5fc;--cyan:#23d8f6;--line:rgba(150,196,241,.13);--sub:#8b99ad;--panel:#0c121d}
+*{box-sizing:border-box}:host,:host{margin:0;min-height:100%;overflow-x:hidden}:host{background:#080d16;font-size:14px}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid #54e4ff;outline-offset:4px}.app{min-height:100svh;display:flex;flex-direction:column}
+.topbar{height:77px;border-bottom:1px solid var(--line);padding:0 clamp(18px,3.1vw,55px);display:flex;justify-content:space-between;align-items:center;gap:20px;background:rgba(8,14,22,.96);position:relative;z-index:5}
+.identity{display:flex;align-items:center;gap:14px}.symbol{width:43px;height:43px;border:1px solid #1f829b;border-radius:14px;display:grid;place-items:center;font-size:22px;font-weight:900;letter-spacing:-.11em;background:linear-gradient(135deg,#15313d,#091521);box-shadow:inset 0 0 20px rgba(37,213,248,.08)}.symbol span{color:#23d8f6}.identity-copy{display:flex;flex-direction:column;gap:4px}.identity-copy strong{letter-spacing:.25em;font-size:13px}.identity-copy small{font-size:9px;letter-spacing:.15em;color:#8797ab}.muted-dot{color:#5b6776}.status-container{font-size:10px;font-weight:700;letter-spacing:.15em;color:#b6c5d5;display:flex;align-items:center;gap:9px}.signal{width:7px;height:7px;background:#2dd4ad;border-radius:100%;box-shadow:0 0 12px #25e4a1}.slash{color:#526076}.dev{color:#66d6ee}
+.workspace{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(345px,390px);max-width:2200px;width:100%;margin:0 auto}.scene-panel{min-width:0;position:relative;display:flex;flex-direction:column;background:#05080e}.viewport{flex:1;min-height:540px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 55% 44%,#1c3545 0%,#0a1522 48%,#05080e 83%)}.viewport canvas{display:block;position:absolute;inset:0;width:100%;height:100%;z-index:1}.vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 55% 46%,transparent 32%,rgba(1,4,10,.69) 100%);z-index:2;pointer-events:none}.grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(99,153,181,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(99,153,181,.025) 1px,transparent 1px);background-size:62px 62px;mask-image:linear-gradient(to bottom,transparent 5%,black 100%);pointer-events:none}
+.scene-label{position:absolute;top:43px;left:clamp(22px,3.5vw,66px);z-index:3;pointer-events:none;display:flex;flex-direction:column;gap:11px}.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#6fd0df;font-weight:700}.scene-title{font-size:clamp(30px,3.5vw,58px);line-height:1.03;font-weight:750;letter-spacing:-.065em}.scene-title em{font-style:normal;color:#67dcf3}.scene-desc{color:#b3bfcd;font-size:12px;max-width:330px;line-height:1.6}
+.visor-badges{z-index:3;position:absolute;right:27px;top:32px;display:flex;gap:7px}.tag{font-size:9px;color:#94acbd;border:1px solid rgba(131,176,194,.22);border-radius:20px;padding:8px 10px;background:rgba(9,19,29,.65);letter-spacing:.1em;font-weight:800}.blue-dot{width:6px;height:6px;background:#64e2fa;border-radius:50%;display:inline-block;margin-right:6px;box-shadow:0 0 6px #54cfea}.viewport-footer{position:absolute;bottom:26px;left:clamp(22px,3.5vw,66px);right:28px;display:flex;align-items:center;justify-content:space-between;gap:15px;z-index:3;pointer-events:none}.hint{display:flex;align-items:center;gap:9px;color:#879bac;font-size:11px}.fps{padding:9px 11px;border-radius:8px;font:700 11px ui-monospace,monospace;color:#a3dceb;background:rgba(2,12,22,.55);border:1px solid rgba(86,175,190,.18)}
+.load-message{position:absolute;left:50%;top:51%;transform:translate(-50%,-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:12px;padding:24px;border:1px solid var(--line);border-radius:18px;background:rgba(6,16,27,.85);min-width:245px;backdrop-filter:blur(12px)}.load-message small{color:var(--sub)}.load-message strong{font-size:13px}.load-message.hidden{display:none}.loading-orb{width:30px;height:30px;border-radius:50%;border:2px solid #1a4956;border-top-color:#5cddf6;animation:spin 1.2s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.scene-toolbar{min-height:95px;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:18px clamp(22px,3.5vw,66px);background:#0b131e;border-top:1px solid var(--line)}.toolbar-title{display:flex;flex-direction:column;gap:4px}.toolbar-title strong{font-size:12px;letter-spacing:.09em}.toolbar-title small{font-size:10px;color:#758ca1}.toolbar-actions{display:flex;gap:9px}.ghost-button,.primary-button{border-radius:8px;padding:11px 14px;font-size:11px;font-weight:700;white-space:nowrap}.ghost-button{background:transparent;color:#c2d2df;border:1px solid #354252}.ghost-button:hover{background:#172533}.primary-button{background:#53d5ec;color:#06121b;border:1px solid #53d5ec;box-shadow:0 0 20px rgba(35,216,246,.1)}.primary-button:hover{background:#89e4f3}
+.control-panel{background:#0d1420;border-left:1px solid var(--line);min-height:0;overflow-y:auto;padding:31px 30px 22px;display:flex;flex-direction:column;gap:24px}.panel-header{padding-bottom:8px}.header-pulse{display:inline-block;width:7px;height:7px;background:#53d9ee;border-radius:50%;margin-left:7px;box-shadow:0 0 10px #00c6e7}.panel-header h1{font-size:clamp(30px,2.6vw,37px);letter-spacing:-.055em;line-height:1.1;margin:10px 0}.panel-header h1 span{font-weight:350;color:#5bddf1}.panel-header p{font-size:12px;color:#9caabd;line-height:1.75;margin:0;max-width:345px}
+.control-section{border-top:1px solid var(--line);padding-top:21px}.section-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:8px}.section-heading h2{font-size:12px;margin:0;font-weight:700;letter-spacing:.025em}.section-meta{font-size:9px;letter-spacing:.12em;color:#778aa0;font-weight:800}.mode-name{font:700 10px ui-monospace,monospace;color:#71dfed;letter-spacing:.06em}.mode-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.mode-card{min-height:67px;border:1px solid #2a3647;border-radius:10px;background:#111a28;color:#9eb0c3;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;padding:10px 11px;transition:background .16s,border-color .16s,transform .16s}.mode-card:hover{transform:translateY(-2px);border-color:#527888}.mode-card.selected{border-color:rgba(91,216,237,.82);background:#122b3b;color:#eafaff;box-shadow:inset 0 0 18px rgba(24,195,234,.05)}.mode-card span:last-child{font-size:11px;font-weight:700}.mode-symbol{height:10px;width:10px;border-radius:50%;background:#33d5e6;box-shadow:0 0 14px #2dc6df}.mode-symbol.greeting{background:#a0eeff}.mode-symbol.processing{background:#b28af7;box-shadow:0 0 14px #916ae9}.mode-symbol.charging{background:#598afc;box-shadow:0 0 14px #5689f8}.mode-symbol.complete{background:#52e3aa;box-shadow:0 0 14px #36c88b}.mode-symbol.failed{background:#ff6581;box-shadow:0 0 14px #ed506e}.mode-symbol.auto{background:conic-gradient(#47daf0,#9c7aff,#4be8aa,#47daf0)}.mode-description{margin:12px 0 0;font-size:11px;color:#8297aa;min-height:15px}
+.color-picker-row{display:flex;align-items:center;gap:12px;border:1px solid #27384a;border-radius:12px;padding:13px;background:#101b29}.color-preview{width:34px;height:34px;flex:0 0 34px;border-radius:9px;background:#23d8f6;box-shadow:0 0 24px rgba(38,214,250,.2)}.color-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}.color-info strong{font-size:12px}.color-info small{color:#8195a8;font:10px ui-monospace,monospace}.color-input-wrap{width:67px;text-align:center;color:#9fbad0;border:1px solid #354758;border-radius:7px;padding:5px;font-size:9px;font-weight:800;cursor:pointer;position:relative;overflow:hidden}.color-input-wrap input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:pointer}.swatches{display:flex;gap:11px;margin-top:14px;flex-wrap:wrap}.swatch{--swatch:#23d8f6;width:29px;height:29px;background:var(--swatch);border:3px solid #0d1420;outline:1px solid rgba(255,255,255,.1);border-radius:50%;transition:transform .16s,outline-color .16s}.swatch:hover{transform:scale(1.1)}.swatch.active{outline:2px solid #e9f4fc}.swatch:nth-child(1){--swatch:#23d8f6}.swatch:nth-child(2){--swatch:#4d86ff}.swatch:nth-child(3){--swatch:#a079ff}.swatch:nth-child(4){--swatch:#44e7a8}.swatch:nth-child(5){--swatch:#ffb35e}.swatch:nth-child(6){--swatch:#ff6581}
+.range-label{display:flex;align-items:center;justify-content:space-between;margin:18px 0 10px;color:#a7b6c5;font-size:11px}.range-label strong{color:#dcf9ff;font:700 12px ui-monospace,monospace}.range-slider{width:100%;height:4px;border-radius:10px;accent-color:#5bd5ec;cursor:pointer}.charge-track{height:4px;background:#1d2b38;border-radius:10px;overflow:hidden;margin-top:15px}.charge-track span{display:block;width:0;height:100%;background:linear-gradient(90deg,#4a81ff,#66eaff);box-shadow:0 0 9px rgba(68,220,253,.6);transition:width .16s}
+.metrics-panel{border:1px solid #243344;background:#0a111c;border-radius:13px;padding:17px 16px;margin-top:0}.metrics-panel .section-heading{margin-bottom:14px}.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 10px}.metric-grid>div{display:flex;flex-direction:column;gap:4px}.metric-grid span{font-size:10px;color:#8396a9}.metric-grid strong{font:700 13px ui-monospace,monospace;color:#d6e7f3}.runtime-status{border-top:1px solid #263344;padding-top:13px;margin-top:16px;font-size:10px;color:#93c3d2;line-height:1.5}.runtime-status.error{color:#ffb0b9}
+.panel-footer{font-size:9px;letter-spacing:.09em;line-height:1.85;color:#718499;border-top:1px solid var(--line);padding-top:18px;margin-top:auto}.panel-footer strong{color:#b4cad8}.panel-footer span{letter-spacing:0}
+@media (max-width:1050px){.workspace{grid-template-columns:minmax(0,1fr) 345px}.control-panel{padding:25px 22px}.scene-label{top:27px}.visor-badges{top:auto;bottom:67px}}
+@media (max-width:770px){.topbar{height:68px;padding:0 16px}.identity-copy small{font-size:8px}.status-container{font-size:9px}.status-container .slash:nth-of-type(2),.status-container .dev{display:none}.workspace{display:flex;flex-direction:column}.scene-panel{min-height:0}.viewport{height:min(75svh,670px);min-height:480px;flex:none}.scene-label{top:25px;left:22px}.scene-title{font-size:35px}.scene-desc{max-width:260px}.visor-badges{top:22px;bottom:auto;right:16px}.tag:last-child{display:none}.viewport-footer{left:22px;right:22px}.scene-toolbar{padding:16px 22px;min-height:90px}.control-panel{border-left:0;border-top:1px solid var(--line);padding:26px 22px 30px}.mode-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:390px){.scene-title{font-size:30px}.scene-desc{font-size:10px;max-width:210px}.toolbar-title strong{font-size:10px}.ghost-button,.primary-button{font-size:10px;padding:10px}.toolbar-actions{gap:6px}.hint{font-size:9px}.status-container{font-size:8px}.tag{font-size:8px}}
+@media (prefers-reduced-motion:reduce){.mode-card,.swatch,.charge-track span{transition:none}.loading-orb{animation:none}}
+
+/* D3: Desktop workspace renders only the visible viewport, no offscreen WebGL fill. */
+@media (min-width:771px){
+  .workspace{height:calc(100svh - 77px);flex:0 0 auto;overflow:hidden}
+  .scene-panel{height:100%;min-height:0}
+  .viewport{flex:1;min-height:0}
+  .scene-toolbar{flex:none}
+  .control-panel{height:100%;min-height:0;overflow-y:auto;scrollbar-gutter:stable}
+}
+
+/* O6T-D4.1B: opt-in expression comparison; base Blender blink always plays. */
+.eye-control{margin-top:17px;padding:13px 14px;border:1px solid #2b3d4d;border-radius:10px;background:#101d2b;display:flex;justify-content:space-between;gap:10px;align-items:center}.eye-control>div{display:flex;flex-direction:column;gap:5px}.eye-control small{font-size:9px;color:#79cedd;letter-spacing:.11em;font-weight:750}.eye-control strong{font-size:11px;color:#deeef9}.eye-switch{display:flex;align-items:center;gap:7px;font-size:10px;color:#aec0cd;cursor:pointer;white-space:nowrap}.eye-switch input{accent-color:#50d3eb;width:16px;height:16px;cursor:pointer}
+
+/* O6T-D4.1I · JG NEXT GEN BRAND SYSTEM V3.1
+   Tokens verified against javiergz28/jgsinformatica main/styles.css (2026-11-22).
+   Visual-only layer; preserves OTTO state semantics, layout and canvas geometry. */
+:host{
+  --brand-bg:#070b16;
+  --brand-dark:#0b111c;
+  --brand-fg:#f4f7ff;
+  --brand-cyan:#00d9e8;
+  --brand-muted:#a0a9ba;
+  --brand-line:#ffffff21;
+  --brand-sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --brand-mono:"Geist Mono",ui-monospace,monospace;
+  --cyan:var(--brand-cyan);
+  --line:var(--brand-line);
+  --sub:var(--brand-muted);
+  --panel:var(--brand-dark);
+  background:var(--brand-bg);
+  color:var(--brand-fg);
+  font-family:var(--brand-sans);
+}
+:host{background:var(--brand-bg);color:var(--brand-fg);font-family:var(--brand-sans);-webkit-font-smoothing:antialiased}
+button:focus-visible,input:focus-visible{outline:2px solid var(--brand-cyan);outline-offset:4px}
+::selection{background:var(--brand-cyan);color:var(--brand-bg)}
+.topbar{background:rgba(7,11,22,.97);border-color:var(--brand-line)}
+.identity{gap:13px}
+.brand-mark{display:block;flex:0 0 46px;width:46px;height:46px;object-fit:contain}
+.identity-copy{gap:4px}
+.identity-copy .brand-name{display:flex;align-items:baseline;gap:5px;font-size:23px;line-height:1;letter-spacing:-.08em;font-weight:600;color:var(--brand-fg)}
+.brand-name>span{color:var(--brand-cyan);font-weight:400}
+.brand-name small{font:500 10px/1 var(--brand-mono);letter-spacing:-.025em;color:var(--brand-fg)}
+.identity-copy .brand-context{font:400 9px/1.35 var(--brand-mono);letter-spacing:.055em;color:#a0a9ba}
+.status-container{font:500 10px/1.4 var(--brand-mono);letter-spacing:.04em;color:#9daebe}
+.status-container .signal{background:var(--brand-cyan);box-shadow:0 0 10px #00d9e860}
+.status-container .dev{color:var(--brand-cyan)}
+.scene-panel{background:var(--brand-bg)}
+.viewport{background:radial-gradient(ellipse at 54% 43%,#13303a 0%,#0b1421 46%,var(--brand-bg) 83%)}
+.vignette{background:radial-gradient(ellipse at 55% 46%,transparent 34%,rgba(3,7,16,.72) 100%)}
+.grid-overlay{background-image:linear-gradient(#ffffff06 1px,transparent 1px),linear-gradient(90deg,#ffffff06 1px,transparent 1px);background-size:96px 96px}
+.eyebrow,.tag,.toolbar-title small,.status-container,.mode-name,.section-meta,.mode-description,.color-info small,.range-label strong,.metric-grid strong,.panel-footer,.fps{
+  font-family:var(--brand-mono)
+}
+.eyebrow{color:#aebac3;letter-spacing:.055em;font-weight:500}
+.scene-label{gap:14px}
+.scene-title{font-weight:400;letter-spacing:-.075em;line-height:1.02;color:var(--brand-fg)}
+.scene-title em{color:var(--brand-cyan)}
+.scene-desc{color:#b7c0cd;line-height:1.7}
+.tag{background:#070b16b8;color:#aebac3;border-color:#ffffff2b;font-weight:500;letter-spacing:.045em}
+.blue-dot,.header-pulse{background:var(--brand-cyan);box-shadow:0 0 10px #00d9e870}
+.fps{border-color:#00d9e82e;color:#c3eff0;background:#070b16c9}
+.hint{color:#a0a9ba}
+.load-message{background:#0b111ce8;border-color:var(--brand-line)}
+.loading-orb{border-color:#1a454c;border-top-color:var(--brand-cyan)}
+.scene-toolbar,.control-panel{background:var(--brand-dark);border-color:var(--brand-line)}
+.toolbar-title strong{font-weight:500;letter-spacing:.03em;color:var(--brand-fg)}
+.toolbar-title small{font-size:10px;letter-spacing:.02em;color:#9baaba}
+.ghost-button,.primary-button{font-weight:500;border-radius:4px;transition:background-color .16s,border-color .16s}
+.ghost-button{border-color:#ffffff45;color:var(--brand-fg);background:transparent}
+.ghost-button:hover{background:#ffffff0b;border-color:#ffffff8a}
+.primary-button{color:var(--brand-bg);background:var(--brand-fg);border-color:var(--brand-fg);box-shadow:none}
+.primary-button:hover{background:#c4f9fa;border-color:#c4f9fa}
+.panel-header h1{font-weight:400;letter-spacing:-.07em}
+.panel-header h1 span{font-weight:400;color:var(--brand-cyan)}
+.panel-header p{color:#b7c0cd}
+.section-heading h2{font-weight:500;color:var(--brand-fg)}
+.section-meta{font-weight:500;color:#8da0b1}
+.mode-name{color:var(--brand-cyan);font-weight:500}
+.mode-card{background:#111925;color:#aebac3;border-color:#ffffff2a;border-radius:5px;box-shadow:none}
+.mode-card:hover{border-color:#00d9e87a;transform:translateY(-1px)}
+.mode-card.selected{background:#0d2832;color:var(--brand-fg);border-color:var(--brand-cyan);box-shadow:none}
+.mode-card[data-mode="processing"].selected{background:#201b34;border-color:#a079ff}
+.mode-card[data-mode="charging"].selected{background:#16223a;border-color:#4d86ff}
+.mode-card[data-mode="complete"].selected{background:#102b28;border-color:#44e7a8}
+.mode-card[data-mode="failed"].selected{background:#2a1825;border-color:#ff6581}
+.mode-card span:last-child{font-weight:500}
+.mode-symbol.idle{background:var(--brand-cyan);box-shadow:0 0 12px #00d9e870}
+.mode-description{color:#a0a9ba;line-height:1.65;letter-spacing:0}
+.color-picker-row,.eye-control,.metrics-panel{background:#0b1823;border-color:#ffffff24;border-radius:6px}
+.color-preview{border-radius:5px}
+.color-input-wrap{border-color:#ffffff47;border-radius:4px;font-weight:500}
+.swatch{border-color:var(--brand-dark)}
+.swatch:nth-child(1){--swatch:#00d9e8}
+.swatch.active{outline-color:var(--brand-fg)}
+.range-label{color:#aebac3}
+.range-label strong,.metric-grid strong{color:var(--brand-fg)}
+.range-slider,.eye-switch input{accent-color:var(--brand-cyan)}
+.charge-track{background:#1b2b38}
+.eye-control small{color:var(--brand-cyan)}
+.eye-control strong{color:var(--brand-fg)}
+.panel-footer{color:#97a6b6;letter-spacing:.025em}
+.panel-footer strong{color:var(--brand-fg)}
+@media(max-width:770px){
+  .brand-mark{flex-basis:40px;width:40px;height:40px}
+  .identity-copy .brand-name{font-size:20px}
+  .brand-name small{font-size:9px}
+  .status-container{font-size:9px}
+  .control-panel{background:var(--brand-dark)}
+}
+@media(max-width:390px){
+  .identity{gap:9px}
+  .brand-mark{flex-basis:35px;width:35px;height:35px}
+  .identity-copy .brand-name{font-size:19px}
+  .identity-copy .brand-context{font-size:8px}
+  .topbar{padding:0 12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .ghost-button,.primary-button{transition:none}
+}
+
+/* O6T-D4.1I / mobile V3.1 polish: concise lab status and usable controls. */
+@media(max-width:770px){
+  .status-container .slash,.status-container .dev,.status-preview{display:none}
+  .status-version{white-space:nowrap}
+  .scene-toolbar{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:13px;min-height:0;padding:15px 22px}
+  .toolbar-title{min-width:0}
+  .toolbar-title small{line-height:1.5;overflow-wrap:normal}
+  .toolbar-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:8px}
+  .toolbar-actions button{min-height:44px;padding:10px 12px;white-space:normal;line-height:1.25}
+}
+@media(max-width:390px){
+  .scene-toolbar{padding:15px 17px}
+}
+
+/* O6T-D4.1J · Approved art direction: neutral graphite, white headings,
+   gray subtitles, restrained color only for functional state signals.
+   Deliberately overrides blue-tinted V3.1 laboratory presentation without
+   changing the published site's own design or OTTO's 3D materials. */
+:host{
+  --premium-bg:#090a0c;
+  --premium-surface:#111215;
+  --premium-surface-raised:#17181c;
+  --premium-white:#f4f4f5;
+  --premium-gray:#a7a7ad;
+  --premium-secondary:#83848b;
+  --premium-border:rgba(255,255,255,.13);
+  --brand-bg:var(--premium-bg);
+  --brand-dark:var(--premium-surface);
+  --brand-fg:var(--premium-white);
+  --brand-muted:var(--premium-gray);
+  --brand-line:var(--premium-border);
+  --line:var(--premium-border);
+  --sub:var(--premium-gray);
+  --panel:var(--premium-surface);
+  background:var(--premium-bg);
+  color:var(--premium-white);
+}
+:host,.app{background:var(--premium-bg);color:var(--premium-white)}
+.topbar{background:#090a0cf7;border-bottom-color:var(--premium-border)}
+.scene-panel,.viewport{background:var(--premium-bg)}
+.viewport{background-image:none!important}
+.grid-overlay{display:none!important}
+.vignette{background:radial-gradient(ellipse 72% 83% at 50% 47%,transparent 44%,rgba(0,0,0,.25) 100%)}
+.scene-title,.scene-title em{color:var(--premium-white);font-weight:400}
+.scene-desc,.panel-header p{color:var(--premium-gray);line-height:1.7}
+.eyebrow,.status-container,.toolbar-title small,.section-meta,.mode-description,
+.hint,.range-label,.panel-footer,.color-info small,.metric-grid span{
+  color:var(--premium-secondary)
+}
+.scene-label .eyebrow{color:var(--premium-gray)}
+.panel-header h1,.panel-header h1 span{color:var(--premium-white);font-weight:400}
+.panel-header h1 span{color:#bfc0c4}
+.section-heading h2,.toolbar-title strong,.color-info strong,.eye-control strong{
+  color:var(--premium-white)
+}
+.mode-name,.eye-control small,.status-container .dev{color:var(--premium-gray)}
+.tag,.fps,.load-message{background:#0d0e11e8;border-color:var(--premium-border);color:#b7b8bd}
+.scene-toolbar,.control-panel{background:var(--premium-surface);border-color:var(--premium-border)}
+.ghost-button{background:#141519;border-color:#ffffff39;color:var(--premium-white)}
+.ghost-button:hover{background:#202125;border-color:#ffffff6b}
+.primary-button{background:var(--premium-white);border-color:var(--premium-white);color:#141517}
+.primary-button:hover{background:#d8d9dc;border-color:#d8d9dc}
+.mode-card{background:#17181c;border-color:#ffffff23;color:#c1c2c6;box-shadow:none}
+.mode-card:hover{background:#202126;border-color:#ffffff68}
+.mode-card.selected,
+.mode-card[data-mode="processing"].selected,
+.mode-card[data-mode="charging"].selected,
+.mode-card[data-mode="complete"].selected,
+.mode-card[data-mode="failed"].selected{
+  background:#24252a;border-color:#d0d0d4;color:var(--premium-white);box-shadow:none
+}
+.mode-card .mode-symbol{box-shadow:none}
+.color-picker-row,.eye-control,.metrics-panel{
+  background:#18191d;border:1px solid var(--premium-border)
+}
+.color-preview{box-shadow:none}
+.color-input-wrap{border-color:#ffffff38;color:#d0d0d2}
+.swatch{border-color:var(--premium-surface)}
+.range-label strong,.metric-grid strong{color:var(--premium-white)}
+.charge-track{background:#303135}
+.panel-footer strong{color:var(--premium-white)}
+.scene-toolbar{border-top-color:var(--premium-border)}
+.blue-dot,.header-pulse,.signal{box-shadow:none}
+@media(max-width:770px){
+ .control-panel{background:var(--premium-surface)}
+}
+
+/* O6T-D4.1K-P1 · typography aligned with the JG Next Gen hero.
+   OTTO is a quiet neutral gray, not a cyan callout. */
+.scene-title{color:var(--premium-white);font-weight:400;letter-spacing:-.078em}
+.scene-title em{color:#aaacb2;font-weight:400}
+.scene-desc{font-size:clamp(12px,1.05vw,14px);max-width:365px;color:#a7a7ad;line-height:1.68}
+.scene-label{gap:15px}
+.panel-header h1 span{color:#bfc0c4}
+.visor-badges .tag{border-color:#ffffff21;color:#96979e;background:#0d0e118c}
+.scene-toolbar{border-top:1px solid #ffffff20}
+@media(max-width:770px){
+  .scene-title em{color:#aaacb2}
+  .scene-desc{max-width:330px}
+}
+
+/* O6T-D4.1K-P2 / JG Next Gen V3.1 minimal controller.
+   Inter for actions, Geist Mono for machine data, no 3D changes. */
+.control-panel{
+  gap:0;padding:30px 28px 20px;
+  background:var(--premium-surface);color:var(--premium-white);
+  font-family:var(--brand-sans);
+}
+.panel-header{padding:0 0 28px;margin:0}
+.panel-header .eyebrow{font:500 10px/1.4 var(--brand-mono);letter-spacing:.06em;color:#999ba0}
+.panel-header h1{
+  font:400 clamp(28px,2.4vw,34px)/1.08 var(--brand-sans);
+  letter-spacing:-.068em;margin:15px 0 11px;color:var(--premium-white)
+}
+.panel-header h1 span{color:#aaacb2;font-weight:400}
+.panel-header p{font:400 12px/1.65 var(--brand-sans);color:#9d9fa5;max-width:310px}
+.control-section{
+  border-top:1px solid #ffffff20;
+  margin:0;padding:23px 0 25px;
+}
+.control-panel .section-heading{margin-bottom:15px;gap:12px}
+.control-panel .section-heading h2{
+  font:500 13px/1.35 var(--brand-sans);
+  letter-spacing:-.015em;color:#eff0f1;margin:0
+}
+.control-panel .section-meta,.control-panel .mode-name{
+  font:500 10px/1.35 var(--brand-mono);
+  letter-spacing:.015em;color:#92949b;
+}
+.control-panel .mode-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.control-panel .mode-card{
+  min-height:49px;min-width:0;display:flex;flex-direction:row;align-items:center;
+  justify-content:flex-start;gap:10px;padding:10px 11px;
+  border:1px solid #ffffff20;border-radius:4px;
+  background:transparent;color:#b7b8bd;
+  box-shadow:none;transform:none;
+  font:500 12px/1.3 var(--brand-sans);
+  transition:background .16s,border-color .16s,color .16s;
+}
+.control-panel .mode-card:hover{
+  transform:none;background:#ffffff09;border-color:#ffffff58;color:#f4f4f5
+}
+.control-panel .mode-card.selected,
+.control-panel .mode-card[data-mode="processing"].selected,
+.control-panel .mode-card[data-mode="charging"].selected,
+.control-panel .mode-card[data-mode="complete"].selected,
+.control-panel .mode-card[data-mode="failed"].selected{
+  background:#ffffff0b;border-color:#bcbec3;color:#f4f4f5;
+  box-shadow:none
+}
+.control-panel .mode-card[data-mode="auto"]{grid-column:1/-1}
+.control-panel .mode-card span:last-child{
+  font:500 12px/1.3 var(--brand-sans);letter-spacing:0
+}
+.control-panel .mode-symbol{
+  width:7px;height:7px;flex:0 0 7px;border-radius:50%;
+  box-shadow:none
+}
+.control-panel .mode-description{
+  margin:13px 0 0;min-height:0;
+  font:400 11px/1.65 var(--brand-sans);
+  color:#989aa1;letter-spacing:0
+}
+.control-panel .eye-control{
+  margin-top:20px;padding:16px 0 0;
+  border:0;border-top:1px solid #ffffff18;border-radius:0;
+  background:transparent;gap:14px
+}
+.control-panel .eye-control>div{gap:6px}
+.control-panel .eye-control small{
+  font:500 9px/1.4 var(--brand-mono);
+  letter-spacing:.045em;color:#878991
+}
+.control-panel .eye-control strong{
+  font:500 12px/1.3 var(--brand-sans);color:#e8e9ec
+}
+.control-panel .eye-switch{font:400 11px/1.4 var(--brand-sans);color:#a8aab0;gap:9px}
+.control-panel .eye-switch input{
+  appearance:none;-webkit-appearance:none;position:relative;
+  width:33px;height:19px;margin:0;flex:0 0 33px;
+  border-radius:20px;border:1px solid #56575c;background:#33343a;
+  cursor:pointer;transition:background .15s,border-color .15s
+}
+.control-panel .eye-switch input::after{
+  content:"";position:absolute;top:2px;left:2px;
+  width:13px;height:13px;border-radius:50%;background:#cacbd0;
+  transition:transform .15s,background .15s
+}
+.control-panel .eye-switch input:checked{background:#d8d9dc;border-color:#d8d9dc}
+.control-panel .eye-switch input:checked::after{transform:translateX(14px);background:#151619}
+.control-panel .eye-switch input:focus-visible{outline:2px solid #e6e7e9;outline-offset:3px}
+.control-panel .color-picker-row{
+  padding:7px 0 14px;border:0;border-bottom:1px solid #ffffff18;
+  background:transparent;border-radius:0;gap:12px
+}
+.control-panel .color-preview{
+  width:23px;height:23px;flex:0 0 23px;border-radius:3px;box-shadow:none
+}
+.control-panel .color-info{gap:3px}
+.control-panel .color-info strong{font:500 12px/1.3 var(--brand-sans);color:#eeeff0}
+.control-panel .color-info small{font:400 10px/1.4 var(--brand-mono);color:#9698a0}
+.control-panel .color-input-wrap{
+  width:auto;padding:8px 9px;min-height:34px;
+  border:1px solid #ffffff37;border-radius:3px;
+  font:500 10px/1.3 var(--brand-mono);
+  color:#b7b8bc;letter-spacing:.025em
+}
+.control-panel .swatches{gap:15px;margin-top:17px}
+.control-panel .swatch{
+  width:19px;height:19px;border:2px solid var(--premium-surface);
+  outline:1px solid #ffffff24;border-radius:50%;
+  transition:outline-color .15s,transform .15s
+}
+.control-panel .swatch:hover{transform:scale(1.08);outline-color:#ffffff88}
+.control-panel .swatch.active{outline:2px solid #d3d4d6;outline-offset:2px}
+.control-panel .range-label{
+  margin:17px 0 9px;font:400 12px/1.45 var(--brand-sans);color:#b4b5bb
+}
+.control-panel .range-label:first-of-type{margin-top:2px}
+.control-panel .range-label strong{
+  font:500 11px/1.4 var(--brand-mono);color:#ecedef
+}
+.control-panel .range-slider{
+  display:block;width:100%;height:18px;margin:0;
+  border:0;border-radius:0;background:transparent;
+  accent-color:#d8d9dc;cursor:pointer;
+  -webkit-appearance:none;appearance:none
+}
+.control-panel .range-slider::-webkit-slider-runnable-track{
+  height:3px;background:#48494d;border:0;border-radius:2px
+}
+.control-panel .range-slider::-webkit-slider-thumb{
+  appearance:none;-webkit-appearance:none;
+  margin-top:-5px;width:13px;height:13px;
+  border:2px solid #111215;border-radius:50%;background:#e4e5e8;
+  box-shadow:0 0 0 1px #8f9197
+}
+.control-panel .range-slider::-moz-range-track{
+  height:3px;background:#48494d;border:0;border-radius:2px
+}
+.control-panel .range-slider::-moz-range-thumb{
+  width:10px;height:10px;border:2px solid #111215;
+  background:#e4e5e8;border-radius:50%
+}
+.control-panel .charge-track{
+  height:2px;margin-top:5px;background:#34353a;border-radius:0
+}
+.control-panel .charge-track span{
+  background:#e8e9ec;box-shadow:none;transition:width .15s
+}
+.control-panel .metrics-panel{
+  margin-top:0;padding:23px 0 0;
+  border:0;border-top:1px solid #ffffff20;
+  border-radius:0;background:transparent
+}
+.control-panel .metrics-panel .section-heading{margin-bottom:20px}
+.control-panel .metric-grid{gap:17px 14px}
+.control-panel .metric-grid>div{gap:6px}
+.control-panel .metric-grid span{
+  font:400 10px/1.4 var(--brand-sans);color:#8f9198
+}
+.control-panel .metric-grid strong{
+  font:500 12px/1.35 var(--brand-mono);color:#e1e2e5
+}
+.control-panel .runtime-status{
+  margin-top:21px;padding-top:13px;border-color:#ffffff18;
+  font:400 10px/1.55 var(--brand-mono);color:#9c9ea4
+}
+.control-panel .runtime-status.error{color:#ff8596}
+.control-panel .panel-footer{
+  margin-top:28px;padding-top:16px;
+  font:400 9px/1.7 var(--brand-mono);
+  color:#777980;letter-spacing:.02em
+}
+.control-panel .panel-footer strong{font-weight:500;color:#bec0c5}
+@media(max-width:1050px){
+  .control-panel{padding:26px 22px 22px}
+}
+@media(max-width:770px){
+  .control-panel{padding:29px 23px 34px}
+  .control-panel .mode-card{min-height:48px}
+}
+@media(prefers-reduced-motion:reduce){
+  .control-panel .mode-card,.control-panel .swatch,
+  .control-panel .eye-switch input,.control-panel .eye-switch input::after{
+    transition:none
+  }
+}
+
+/* O6T-D4.1M · CINEMATIC GLASS POLISH SOBRE R1
+   Mantiene una sola lámina + dos capas difusas sin arcos, órbitas, HUD ni
+   elementos nuevos. Luz de fondo y contraste ambientales; nunca luces 3D.
+   CSS reversible; no afecta hero, mandos, GLB ni cámara. */
+.viewport{isolation:isolate;background:#090a0c!important}
+.viewport .liquid-atmosphere{
+  position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 62% at 53% 48%,rgba(112,112,116,.09),transparent 78%),
+    linear-gradient(134deg,#08090b 0%,#101114 55%,#090a0c 100%);
+}
+.liquid-atmosphere>*{position:absolute;pointer-events:none}
+.glass-diffuse{
+  inset:11% 3% 0% 7%;
+  background:
+    radial-gradient(ellipse 52% 54% at 51% 44%,rgba(203,203,206,.16),rgba(158,158,165,.045) 52%,transparent 84%),
+    radial-gradient(ellipse 63% 36% at 53% 81%,rgba(135,135,141,.075),transparent 81%);
+  filter:blur(52px);opacity:.50
+}
+/* Única superficie de vidrio; sin líneas de contorno ni overlays gráficos. */
+.glass-sheet-main{
+  left:37%;top:18%;width:min(59%,690px);height:69%;
+  border-radius:clamp(42px,5.2vw,70px);
+  background:
+    radial-gradient(ellipse 62% 64% at 33% 25%,rgba(249,249,250,.14),transparent 78%),
+    linear-gradient(137deg,rgba(237,237,240,.075),rgba(148,148,154,.018) 44%,rgba(222,222,228,.045) 83%);
+  border:1px solid rgba(248,248,250,.065);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.033),inset 0 -26px 68px rgba(255,255,255,.018),0 27px 80px rgba(0,0,0,.28);
+  -webkit-backdrop-filter:blur(13px) saturate(80%);
+  backdrop-filter:blur(13px) saturate(80%);
+  opacity:.82;
+  /* Static frosted sheet: no composited blur transform cycle */
+}
+.glass-soft-reflection{
+  left:36%;top:19%;width:45%;height:37%;border-radius:64px;
+  background:radial-gradient(ellipse at 44% 39%,rgba(239,239,241,.13),rgba(206,206,212,.019) 58%,transparent 86%);
+  filter:blur(51px);mix-blend-mode:screen;opacity:.36;
+  /* Static soft reflection: remove intermittent compositor invalidations */
+}
+@keyframes otto-glass-breathe{
+  from{transform:translate3d(0,0,0) scale(1);opacity:.82}
+  to{transform:translate3d(0,-2px,0) scale(1.002);opacity:.835}
+}
+@keyframes otto-glass-glow{
+  from{opacity:.35;transform:translate3d(0,0,0)}
+  to{opacity:.39;transform:translate3d(1px,-1px,0)}
+}
+.viewport canvas{z-index:1}
+.viewport .vignette{
+  z-index:2;
+  background:
+    linear-gradient(180deg,rgba(5,6,8,.38),transparent 28%,transparent 74%,rgba(5,6,8,.36)),
+    radial-gradient(ellipse 95% 94% at 54% 47%,transparent 50%,rgba(4,5,7,.16) 100%);
+}
+.scene-label,.visor-badges,.viewport-footer{z-index:3}
+@media(max-width:1050px) and (min-width:771px){
+  .glass-sheet-main{left:31%;top:18%;width:65%;height:69%}
+  .glass-soft-reflection{left:39%;width:51%}
+}
+@media(max-width:770px){
+  .viewport .liquid-atmosphere{
+    background:
+      radial-gradient(ellipse 70% 64% at 51% 56%,rgba(90,90,96,.11),transparent 82%),
+      linear-gradient(150deg,#08090b,#111215 53%,#090a0c)
+  }
+  .glass-diffuse{inset:22% -8% -5%;filter:blur(37px);opacity:.43}
+  .glass-sheet-main{
+    left:9%;top:32%;width:82%;height:57%;
+    border-radius:38px;
+    -webkit-backdrop-filter:blur(10px) saturate(80%);
+    backdrop-filter:blur(10px) saturate(80%);
+    opacity:.77
+  }
+  .glass-soft-reflection{
+    left:17%;top:31%;width:68%;height:27%;filter:blur(38px);opacity:.33
+  }
+  .viewport .vignette{background:linear-gradient(180deg,rgba(5,6,8,.42),transparent 30%,transparent 75%,rgba(5,6,8,.4))}
+}
+@media(prefers-reduced-motion:reduce){
+  .glass-sheet-main,.glass-soft-reflection{animation:none!important}
+}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+  .glass-sheet-main{background-color:rgba(167,167,173,.052)}
+}
+
+/* O6T-D4.1N-P2A | OTTO CONTROL DOCK
+   Integrated faux-3D controls. Three primary objects, contextual popovers,
+   no controls scrollbar. CSS only; no additional WebGL or heavy textures. */
+:host,:host,.app{height:100%;height:100dvh;overflow:hidden}
+.app{min-height:0;display:flex;flex-direction:column}
+.topbar{flex:0 0 77px;height:77px;min-height:0}
+.workspace{
+  display:block;flex:1 1 0;min-height:0;height:auto;
+  width:100%;max-width:2200px;margin-inline:auto;overflow:hidden
+}
+.scene-panel{height:100%;min-height:0;width:100%;display:flex;flex-direction:column;isolation:isolate;overflow:visible}
+.scene-panel .viewport{min-height:0;flex:1 1 0}
+.scene-panel .scene-toolbar{
+  order:3;flex:0 0 54px;min-height:54px;padding:7px clamp(18px,3.5vw,48px);
+  background:#0b0c0f;gap:12px;
+}
+.scene-panel .toolbar-title{gap:2px}
+.scene-panel .toolbar-title strong{font-size:10px;letter-spacing:.025em}
+.scene-panel .toolbar-title .eyebrow{font-size:8px}
+.scene-panel .toolbar-title small{font-size:9px}
+.scene-panel .toolbar-actions{gap:7px}
+.scene-panel .toolbar-actions button{min-height:36px;padding:7px 11px}
+.otto-dock{
+  order:2;flex:0 0 157px;height:157px;min-height:0;
+  position:relative;z-index:8;overflow:visible;
+  display:block;width:100%;padding:6px 14px 8px;border:0;
+  background:linear-gradient(180deg,#090a0c 0%,#101114 80%,#0b0c0f);
+  color:#f4f4f5;font-family:var(--brand-sans);
+}
+.otto-dock .dock-shell{
+  margin:0 auto;max-width:640px;height:100%;
+  padding:8px 16px 10px;position:relative;
+  border:1px solid rgba(255,255,255,.135);border-radius:23px;
+  background:
+    radial-gradient(ellipse 60% 100% at 50% -30%,rgba(255,255,255,.085),transparent 90%),
+    linear-gradient(145deg,rgba(47,48,53,.96),rgba(20,21,24,.98) 54%,rgba(27,28,31,.98));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.075),inset 0 -8px 25px rgba(0,0,0,.25),0 13px 35px rgba(0,0,0,.32);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+}
+.otto-dock .dock-topline{
+  height:30px;display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:0 2px 6px;border-bottom:1px solid rgba(255,255,255,.10)
+}
+.otto-dock .mood-now{
+  display:flex;min-width:0;align-items:center;gap:8px;flex:1;
+  border:0;background:transparent;padding:0;box-shadow:none;
+  --companion-accent:#d0d3d8
+}
+.otto-dock .mood-now[data-mood=greeting]{--companion-accent:#abe2ea}
+.otto-dock .mood-now[data-mood=processing]{--companion-accent:#c7b6ed}
+.otto-dock .mood-now[data-mood=charging]{--companion-accent:#a0bff2}
+.otto-dock .mood-now[data-mood=complete]{--companion-accent:#9ee0c1}
+.otto-dock .mood-now[data-mood=failed]{--companion-accent:#e9a4b0}
+.otto-dock .mood-face{
+  position:relative;width:25px;height:25px;flex:0 0 25px;border-radius:9px;
+  border:1px solid rgba(255,255,255,.18);
+  background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.035));
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.08)
+}
+.otto-dock .mood-eye{
+  position:absolute;top:8px;width:3px;height:4px;border:1px solid var(--companion-accent);
+  border-radius:50%
+}
+.otto-dock .mood-eye:first-child{left:6px}
+.otto-dock .mood-eye:nth-child(2){right:6px}
+.otto-dock .mood-smile{position:absolute;bottom:5px;left:8px;width:9px;height:4px;border-bottom:1px solid var(--companion-accent);border-radius:0 0 8px 8px}
+.otto-dock .mood-now[data-mood=failed] .mood-smile{transform:rotate(180deg) translateY(-3px)}
+.otto-dock .mood-now-copy{min-width:0;display:flex;align-items:baseline;gap:8px}
+.otto-dock .mood-kicker{font:500 9px/1 var(--brand-mono);letter-spacing:.04em;color:#a5a6ae;white-space:nowrap}
+.otto-dock .mode-name{font:600 11px/1.15 var(--brand-sans);color:#f4f4f5;letter-spacing:.01em;white-space:nowrap}
+.otto-dock .mode-description{position:absolute;width:1px;height:1px;padding:0;margin:-1px;border:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.otto-dock .dock-top-actions{display:flex;gap:6px;flex:none}
+.otto-dock .dock-top-actions button{
+  display:flex;align-items:center;justify-content:center;gap:6px;min-width:72px;min-height:28px;
+  border:1px solid rgba(255,255,255,.13);border-radius:9px;
+  background:rgba(255,255,255,.045);color:#d9dade;
+  font:500 10px/1.2 var(--brand-sans);padding:4px 10px
+}
+.otto-dock .dock-top-actions button span{font-size:13px;color:#c5c7cc}
+.otto-dock [data-dock-toggle][aria-expanded=true]{
+  border-color:rgba(255,255,255,.48);background:rgba(255,255,255,.13)
+}
+.otto-dock .dock-modules{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;align-items:stretch;height:calc(100% - 30px);padding-top:7px
+}
+.otto-dock .dock-module{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;
+  min-width:0;position:relative;border:1px solid rgba(255,255,255,.065);
+  border-radius:16px;background:linear-gradient(152deg,rgba(255,255,255,.055),rgba(255,255,255,.012) 63%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+.otto-dock .dock-module-title{
+  color:#d5d6db;font:600 11px/1.2 var(--brand-sans);letter-spacing:-.012em
+}
+.otto-dock .dock-module-light button{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  gap:3px;width:100%;height:100%;border:0;border-radius:15px;
+  background:transparent;color:#e7e8ea;padding:5px 8px
+}
+.otto-dock .dock-module-light button:hover,.otto-dock .dock-module-light button:focus-visible{
+  background:rgba(255,255,255,.045)
+}
+.otto-dock #dock-light-label{
+  font:500 9px/1.2 var(--brand-mono);color:#aeb1bb;text-transform:none
+}
+.otto-dock .dock-orb-well{
+  display:grid;place-items:center;position:relative;width:54px;height:54px;
+  border-radius:50%;
+  background:radial-gradient(circle at 44% 29%,#484a50,#1c1e23 63%,#0c0d11);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.11),inset 0 -4px 7px #0009,0 4px 10px #0008
+}
+.otto-dock .dock-light-orb{
+  --orb-color:#00d9e8;display:block;width:31px;height:31px;border-radius:50%;
+  background:radial-gradient(circle at 29% 23%,#ffffffb3,var(--orb-color) 38%,#14171c 135%);
+  box-shadow:inset -5px -6px 8px rgba(0,0,0,.38),inset 2px 2px 3px rgba(255,255,255,.24),0 1px 12px color-mix(in srgb,var(--orb-color) 23%,transparent)
+}
+.otto-dock .dock-dial{
+  width:56px;height:56px;position:relative;display:block;flex:0 0 56px;
+  cursor:ew-resize;border-radius:50%
+}
+.otto-dock .dock-dial input{
+  position:absolute;inset:0;width:100%;height:100%;margin:0;
+  opacity:0;z-index:3;cursor:ew-resize;touch-action:pan-x;
+  appearance:none;-webkit-appearance:none;
+}
+.otto-dock .dock-dial-ring{
+  position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;
+  border-radius:50%;
+  background:conic-gradient(from -90deg,#e3e5e9 var(--dial-pct),#42444b var(--dial-pct));
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.21),0 4px 9px rgba(0,0,0,.38),0 0 0 2px #1b1c21;
+}
+.otto-dock .dock-module-motion .dock-dial-ring{
+  background:conic-gradient(from -90deg,#a9b5c8 var(--dial-pct),#42444b var(--dial-pct))
+}
+.otto-dock .dock-dial-core{
+  display:grid;place-items:center;width:43px;height:43px;border-radius:50%;
+  background:radial-gradient(circle at 33% 26%,#474951,#202126 66%,#15161a);
+  border:1px solid rgba(255,255,255,.13);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.16),inset 0 -4px 6px #0007
+}
+.otto-dock .dock-dial-core strong{font:600 12px/1 var(--brand-mono);color:#f1f1f3}
+.otto-dock .dock-dial:focus-within{outline:2px solid #f4f4f5;outline-offset:4px}
+.otto-dock .dock-popover{
+  position:absolute;z-index:30;
+  bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);
+  width:min(420px,calc(100vw - 28px));height:auto;
+  padding:14px 16px 16px;overflow:visible;
+  border:1px solid rgba(255,255,255,.22);border-radius:22px;
+  background:linear-gradient(140deg,rgba(40,41,46,.98),rgba(17,18,22,.99) 58%);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.095),0 20px 64px rgba(0,0,0,.64);
+}
+.otto-dock .dock-popover[hidden]{display:none!important}
+.otto-dock .dock-popover-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.otto-dock .dock-popover-head strong{font:600 14px/1.25 var(--brand-sans);color:#f5f5f6}
+.otto-dock .dock-close{
+  width:36px;height:36px;display:grid;place-items:center;border-radius:11px;border:1px solid #ffffff26;
+  color:#dfe0e3;background:#ffffff10;font:400 22px/1 var(--brand-sans)
+}
+.otto-dock .color-picker-row{padding:10px;background:#ffffff06;border-color:#ffffff1a}
+.otto-dock .swatches{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;justify-items:center;margin:12px 0 0}
+.otto-dock .swatch{
+  position:relative;width:44px;height:44px;flex:none;border:0;outline:0;
+  background:transparent;box-shadow:none;border-radius:50%
+}
+.otto-dock .swatch::before{
+  content:"";position:absolute;inset:8px;border-radius:50%;
+  background:var(--swatch);box-shadow:0 0 0 1px #ffffff42
+}
+.otto-dock .swatch.active::before{box-shadow:0 0 0 3px #17181b,0 0 0 5px #e8e8eb}
+.otto-dock .swatch:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.otto-dock .color-input-wrap{min-width:66px;min-height:44px;display:flex;align-items:center;justify-content:center}
+.otto-dock .mode-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.otto-dock .mode-card[data-mode]{
+  --tile-accent:#e2e3e6;--tile-bg:rgba(255,255,255,.065);
+  min-height:61px;padding:6px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  border:1px solid #ffffff24;border-radius:12px;background:#ffffff08;
+  color:#e0e1e5;font:500 11px/1.1 var(--brand-sans);transition:background-color .16s,border-color .16s
+}
+.otto-dock .mode-card[data-mode]:hover{background:#ffffff12;border-color:#ffffff6d;transform:none}
+.otto-dock .mode-card.selected{
+  background:var(--tile-bg);border-color:color-mix(in srgb,var(--tile-accent) 67%,transparent);
+  color:#fff
+}
+.otto-dock .mode-card[data-mode=greeting]{--tile-accent:#b0e0ed;--tile-bg:#b0e0ed18}
+.otto-dock .mode-card[data-mode=processing]{--tile-accent:#c1adf2;--tile-bg:#c1adf218}
+.otto-dock .mode-card[data-mode=charging]{--tile-accent:#9bb9ed;--tile-bg:#9bb9ed18}
+.otto-dock .mode-card[data-mode=complete]{--tile-accent:#9edbc2;--tile-bg:#9edbc218}
+.otto-dock .mode-card[data-mode=failed]{--tile-accent:#efa6ac;--tile-bg:#efa6ac18}
+.otto-dock .mode-card .mode-symbol{
+  width:24px;height:24px;border:1px solid #ffffff20;border-radius:9px;
+  display:grid;place-items:center;color:var(--tile-accent);background:#ffffff08;
+  font:500 17px/1 var(--brand-sans);box-shadow:none
+}
+.otto-dock .mode-symbol::before{content:"–"}
+.otto-dock .mode-symbol.greeting::before{content:"◡"}
+.otto-dock .mode-symbol.processing::before{content:"✳"}
+.otto-dock .mode-symbol.charging::before{content:"↑"}
+.otto-dock .mode-symbol.complete::before{content:"✓"}
+.otto-dock .mode-symbol.failed::before{content:"!"}
+.otto-dock .mode-symbol.auto::before{content:"▶";font-size:11px}
+.otto-dock .mode-card span:last-child{font:500 10px/1.2 var(--brand-sans);color:inherit}
+.otto-dock .mode-card[data-mode=auto]{
+  grid-column:1/-1;flex-direction:row;justify-content:center;gap:10px;min-height:47px;
+  background:#ffffff12
+}
+.otto-dock .mode-demo-copy{display:flex;flex-direction:column;align-items:flex-start;gap:2px;white-space:normal!important;text-align:left}
+.otto-dock .mode-demo-copy strong{font:550 11px/1.1 var(--brand-sans)}
+.otto-dock .mode-demo-copy small{font:400 9px/1.1 var(--brand-sans);color:#b5b6bd}
+.otto-dock .eye-control{display:flex;align-items:center;justify-content:space-between;margin-top:11px;padding:9px 10px;background:#ffffff08}
+.otto-dock .eye-control strong{font-size:11px}
+.otto-dock .eye-control label{white-space:nowrap}
+.otto-dock .advanced-tuning{margin:0;overflow:visible;border:0;background:none}
+.otto-dock .advanced-tuning summary{
+  min-height:35px;padding:7px 0;gap:8px;background:none;
+  font:500 11px/1.3 var(--brand-sans);cursor:pointer
+}
+.otto-dock .advanced-tuning-body{border:0;padding:0 0 4px}
+.otto-dock .advanced-tuning-body .range-label{margin:10px 0 5px;font-size:11px}
+.otto-dock .advanced-tuning-body .range-label:first-child{margin-top:4px}
+.otto-dock .advanced-tuning-body .range-slider{height:18px;accent-color:#cfd2d9}
+.otto-dock .advanced-tuning-body .charge-track{margin-top:4px}
+.otto-dock .metrics-panel{margin:8px 0 0;padding:8px 11px;border-radius:11px;background:#ffffff06}
+.otto-dock .metrics-panel .section-heading{margin:0 0 5px}
+.otto-dock .metrics-panel .section-heading h2{font-size:10px}
+.otto-dock .metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.otto-dock .metric-grid span{font-size:8px}
+.otto-dock .metric-grid strong{font-size:10px}
+.otto-dock .runtime-status{font-size:9px;line-height:1.2;margin-top:5px}
+.otto-dock button:focus-visible,.otto-dock summary:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media(max-width:770px){
+  .topbar{height:59px;flex-basis:59px}
+  .otto-dock{flex:0 0 154px;height:154px;padding:5px 8px 7px}
+  .otto-dock .dock-shell{padding:7px 9px 8px;border-radius:20px}
+  .otto-dock .dock-modules{gap:6px;padding-top:6px}
+  .otto-dock .dock-module{border-radius:13px}
+  .otto-dock .dock-module-title{font-size:10px}
+  .otto-dock .dock-topline{height:31px;padding-bottom:5px}
+  .otto-dock .dock-top-actions button{min-width:61px;min-height:27px;padding:4px 7px}
+  .otto-dock .mood-kicker{font-size:8px}
+  .otto-dock .mode-name{font-size:10px}
+  .otto-dock .dock-orb-well{width:48px;height:48px}
+  .otto-dock .dock-light-orb{width:30px;height:30px}
+  .otto-dock .dock-dial{width:51px;height:51px;flex-basis:51px}
+  .otto-dock .dock-dial-core{width:39px;height:39px}
+  .otto-dock .dock-dial-core strong{font-size:11px}
+  .otto-dock .dock-popover{width:min(420px,calc(100vw - 20px));padding:10px 12px 12px;bottom:calc(100% + 1px)}
+  .scene-panel .scene-toolbar{height:48px;min-height:48px;flex:0 0 48px;padding:5px 12px;display:flex;align-items:center;justify-content:center}
+  .scene-panel .toolbar-title{display:none}
+  .scene-panel .toolbar-actions{display:flex;width:auto;gap:9px}
+  .scene-panel .toolbar-actions button{min-height:36px;padding:6px 12px;font-size:10px}
+  .viewport .scene-label{top:23px;left:23px}
+  .viewport .scene-title{font-size:clamp(30px,7vw,43px)}
+  .viewport .scene-desc{max-width:320px}
+  .viewport .viewport-footer{bottom:11px;left:16px;right:16px}
+  .viewport .hint{font-size:9px}
+}
+@media(max-width:380px){
+  .otto-dock .mood-kicker{display:none}
+  .otto-dock .dock-top-actions button{min-width:59px}
+  .otto-dock .dock-modules{gap:5px}
+  .otto-dock .dock-module-title{font-size:10px}
+  .otto-dock .swatches{gap:0}
+  .otto-dock .mode-card[data-mode]{min-height:56px}
+  .viewport .scene-label{top:19px;left:18px}
+}
+@media(max-height:680px){
+  .otto-dock{flex-basis:139px;height:139px}
+  .otto-dock .dock-shell{padding-top:5px;padding-bottom:5px}
+  .otto-dock .dock-modules{padding-top:4px}
+  .otto-dock .dock-orb-well{width:43px;height:43px}
+  .otto-dock .dock-dial{width:47px;height:47px;flex-basis:47px}
+  .otto-dock .dock-dial-core{width:36px;height:36px}
+  .otto-dock .dock-popover-settings .metrics-panel{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .otto-dock .mode-card,.otto-dock .dock-top-actions button,.otto-dock .swatch,
+  .otto-dock .dock-light-orb{animation:none!important;transition:none!important}
+}
+
+/* O6T-D4.1N-P2B — Readable energy/motion feedback.
+   No extra WebGL objects or persistent ambient animation. */
+.otto-dock .dock-module-state{
+  font:500 9px/1.15 var(--brand-sans);
+  letter-spacing:.01em;color:#aeb1bb;white-space:nowrap;
+}
+.otto-dock .dock-module-gauge .dock-dial-ring{
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.21),
+    0 4px 9px rgba(0,0,0,.38),0 0 0 2px #1b1c21,
+    0 0 18px rgba(232,233,236,var(--dock-halo,.09));
+  transition:box-shadow .20s ease-out;
+}
+.otto-dock .dock-module-motion .dock-dial-ring{
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.18),
+    0 4px 9px rgba(0,0,0,.38),0 0 0 2px #1b1c21,
+    0 0 18px rgba(170,183,205,var(--dock-halo,.09));
+}
+.otto-dock .dock-light-orb{
+  filter:brightness(var(--orb-brightness,1));
+  transition:filter .20s ease-out;
+}
+@media(max-width:770px){
+  .otto-dock .dock-module{gap:2px}
+  .otto-dock .dock-module-state{font-size:9px}
+}
+@media(max-height:680px){
+  .otto-dock .dock-module-state{font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  .otto-dock .dock-module-gauge .dock-dial-ring,
+  .otto-dock .dock-light-orb{transition:none!important}
+}
+
+/* A restrained pearl bounce behind the character; reacts to energy, never creates HUD traces. */
+.viewport .liquid-atmosphere::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 45% 46% at 52% 50%,rgba(238,238,241,.20),rgba(218,218,222,.045) 57%,transparent 85%);
+  opacity:var(--otto-energy-aura,.26);transition:opacity .28s ease-out;
+}
+@media(max-width:770px){
+  .viewport .liquid-atmosphere::after{
+    background:radial-gradient(ellipse 59% 36% at 50% 54%,rgba(240,240,243,.17),rgba(219,219,223,.045) 54%,transparent 84%);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .viewport .liquid-atmosphere::after{transition:none!important}
+}
+
+/* O6T-D4.1N-P2C · SINGLE-SHEET CONTROL GLASS
+   One floating frosted surface: no nested control cards, and secondary
+   views replace the dial row instead of overlaying the character. */
+.otto-dock{background:linear-gradient(180deg,rgba(9,10,12,.98),rgba(10,11,13,.95));}
+.otto-dock .dock-shell{
+  border:1px solid rgba(247,247,251,.16);
+  background:
+    radial-gradient(ellipse 76% 140% at 42% -60%,rgba(250,250,251,.11),transparent 85%),
+    linear-gradient(135deg,rgba(74,75,80,.36),rgba(30,31,35,.67) 55%,rgba(33,34,38,.51));
+  -webkit-backdrop-filter:blur(19px) saturate(78%);
+  backdrop-filter:blur(19px) saturate(78%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 18px 45px rgba(0,0,0,.21);
+}
+.otto-dock .dock-module{
+  background:transparent;border:0;box-shadow:none;border-radius:0;
+  position:relative;
+}
+.otto-dock .dock-module:nth-child(n+2)::before{
+  content:"";position:absolute;left:-6px;top:17%;height:66%;width:1px;
+  background:linear-gradient(180deg,transparent,rgba(248,248,251,.12),transparent);
+  pointer-events:none
+}
+.otto-dock .dock-dial-ring{box-shadow:inset 0 1px 2px rgba(255,255,255,.17),0 3px 11px rgba(0,0,0,.27),0 0 0 1px rgba(255,255,255,.08);}
+.otto-dock .dock-module-gauge .dock-dial-ring{box-shadow:inset 0 1px 2px rgba(255,255,255,.17),0 3px 11px rgba(0,0,0,.27),0 0 13px rgba(235,235,239,var(--dock-halo,.07));}
+.otto-dock .dock-module-motion .dock-dial-ring{box-shadow:inset 0 1px 2px rgba(255,255,255,.14),0 3px 11px rgba(0,0,0,.27),0 0 13px rgba(183,188,198,var(--dock-halo,.07));}
+.otto-dock.is-open{flex-basis:249px;height:249px}
+.otto-dock.is-open .dock-modules{display:none}
+.otto-dock .dock-popover{
+  top:40px;bottom:7px;left:50%;transform:translateX(-50%);
+  width:min(600px,calc(100% - 42px));height:auto;padding:4px 8px 6px;
+  border:0;border-radius:0;background:transparent;
+  -webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;
+  overflow:visible;
+}
+.otto-dock .dock-popover-head{margin-bottom:5px}
+.otto-dock .dock-popover-head strong{font-size:12px;font-weight:550}
+.otto-dock .dock-close{width:30px;height:30px;border:0;background:rgba(255,255,255,.08);border-radius:10px}
+.otto-dock .dock-popover-moods .mode-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.otto-dock .mode-card[data-mode]{min-height:49px;padding:4px 3px;gap:3px;border-radius:11px;border:1px solid rgba(255,255,255,.075);background:rgba(255,255,255,.035)}
+.otto-dock .mode-card[data-mode=auto]{grid-column:1/-1;min-height:29px;padding:4px 8px}
+.otto-dock .mode-card[data-mode=auto] .mode-symbol{width:21px;height:20px}
+.otto-dock .mode-demo-copy small{display:none}
+.otto-dock .eye-control{margin-top:5px;padding:4px 8px;background:transparent}
+.otto-dock .color-picker-row{background:transparent;border:0;padding:5px 0}
+.otto-dock .swatches{margin-top:5px}
+.otto-dock .dock-popover-settings .advanced-tuning summary{min-height:27px;padding:3px 0}
+.otto-dock .advanced-tuning-body .range-label{margin:4px 0 2px}
+.otto-dock .advanced-tuning-body .range-label:first-child{margin-top:2px}
+.otto-dock .advanced-tuning-body .range-slider{height:16px}
+.otto-dock .dock-popover-settings .metrics-panel{display:none}
+.otto-dock .dock-top-actions button{border-color:rgba(255,255,255,.095);background:rgba(255,255,255,.035)}
+.otto-dock .dock-topline{border-color:rgba(255,255,255,.085)}
+@media(max-width:770px){
+  .otto-dock.is-open{flex-basis:255px;height:255px}
+  .otto-dock .dock-popover{top:38px;bottom:5px;width:calc(100% - 28px);padding:2px 5px}
+  .otto-dock .dock-popover-moods .mode-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+  .otto-dock .mode-card[data-mode]{min-height:44px;gap:2px}
+  .otto-dock .mode-card .mode-symbol{width:20px;height:20px}
+  .otto-dock .mode-card[data-mode=auto]{min-height:25px}
+  .otto-dock .eye-control{margin-top:3px;padding:3px 6px}
+  .otto-dock .dock-module:nth-child(n+2)::before{left:-3px}
+}
+@media(max-height:680px){
+  .otto-dock.is-open{flex-basis:200px;height:200px}
+  .otto-dock .dock-popover{top:36px}
+  .otto-dock .dock-popover-settings .metrics-panel{display:none}
+}
+
+
+/* O6T-D4.1N-P2D · OTTO GLASS CONTROLS
+   One frosted surface, three tangible instruments. No new DOM layers, textures,
+   CSS ambient animations or canvas passes. R4 renderer/rig untouched. */
+.otto-dock .dock-shell{
+  border-color:rgba(253,253,255,.21);
+  background:
+    radial-gradient(ellipse 74% 115% at 34% -58%,rgba(255,255,255,.19),transparent 94%),
+    linear-gradient(150deg,rgba(77,79,85,.36),rgba(35,36,40,.73) 49%,rgba(25,26,30,.69));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.17),
+    inset 0 -16px 24px rgba(0,0,0,.13),
+    0 17px 42px rgba(0,0,0,.25);
+}
+.otto-dock .dock-shell::before{
+  content:"";position:absolute;top:1px;left:9%;right:9%;height:1px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22) 34%,rgba(255,255,255,.10) 70%,transparent);
+}
+.otto-dock .dock-topline{border-color:rgba(255,255,255,.095)}
+.otto-dock .dock-top-actions button{
+  border:1px solid rgba(252,252,255,.14);border-radius:15px;
+  background:linear-gradient(175deg,rgba(255,255,255,.095),rgba(255,255,255,.015));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+  transition:background-color .16s,border-color .16s;
+}
+.otto-dock .dock-top-actions button:hover{
+  border-color:rgba(255,255,255,.31);background-color:rgba(255,255,255,.07)
+}
+.otto-dock .dock-modules{gap:10px}
+.otto-dock .dock-module{gap:2px}
+.otto-dock .dock-module-title{
+  color:#e4e4e8;font-weight:600;letter-spacing:-.018em
+}
+.otto-dock .dock-module-state,.otto-dock #dock-light-label{
+  color:#b6b8c0;letter-spacing:.005em
+}
+/* Convex pearl glass puck; the light hue comes only from the selected color. */
+.otto-dock .dock-orb-well{
+  width:59px;height:59px;
+  border:1px solid rgba(255,255,255,.17);
+  background:radial-gradient(ellipse at 36% 22%,#60636c,#27292f 49%,#101115 80%);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.14),
+    inset 0 -5px 9px rgba(0,0,0,.76),0 4px 8px rgba(0,0,0,.4),
+    0 0 0 1px rgba(0,0,0,.22);
+  transition:transform .14s ease-out,box-shadow .14s ease-out;
+}
+.otto-dock .dock-light-orb{
+  position:relative;width:36px;height:36px;
+  background:radial-gradient(ellipse at 26% 18%,rgba(255,255,255,.94) 0,
+    color-mix(in srgb,var(--orb-color) 58%,white) 13%,
+    var(--orb-color) 43%,
+    color-mix(in srgb,var(--orb-color) 43%,#111218) 86%);
+  box-shadow:inset 2px 3px 4px rgba(255,255,255,.23),
+    inset -5px -7px 9px rgba(0,0,0,.49),
+    0 0 16px color-mix(in srgb,var(--orb-color) 24%,transparent);
+}
+.otto-dock .dock-light-orb::after{
+  content:"";position:absolute;left:23%;top:12%;width:39%;height:18%;
+  border-radius:50%;transform:rotate(-31deg);
+  background:rgba(255,255,255,.5);filter:blur(2px);pointer-events:none
+}
+.otto-dock .dock-module-light button:hover .dock-orb-well,
+.otto-dock .dock-module-light button:focus-visible .dock-orb-well{
+  transform:translateY(-1px);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.22),
+    inset 0 -5px 9px rgba(0,0,0,.77),0 7px 14px rgba(0,0,0,.43)
+}
+/* True 270 degree dials. The ring ends at the precise control value, and the
+   small light pip marks the fingertip. The bottom quarter remains unmarked. */
+.otto-dock .dock-dial{width:60px;height:60px;flex-basis:60px;cursor:grab}
+.otto-dock .dock-dial input{
+  cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none
+}
+.otto-dock .dock-module[data-dragging=true] .dock-dial,
+.otto-dock .dock-module[data-dragging=true] .dock-dial input{cursor:grabbing}
+.otto-dock .dock-dial-ring,
+.otto-dock .dock-module-motion .dock-dial-ring{
+  --dial-accent:#e2e5ef;
+  background:conic-gradient(from 225deg,
+    var(--dial-accent) 0deg var(--dial-sweep,113.4deg),
+    rgba(200,202,211,.19) var(--dial-sweep,113.4deg) 270deg,
+    transparent 270deg 360deg);
+  border:1px solid rgba(255,255,255,.095);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.16),
+    0 4px 10px rgba(0,0,0,.44),
+    0 0 16px rgba(232,233,239,var(--dock-halo,.08));
+  transition:box-shadow .16s ease-out,transform .16s ease-out;
+}
+.otto-dock .dock-module-motion .dock-dial-ring{
+  --dial-accent:#becbe3;
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.13),
+    0 4px 10px rgba(0,0,0,.44),
+    0 0 16px rgba(183,195,220,var(--dock-halo,.08))
+}
+.otto-dock .dock-dial-ring::after{
+  content:"";position:absolute;left:50%;top:50%;
+  width:5px;height:5px;margin:-2.5px 0 0 -2.5px;border-radius:50%;
+  transform:rotate(calc(-135deg + var(--dial-sweep,113.4deg))) translateY(-26px);
+  background:#fafbff;
+  box-shadow:0 0 6px rgba(255,255,255,.55);
+}
+.otto-dock .dock-dial-core{
+  width:46px;height:46px;
+  background:radial-gradient(ellipse at 33% 19%,#4e515b 0%,#2b2d34 43%,#18191e 83%);
+  border:1px solid rgba(255,255,255,.19);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.2),
+    inset 0 -5px 7px rgba(0,0,0,.61),
+    0 1px 2px rgba(0,0,0,.3);
+  transition:transform .14s ease-out;
+}
+.otto-dock .dock-dial-core strong{
+  font-size:11.5px;letter-spacing:-.045em;
+  font-variant-numeric:tabular-nums;
+  text-shadow:0 1px 3px rgba(0,0,0,.65);
+}
+.otto-dock .dock-module-gauge:hover .dock-dial-core,
+.otto-dock .dock-module-gauge:focus-within .dock-dial-core{
+  transform:translateY(-1px)
+}
+.otto-dock .dock-module-gauge:focus-within .dock-dial-ring{
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.19),
+    0 4px 10px rgba(0,0,0,.4),0 0 0 2px rgba(255,255,255,.21)
+}
+/* Expanded controls remain in the same sheet, with no secondary glass cards. */
+.otto-dock .dock-popover{padding-top:5px}
+.otto-dock .mode-card[data-mode]{
+  background:transparent;border-color:transparent;border-radius:11px;
+  box-shadow:none;
+}
+.otto-dock .mode-card[data-mode]:hover{
+  background:rgba(255,255,255,.065);border-color:transparent
+}
+.otto-dock .mode-card.selected{
+  background:color-mix(in srgb,var(--tile-accent) 13%,transparent);
+  border-color:color-mix(in srgb,var(--tile-accent) 38%,transparent)
+}
+.otto-dock .mode-card[data-mode=auto]{
+  background:rgba(255,255,255,.055);border-color:transparent
+}
+@media(max-width:770px){
+  .otto-dock .dock-modules{gap:5px}
+  .otto-dock .dock-orb-well{width:52px;height:52px}
+  .otto-dock .dock-light-orb{width:31px;height:31px}
+  .otto-dock .dock-dial{width:54px;height:54px;flex-basis:54px}
+  .otto-dock .dock-dial-core{width:41px;height:41px}
+  .otto-dock .dock-dial-ring::after{
+    transform:rotate(calc(-135deg + var(--dial-sweep,113.4deg))) translateY(-23px)
+  }
+  .otto-dock .dock-dial-core strong{font-size:11px}
+}
+@media(max-height:680px){
+  .otto-dock .dock-orb-well{width:44px;height:44px}
+  .otto-dock .dock-light-orb{width:28px;height:28px}
+  .otto-dock .dock-dial{width:47px;height:47px;flex-basis:47px}
+  .otto-dock .dock-dial-core{width:36px;height:36px}
+  .otto-dock .dock-dial-ring::after{
+    transform:rotate(calc(-135deg + var(--dial-sweep,113.4deg))) translateY(-20px)
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .otto-dock .dock-orb-well,.otto-dock .dock-dial-ring,
+  .otto-dock .dock-dial-core,.otto-dock .dock-top-actions button{
+    transition:none!important
+  }
+}
+
+
+/* O6T-D4.1N-P2E · QUIET GLASS
+   Refined Apple-like restraint: one soft sheet, no futuristic glowing gauges,
+   no nested controller cards. Existing pointer/keyboard interaction retained. */
+.otto-dock .dock-shell{
+  border:1px solid rgba(255,255,255,.17);
+  border-radius:25px;
+  background:
+    linear-gradient(160deg,rgba(66,66,69,.62),rgba(36,36,39,.86) 47%,rgba(33,33,36,.90));
+  -webkit-backdrop-filter:blur(22px) saturate(88%);
+  backdrop-filter:blur(22px) saturate(88%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 14px 38px rgba(0,0,0,.22);
+}
+.otto-dock .dock-shell::before{opacity:.37}
+.otto-dock .dock-topline{border-bottom-color:rgba(255,255,255,.065)}
+.otto-dock .dock-modules{gap:0}
+.otto-dock .dock-module{gap:3px}
+.otto-dock .dock-module:nth-child(n+2)::before{display:none}
+.otto-dock .dock-module-title{font-size:11px;font-weight:550;color:#ededf0;letter-spacing:-.025em}
+.otto-dock .dock-module-state,.otto-dock #dock-light-label{
+  font:400 9px/1.2 var(--brand-sans);color:#b9b9bd;letter-spacing:0
+}
+.otto-dock .dock-top-actions button{
+  min-height:29px;min-width:61px;padding:5px 12px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.075);border-radius:999px;
+  box-shadow:none;color:#e6e6e9;font-weight:500
+}
+.otto-dock .dock-top-actions button:hover{
+  background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.12)
+}
+.otto-dock .mood-face{
+  border-color:rgba(255,255,255,.075);
+  background:rgba(255,255,255,.065);box-shadow:none
+}
+/* An opalescent glass light selector, rather than a neon lamp. */
+.otto-dock .dock-orb-well{
+  width:54px;height:54px;
+  background:radial-gradient(ellipse at 36% 18%,#55555a,#303034 60%,#212125 100%);
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.10),
+    inset 0 -4px 6px rgba(0,0,0,.28),0 3px 7px rgba(0,0,0,.2);
+}
+.otto-dock .dock-light-orb{
+  width:32px;height:32px;
+  background:radial-gradient(circle at 31% 23%,
+    #f7f7f9 0%,color-mix(in srgb,var(--orb-color) 27%,#f4f4f6) 29%,
+    color-mix(in srgb,var(--orb-color) 43%,#72747b) 66%,
+    color-mix(in srgb,var(--orb-color) 30%,#26282e) 98%);
+  filter:saturate(.73);
+  box-shadow:inset 1px 2px 2px rgba(255,255,255,.26),
+    inset -4px -5px 8px rgba(0,0,0,.30),
+    0 3px 9px rgba(0,0,0,.16);
+}
+.otto-dock .dock-light-orb::after{
+  left:27%;top:14%;width:30%;height:11%;
+  background:rgba(255,255,255,.5);filter:blur(2px)
+}
+.otto-dock .dock-module-light button:hover .dock-orb-well,
+.otto-dock .dock-module-light button:focus-visible .dock-orb-well{
+  transform:none;
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.14),0 3px 9px rgba(0,0,0,.28);
+}
+/* Same native functional dial, visually simplified into a ceramic glass puck. */
+.otto-dock .dock-dial{width:55px;height:55px;flex-basis:55px}
+.otto-dock .dock-dial-ring,
+.otto-dock .dock-module-motion .dock-dial-ring{
+  background:conic-gradient(from 225deg,
+    rgba(241,241,245,.83) 0deg var(--dial-sweep,113.4deg),
+    rgba(236,236,241,.16) var(--dial-sweep,113.4deg) 270deg,
+    transparent 270deg 360deg);
+  border:0;
+  box-shadow:0 2px 7px rgba(0,0,0,.22);
+  transition:box-shadow .16s ease;
+}
+.otto-dock .dock-dial-ring::after{display:none}
+.otto-dock .dock-dial-core{
+  width:48px;height:48px;
+  background:radial-gradient(ellipse at 36% 16%,#535358 0%,#36363a 53%,#27272b 99%);
+  border:1px solid rgba(255,255,255,.11);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.15),
+    inset 0 -3px 5px rgba(0,0,0,.24);
+}
+.otto-dock .dock-dial-core strong{
+  font:500 12px/1 var(--brand-mono);letter-spacing:-.04em;
+  color:#f6f6f8;text-shadow:none
+}
+.otto-dock .dock-module-gauge:hover .dock-dial-core,
+.otto-dock .dock-module-gauge:focus-within .dock-dial-core{transform:none}
+.otto-dock .dock-module-gauge:focus-within .dock-dial-ring{
+  box-shadow:0 0 0 2px rgba(255,255,255,.30);
+}
+.otto-dock .dock-popover-head strong{font-weight:550}
+.otto-dock .mode-card[data-mode]:hover{background:rgba(255,255,255,.05)}
+.otto-dock .mode-card.selected{
+  background:rgba(255,255,255,.10);
+  border-color:rgba(255,255,255,.20)
+}
+.otto-dock .mode-card .mode-symbol{
+  border-color:rgba(255,255,255,.075);
+  background:rgba(255,255,255,.05);color:#e7e7eb
+}
+@media(max-width:770px){
+  .otto-dock .dock-orb-well{width:48px;height:48px}
+  .otto-dock .dock-light-orb{width:30px;height:30px}
+  .otto-dock .dock-dial{width:51px;height:51px;flex-basis:51px}
+  .otto-dock .dock-dial-core{width:44px;height:44px}
+}
+@media(max-height:680px){
+  .otto-dock .dock-orb-well{width:43px;height:43px}
+  .otto-dock .dock-light-orb{width:27px;height:27px}
+  .otto-dock .dock-dial{width:46px;height:46px;flex-basis:46px}
+  .otto-dock .dock-dial-core{width:39px;height:39px}
+}
+/* Reliability: draw a small local poster until the first successful 3D render. */
+.viewport #otto-poster{
+  position:absolute;left:50%;top:53%;width:min(430px,75%);height:auto;
+  z-index:1;transform:translate(-50%,-50%);pointer-events:none;
+  opacity:.90;object-fit:contain;
+  -webkit-mask-image:radial-gradient(ellipse 74% 78% at 50% 49%,black 62%,transparent 100%);
+  mask-image:radial-gradient(ellipse 74% 78% at 50% 49%,black 62%,transparent 100%);
+  transition:opacity .22s ease-out,visibility .22s;
+}
+:host(.otto-live) .viewport #otto-poster{opacity:0;visibility:hidden}
+:host(.otto-3d-unavailable) .viewport canvas{opacity:0;pointer-events:none}
+.viewport .load-message.otto-boot-failed{
+  top:auto;bottom:7%;transform:translateX(-50%);
+  max-width:min(420px,90vw);min-width:260px;
+  border-radius:19px;border-color:rgba(255,255,255,.17);
+  background:rgba(33,33,37,.87);text-align:center;
+}
+.viewport .otto-boot-failed .loading-orb{display:none}
+.viewport #retry-otto{
+  margin-top:6px;padding:9px 18px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.22);
+  color:#f5f5f6;background:rgba(255,255,255,.095);
+  font-weight:500
+}
+.viewport #retry-otto[hidden]{display:none}
+@media(max-width:770px){.viewport #otto-poster{width:min(370px,92%);top:56%}}
+@media(prefers-reduced-motion:reduce){
+  .viewport #otto-poster,.otto-dock .dock-dial-ring{transition:none!important}
+}
+
+
+/* P2E refinement · two horizontal, raised frosted sliders.
+   Apple Control Center–inspired restraint, not sci-fi rings or LEDs. */
+.otto-dock .dock-module-gauge .dock-dial{
+  width:min(144px,94%);height:54px;flex:0 0 54px;
+  border-radius:19px;cursor:ew-resize;touch-action:none
+}
+.otto-dock .dock-module-gauge .dock-dial input{
+  cursor:ew-resize;touch-action:none
+}
+.otto-dock .dock-module-gauge[data-dragging=true] .dock-dial,
+.otto-dock .dock-module-gauge[data-dragging=true] .dock-dial input{cursor:ew-resize}
+.otto-dock .dock-module-gauge .dock-dial-ring{
+  inset:auto 5px;top:17px;bottom:auto;width:auto;height:20px;
+  display:block;border-radius:999px;
+  background:linear-gradient(90deg,
+    rgba(245,245,247,.47) 0 var(--dial-pct,42%),
+    rgba(255,255,255,.105) var(--dial-pct,42%) 100%);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.09);
+}
+.otto-dock .dock-module-motion .dock-dial-ring{
+  background:linear-gradient(90deg,
+    rgba(235,236,240,.41) 0 var(--dial-pct,100%),
+    rgba(255,255,255,.105) var(--dial-pct,100%) 100%);
+}
+.otto-dock .dock-module-gauge .dock-dial-core{
+  position:absolute;left:clamp(19px,var(--dial-pct,42%),calc(100% - 19px));
+  top:50%;transform:translate(-50%,-50%);width:39px;height:28px;
+  border-radius:13px;
+  background:linear-gradient(158deg,#737378 0%,#505057 41%,#3b3b41 100%);
+  border:1px solid rgba(255,255,255,.20);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 3px 8px rgba(0,0,0,.25);
+}
+.otto-dock .dock-module-gauge .dock-dial-core strong{
+  font:500 10px/1 var(--brand-mono);color:#fff;letter-spacing:-.03em
+}
+.otto-dock .dock-module-gauge:hover .dock-dial-core,
+.otto-dock .dock-module-gauge:focus-within .dock-dial-core{
+  transform:translate(-50%,-50%)
+}
+.otto-dock .dock-module-gauge .dock-dial:focus-within{
+  outline:2px solid rgba(255,255,255,.76);outline-offset:1px
+}
+@media(max-width:770px){
+  .otto-dock .dock-module-gauge .dock-dial{
+    width:min(108px,94%);height:48px;flex-basis:48px
+  }
+  .otto-dock .dock-module-gauge .dock-dial-ring{top:14px}
+}
+@media(max-height:680px){
+  .otto-dock .dock-module-gauge .dock-dial{height:43px;flex-basis:43px}
+  .otto-dock .dock-module-gauge .dock-dial-ring{top:11px}
+}
+
+
+/* O6T-D4.1N-P2F · Quiet Glass, six controls on one continuous sheet.
+   3×2 instruments. No nested cards, no scrolling, no additional WebGL work. */
+.otto-dock{
+  flex:0 0 250px;
+  height:250px;
+}
+.otto-dock .dock-shell{
+  max-width:700px;
+  padding:8px 16px 11px;
+}
+.otto-dock .dock-modules{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  row-gap:3px;
+  column-gap:8px;
+  padding-top:5px;
+  height:calc(100% - 30px);
+  align-items:stretch;
+}
+.otto-dock .dock-module{
+  gap:2px;
+  justify-content:center;
+  padding:1px 2px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.otto-dock .dock-module::before,
+.otto-dock .dock-module:nth-child(n+2)::before{display:none}
+.otto-dock .dock-module-gauge .dock-dial{
+  width:min(145px,94%);
+  height:48px;
+  flex-basis:48px;
+}
+.otto-dock .dock-module-gauge .dock-dial-ring{
+  top:14px;
+  height:19px;
+}
+.otto-dock .dock-module-gauge .dock-dial-core{
+  width:39px;height:28px;
+}
+.otto-dock .dock-module-title{
+  font-weight:550;
+  font-size:11px;
+  letter-spacing:-.01em
+}
+.otto-dock .dock-module-state{
+  font-size:9px;
+  color:#b9b9bd;
+}
+.otto-dock .dock-module-light button{padding:1px 6px}
+.otto-dock .dock-orb-well{width:48px;height:48px}
+.otto-dock .dock-light-orb{width:30px;height:30px}
+.otto-dock .dock-module-flow .dock-dial-core strong{font-size:9px}
+.otto-dock .dock-popover-settings .metrics-panel{
+  display:block;
+  background:transparent;
+  border:0;
+  margin:6px 0 0;
+  padding:3px 0 0;
+}
+.otto-dock .dock-popover-settings .metric-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.otto-dock .dock-info-note{
+  font:400 10px/1.45 var(--brand-sans);
+  color:#a8a8ae;
+  margin:2px 0 8px;
+}
+.otto-dock.is-open{
+  flex-basis:249px;
+  height:249px;
+}
+@media(max-width:770px){
+  .otto-dock{
+    flex-basis:234px;
+    height:234px;
+    padding:5px 8px 6px;
+  }
+  .otto-dock .dock-shell{padding:7px 9px 8px}
+  .otto-dock .dock-modules{row-gap:1px;column-gap:3px;padding-top:4px}
+  .otto-dock .dock-module{gap:2px}
+  .otto-dock .dock-module-gauge .dock-dial{
+    width:min(108px,96%);
+    height:44px;
+    flex-basis:44px;
+  }
+  .otto-dock .dock-module-gauge .dock-dial-ring{top:12px;height:19px}
+  .otto-dock .dock-module-title{font-size:10px}
+  .otto-dock .dock-orb-well{width:44px;height:44px}
+  .otto-dock .dock-light-orb{width:28px;height:28px}
+  .otto-dock.is-open{flex-basis:255px;height:255px}
+}
+@media(max-width:380px){
+  .otto-dock .dock-modules{column-gap:1px}
+  .otto-dock .dock-module-gauge .dock-dial{
+    width:min(98px,96%);
+    height:43px;
+    flex-basis:43px;
+  }
+  .otto-dock .dock-module-gauge .dock-dial-ring{top:12px;height:18px}
+}
+@media(max-height:680px){
+  .otto-dock{flex-basis:209px;height:209px}
+  .otto-dock .dock-shell{padding-top:4px;padding-bottom:4px}
+  .otto-dock .dock-modules{padding-top:2px;row-gap:0}
+  .otto-dock .dock-module-gauge .dock-dial{
+    height:36px;flex-basis:36px;
+  }
+  .otto-dock .dock-module-gauge .dock-dial-ring{top:9px;height:18px}
+  .otto-dock .dock-orb-well{width:36px;height:36px}
+  .otto-dock .dock-light-orb{width:23px;height:23px}
+  .otto-dock .dock-module-title{font-size:10px}
+  .otto-dock .dock-module-state{font-size:8px}
+  .otto-dock.is-open{flex-basis:200px;height:200px}
+}
+
+
+/* Compact-height safeguard, 360×640: protect the mascot and fit every popover. */
+@media(max-height:680px){
+  .viewport .scene-desc{display:none}
+  .otto-dock .dock-popover{top:33px;bottom:6px;padding:0 4px}
+  .otto-dock .dock-popover-head{height:25px;margin-bottom:1px}
+  .otto-dock .dock-popover-head .dock-close{
+    width:25px;height:25px;font-size:19px;border-radius:9px
+  }
+  .otto-dock .dock-popover-moods .mode-grid{gap:2px 4px}
+  .otto-dock .dock-popover-moods .mode-card[data-mode]{
+    min-height:34px;padding:2px 2px;gap:1px;font-size:9px
+  }
+  .otto-dock .dock-popover-moods .mode-card .mode-symbol{
+    width:16px;height:16px;font-size:12px
+  }
+  .otto-dock .dock-popover-moods .mode-card[data-mode=auto]{
+    min-height:21px;padding:1px 5px
+  }
+  .otto-dock .dock-popover-moods .mode-demo-copy strong{font-size:10px}
+  .otto-dock .eye-control{margin-top:2px;padding:1px 4px}
+  .otto-dock .dock-popover-settings .metrics-panel{margin-top:3px;padding-top:1px}
+  .otto-dock .dock-popover-settings .metric-grid{gap:4px}
+  .otto-dock .dock-info-note{font-size:9px;margin:0 0 4px}
+}
+
+/* FIN-02 integration adapter. Retain the six-instrument P2F dock. */
+:host{display:block;width:100%;height:max(600px,calc(100svh - 64px));min-height:0;overflow:hidden;font-family:var(--jg-font,Inter,system-ui,sans-serif);isolation:isolate}
+.app{height:100%;min-height:0}
+.workspace{height:100%;min-height:0;flex:1 1 0}
+.scene-panel{height:100%}
+.scene-label,.visor-badges,.viewport-footer .fps{display:none}
+.viewport canvas{touch-action:pan-y}
+.scene-panel .toolbar-actions{flex-wrap:wrap;justify-content:center}
+@media(max-width:770px){:host{height:max(640px,calc(100svh - 48px))}.scene-panel .scene-toolbar{flex-basis:64px;min-height:64px}.scene-panel .toolbar-actions{gap:5px}.scene-panel .toolbar-actions button{padding:5px 8px}}
+/* No ghosted frames during the poster-to-WebGL handoff. */
+:host(.otto-live) .viewport #otto-poster{display:none;transition:none}
+
+/* Scroll reveal: only the camera/poster changes apparent size; the dock never scales. */
+:host{height:100%;min-height:0}
+.viewport #otto-poster{transform:translate(calc(-50% + var(--otto-poster-slide,0%)),-50%) scale(var(--otto-scale,1))}
+.otto-dock,.scene-toolbar{clip-path:inset(0 0 var(--otto-dock-reveal,0%) 0);translate:0 var(--otto-dock-reveal,0%)}
+.viewport-footer{clip-path:inset(0 0 var(--otto-dock-reveal,0%) 0)}
+@media(prefers-reduced-motion:reduce){.otto-dock,.scene-toolbar,.viewport-footer{clip-path:none;translate:none}}
+
+/* The presentation is now a continuous stage, not a framed product card. */
+.viewport .glass-sheet-main,.viewport .glass-soft-reflection{display:none}
+.viewport .glass-diffuse{inset:0;opacity:.52;background:radial-gradient(ellipse at 50% 49%,rgba(151,159,174,.28),rgba(35,42,51,.13) 43%,transparent 73%);filter:blur(26px)}
+
+:host .scene-panel .toolbar-title{display:none}
+:host .scene-panel .scene-toolbar{justify-content:center}
+
+/* A soft spotlight follows the entrance beat; no neon or framed backdrop. */
+.viewport .glass-diffuse{opacity:var(--otto-stage-light,.52);background:radial-gradient(ellipse at 62% 48%,rgba(176,183,195,.34),rgba(35,42,51,.14) 44%,transparent 73%)}
+@media(max-width:770px){.viewport .glass-diffuse{background:radial-gradient(ellipse at 50% 49%,rgba(176,183,195,.34),rgba(35,42,51,.14) 44%,transparent 73%)}}
+
+/* FIN-02 performance: the radial gradient is already soft; no full-viewport blur pass. */
+.viewport .glass-diffuse{filter:none}

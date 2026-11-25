@@ -1,593 +1,846 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-UY">
-<head>
-  <meta charset="UTF-8">
+<head><script type="importmap">{"imports":{"three":"./nextgen/otto/vendor/build/three.module.js","three/addons/":"./nextgen/otto/vendor/addons/"}}</script>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Soporte técnico y reparación de PC a domicilio en Montevideo | JG Soluciones Informáticas</title>
-  <meta name="description" content="Soporte técnico y reparación de PC y notebooks a domicilio en Montevideo, para hogares y empresas. Diagnóstico desde $800, tarifas claras. Escribinos por WhatsApp.">
-  <meta name="author" content="JG Soluciones Informáticas">
-  <meta name="theme-color" content="#1E40AF" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111A2B" media="(prefers-color-scheme: dark)">
-  <link rel="canonical" href="https://javiergz28.github.io/JG-Soluciones-Informaticas/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b111c">
+  <meta name="description" content="Diagnóstico y reparación de PC y notebooks, mantenimiento, optimización y respaldo de información en Montevideo. Consultanos por WhatsApp o correo.">
+  <title>JG Soluciones Informáticas | Soporte técnico y reparación de PC en Montevideo</title>
+  <link rel="icon" href="./assets/brand/jg-nextgen-favicon32.png">
+  <style data-jg-source="servicios/servicios.css" data-jg-version="be0273685529fc14">
+:root{color-scheme:light;--bg:#0b111c;--panel:#141b25;--line:#ffffff31;--white:#f4f6fa;--muted:#a6b2bf;--cyan:#00d9e8;--paper:#e9ebed;--ink:#151b24;--pad:clamp(22px,5vw,88px);--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}a{color:inherit}button{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}.skip{position:fixed;top:-100px;left:22px;z-index:1000;background:#fff;color:#111;padding:12px}.skip:focus{top:16px}
+.mast{height:72px;background:#0b111c;display:flex;justify-content:space-between;align-items:center;padding:0 var(--pad);gap:24px;color:#e9f0f4}.identity{font-weight:650;font-size:15px;text-decoration:none;letter-spacing:-.05em}.identity span{color:var(--cyan)}.environment,.mast-contact,.section-label,.explore-label,.overline,.card-meta,.service-price>span,.service-footer a,.end-section>p,.end-section>a{font:10px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.1em}.environment{color:#b0bfcc}.mast-contact{text-decoration:none;border-bottom:1px solid #8ea5b2;padding:7px 0}
+.introduction{background:var(--paper);padding:clamp(60px,9vw,135px) var(--pad) clamp(58px,7vw,92px)}.section-label{display:flex;align-items:center;justify-content:space-between;gap:22px;border-bottom:1px solid #151b2455;padding-bottom:18px;color:#626e79}.split{display:grid;grid-template-columns:minmax(0,2fr) minmax(220px,1fr);gap:clamp(30px,6vw,90px);align-items:end;padding-top:clamp(55px,7vw,100px)}h1{margin:0;font-size:clamp(45px,5.5vw,104px);letter-spacing:-.072em;font-weight:400;line-height:1.04}h1 span{color:#888f97}.intro-copy p:first-child{font-size:clamp(16px,1.4vw,20px);line-height:1.65;color:#475561;max-width:410px}.explore-label{margin:35px 0 0;color:#5b6a75}.explore-label span{margin-left:12px}
+.services-section{background:#0b111c;color:var(--white);padding:clamp(76px,9vw,135px) var(--pad) clamp(80px,8vw,116px)}.services-heading{max-width:900px;margin-bottom:clamp(30px,4.5vw,62px)}.overline{color:#9cabb8}.services-heading h2{font-weight:400;font-size:clamp(40px,5.4vw,82px);line-height:1.08;letter-spacing:-.065em;margin:24px 0}.services-heading>p:last-child{color:#9cabb8;line-height:1.65;font-size:clamp(15px,1.2vw,18px);margin:0}
+.service-grid{height:clamp(540px,51vw,680px);display:grid;grid-template-columns:minmax(0,1.34fr) minmax(0,.66fr);grid-template-rows:minmax(0,1.33fr) minmax(0,.67fr);gap:14px;transition:grid-template-columns 760ms var(--ease),grid-template-rows 760ms var(--ease)}.service-grid[data-active="1"],.service-grid[data-active="3"]{grid-template-columns:minmax(0,.66fr) minmax(0,1.34fr)}.service-grid[data-active="2"],.service-grid[data-active="3"]{grid-template-rows:minmax(0,.67fr) minmax(0,1.33fr)}
+.service-card{min-width:0;min-height:0;display:flex;flex-direction:column;overflow:hidden;position:relative;border:1px solid #ffffff24;background:#121923;border-radius:20px;padding:clamp(19px,2.1vw,34px);transition:background 360ms ease,border-color 360ms ease,box-shadow 360ms ease}.service-card.is-active{border-color:#ffffff69;background:#171f2a;box-shadow:0 12px 46px #00000018}.service-card:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,#b9f7ff66,transparent);opacity:0;transition:opacity .45s}.service-card.is-active:before{opacity:1}.service-trigger{padding:0;border:0;background:transparent;color:inherit;width:100%;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:clamp(17px,3vw,38px);flex:none}.card-meta{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;color:#a5b4c1;white-space:nowrap}.card-icon{font:26px/1 Inter,system-ui,sans-serif;min-width:26px;text-align:right;color:#b3c4cd;transform-origin:center;transition:transform 500ms var(--ease),color 250ms}.service-trigger:hover .card-icon{transform:rotate(90deg);color:#eaf8fc}.service-card.is-active .service-trigger:hover .card-icon{transform:rotate(0deg)}.card-title{font-size:clamp(25px,2.7vw,43px);letter-spacing:-.055em;font-weight:400;line-height:1.08;transition:transform 500ms var(--ease),color .3s;overflow-wrap:anywhere}.service-trigger:hover .card-title{transform:translateX(3px)}.service-card:not(.is-active) .card-title{font-size:clamp(21px,2.2vw,34px)}.service-detail{margin-top:auto;display:flex;flex-direction:column;justify-content:flex-end;min-height:0;gap:clamp(18px,2.4vw,29px);animation:detail-appear 500ms 130ms var(--ease) both}.service-detail[hidden]{display:none!important}.service-detail>p{margin:0;color:#bac5cf;font-size:clamp(14px,1.18vw,17px);line-height:1.58;max-width:550px}.service-footer{display:flex;justify-content:space-between;gap:14px;align-items:end;border-top:1px solid #ffffff30;padding-top:15px}.service-price{display:flex;flex-direction:column;gap:5px;min-width:0}.service-price>span{font-size:9px;color:#91a4b3}.service-price strong{font-size:clamp(20px,2.4vw,34px);font-weight:450;letter-spacing:-.04em;line-height:1.1}.service-price small{font-size:12px;color:#adbcc7;line-height:1.35}.service-footer>a{text-decoration:none;border-bottom:1px solid #ffffffa3;padding-bottom:7px;white-space:nowrap;color:#effbff;flex-shrink:0}.service-footer>a span{font-size:16px;margin-left:3px}.service-footer>a:hover{color:var(--cyan);border-color:var(--cyan)}
+.end-section{background:#e9ebed;color:#151b24;padding:clamp(80px,10vw,150px) var(--pad)}.end-section>p{color:#667481}.end-section h2{font-size:clamp(43px,6vw,90px);line-height:1.05;letter-spacing:-.07em;font-weight:400;max-width:1050px;margin:35px 0 70px}.end-section>a{display:inline-block;padding:0 0 11px;text-decoration:none;border-bottom:1px solid #151b24}.end-section>a span{font-size:16px;margin-left:12px}@keyframes detail-appear{from{transform:translateY(13px)}to{transform:translateY(0)}}
+@media(max-width:1000px){.split{grid-template-columns:1fr}.intro-copy{max-width:490px}.service-grid{height:645px;gap:11px}.service-card{padding:23px}.service-detail>p{font-size:14px;line-height:1.5}.card-title{font-size:clamp(27px,3vw,38px)}.card-meta{font-size:9px}.service-footer{flex-direction:column;align-items:start;gap:12px}.service-price strong{font-size:24px}}
+@media(max-width:720px){.mast{height:66px}.environment{display:none}.mast-contact{font-size:9px}.introduction{padding-top:75px}.split{padding-top:55px}.split h1{font-size:clamp(40px,9vw,65px)}.services-section{padding-top:77px}.services-heading{margin-bottom:34px}.services-heading h2{font-size:clamp(38px,8vw,65px)}.service-grid,.service-grid[data-active]{height:auto;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:none!important;grid-auto-rows:auto;gap:11px;transition:none}.service-card,.service-card:not(.is-active){min-height:115px;padding:23px;border-radius:16px;transition:min-height 520ms var(--ease),background 350ms,border-color 350ms}.service-card.is-active{min-height:340px}.service-trigger{gap:18px}.card-title,.service-card:not(.is-active) .card-title{font-size:clamp(26px,6vw,33px)}.card-meta{font-size:9px}.service-detail{margin-top:34px;gap:28px}.service-detail>p{font-size:15px}.service-footer{flex-direction:row;align-items:end;gap:10px}.service-price strong{font-size:23px}.service-footer>a{font-size:9px}.end-section h2{margin-bottom:45px}}
+@media(max-width:370px){.card-meta{white-space:normal;font-size:8px}.service-footer{flex-direction:column;align-items:flex-start}.service-card.is-active{min-height:395px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_UY">
-  <meta property="og:site_name" content="JG Soluciones Informáticas">
-  <meta property="og:title" content="Soporte técnico y reparación de PC a domicilio en Montevideo | JG Soluciones Informáticas">
-  <meta property="og:description" content="Reparación de PC y notebooks, redes, backup y mantenimiento a domicilio en Montevideo. Tarifas publicadas, diagnóstico desde $800.">
-  <meta property="og:url" content="https://javiergz28.github.io/JG-Soluciones-Informaticas/">
-  <meta property="og:image" content="https://javiergz28.github.io/JG-Soluciones-Informaticas/Logo.png">
-  <meta name="twitter:card" content="summary">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+/* Mouse affordance: preserve the approved light and subtle scale, never hide the cursor. */
+.service-card{cursor:pointer}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .service-card{transition:transform 380ms var(--ease),background 360ms ease,border-color 360ms ease,box-shadow 360ms ease;transform-origin:center}
+  .service-card:hover{transform:scale(1.012);z-index:2;border-color:#c4e4f077;box-shadow:0 14px 35px #00000025}
+  .service-card.is-active:hover{transform:scale(1.006)}
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css">
+/* G2-C19-P3 — optical, localized highlight inspired by Apple's interactive glass.
+   The glass layer belongs to the interaction, NOT the card's entire content surface.
+   No outlines/shapes, WebGL, or expensive card-sized backdrop filters. */
+.service-card{isolation:isolate}
+.service-card::after{
+  content:"";position:absolute;inset:0;z-index:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(ellipse 250px 190px at var(--spot-x,50%) var(--spot-y,20%),rgba(209,238,255,.095),rgba(179,221,251,.025) 43%,transparent 76%);
+  opacity:0;transition:opacity 420ms var(--ease)
+}
+.service-card:hover::after,.service-card:focus-within::after{opacity:1}
+.service-card.is-active{box-shadow:inset 0 1px 0 rgba(239,249,255,.08),0 12px 46px #00000018}
+.service-card.is-active:hover,.service-card:focus-within{border-color:rgba(205,236,255,.58);box-shadow:inset 0 1px 0 rgba(247,252,255,.18),0 14px 36px rgba(0,0,0,.18)}
+/* First the grid changes geometry, then the story and the price appear in sequence. */
+.service-detail{animation:none}
+.service-detail>p{animation:detail-appear 470ms 345ms var(--ease) both}
+.service-detail .service-footer{animation:detail-appear 470ms 455ms var(--ease) both}
+@media(max-width:720px){
+  .service-detail>p{animation-delay:205ms}
+  .service-detail .service-footer{animation-delay:295ms}
+}
+@media(prefers-reduced-motion:reduce){
+  .service-card::after{transition:none}
+  .service-detail>p,.service-detail .service-footer{animation:none!important}
+}
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://javiergz28.github.io/JG-Soluciones-Informaticas/#business",
-    "name": "JG Soluciones Informáticas",
-    "description": "Soporte técnico, reparación de PC y notebooks, instalación de redes, backup y mantenimiento preventivo a domicilio en Montevideo, para hogares y empresas.",
-    "url": "https://javiergz28.github.io/JG-Soluciones-Informaticas/",
-    "image": "https://javiergz28.github.io/JG-Soluciones-Informaticas/Logo.png",
-    "telephone": "+59898335277",
-    "priceRange": "$800 - $1500",
-    "address": { "@type": "PostalAddress", "addressCountry": "UY", "addressRegion": "Montevideo" },
-    "areaServed": { "@type": "City", "name": "Montevideo", "addressCountry": "UY" },
-    "paymentAccepted": "Efectivo, transferencia bancaria, Mercado Pago",
-    "sameAs": [ "https://www.linkedin.com/in/javier-gutierrez-433096106/" ],
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00", "closes": "19:00"
-    }],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog", "name": "Servicios",
-      "itemListElement": [
-        { "@type": "Offer", "price": "800",  "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Diagnóstico / revisión general" } },
-        { "@type": "Offer", "price": "1000", "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Mantenimiento preventivo" } },
-        { "@type": "Offer", "price": "1200", "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Limpieza física interna" } },
-        { "@type": "Offer", "price": "1200", "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Backup / respaldo de datos" } },
-        { "@type": "Offer", "price": "1500", "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Formateo e instalación de sistema operativo" } },
-        { "@type": "Offer", "price": "1500", "priceCurrency": "UYU", "itemOffered": { "@type": "Service", "name": "Instalación y configuración de red WiFi" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soporte en la nube (Microsoft 365 y Google Workspace)" } }
-      ]
-    }
+/* G2-C19-P7 — strong no-fade corner wipes at both scroll boundaries.
+   CSS variables update on scroll in both directions; existing hover scale works
+   independently via transform. No persistent one-shot entrance animation. */
+@media (prefers-reduced-motion:no-preference){
+  .scroll-reveal{
+    translate:var(--reveal-x,0px) var(--reveal-y,0px);
+    clip-path:inset(var(--reveal-cut-top,0%) var(--reveal-cut-right,0%) var(--reveal-cut-bottom,0%) var(--reveal-cut-left,0%));
   }
-  </script>
+  .service-card.scroll-reveal{
+    scale:var(--reveal-scale,1);
+    clip-path:inset(var(--reveal-cut-top,0%) var(--reveal-cut-right,0%) var(--reveal-cut-bottom,0%) var(--reveal-cut-left,0%) round 20px);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .scroll-reveal{translate:none!important;scale:1!important;clip-path:none!important}
+}
+
+/* Keep corner exits contained without affecting the section below or scrolling. */
+.services-section{overflow-x:clip}
+@media(max-width:720px){.service-card.is-active{min-height:370px}}
+
+/* A quiet exit runway on narrow screens replaces the former technical footer and gives every corner its full reversible scroll travel. */
+@media(max-width:720px){.services-section{padding-bottom:clamp(220px,29svh,290px)}}
+
+</style>
+  <script type="module" src="./servicios/servicios.js?v=be0273685529fc14"></script>
+  <style data-jg-source="servicios/historia.css" data-jg-version="be0273685529fc14">
+/* G2-C20-P2 — compact, native sticky stack; JG identity. */
+:root{color-scheme:dark;--bg:#0b111c;--white:#f3f5f7;--muted:#a8b4bf;--pad:clamp(22px,5vw,86px);--story-width:70%;--pin:15vh;--gap:3.125vw;--panel-muted:#c2d1da}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}a:focus-visible{outline:2px solid #82dcf2;outline-offset:6px}em{font-style:normal}
+.skip-link{position:fixed;top:-100px;left:15px;z-index:100;background:#fff;color:#111;padding:12px 16px}.skip-link:focus{top:15px}
+.topbar{display:flex;align-items:center;justify-content:space-between;height:74px;padding:0 var(--pad)}
+.brand{font-weight:660;font-size:15px;letter-spacing:-.055em;text-decoration:none}.brand span{color:#8ae9ee}
+.back-link{text-decoration:none;border-bottom:1px solid #9dadb8;padding:7px 0;font-size:10px;letter-spacing:.11em;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.opening{min-height:clamp(570px,96svh,1000px);padding:clamp(66px,9vw,125px) var(--pad) 65px;display:flex;flex-direction:column;justify-content:space-between}
+.opening-meta,.discover,.finale-meta,.finale>a{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:10px;letter-spacing:.11em;line-height:1.5}
+.opening-meta{display:flex;justify-content:space-between;gap:18px;color:#94a4b2;border-bottom:1px solid #ffffff32;padding-bottom:22px}
+.opening-main{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(200px,.55fr);gap:clamp(25px,5vw,95px);align-items:end;margin:65px 0}
+.opening h1{font-size:clamp(46px,6.6vw,116px);letter-spacing:-.077em;line-height:1.02;font-weight:430;margin:0}.opening h1 em{color:#8195a6}
+.opening-main>p{font-size:clamp(16px,1.45vw,20px);line-height:1.7;color:#aabac4;max-width:360px;margin:0 0 7px}
+.discover{align-self:flex-start;text-decoration:none;border-bottom:1px solid #748d9c;padding-bottom:11px;color:#d5e0e8}.discover span{margin-left:20px;font-size:17px}
+/* Same proportions as the observed reference: 70vw, 28.125vw visual, 3.125vw gaps. */
+.story{position:relative;background:#080d15;border-radius:5vw 5vw 0 0;padding:9.375vw 0;isolation:isolate}
+.story-inner{width:var(--story-width);margin-inline:auto;position:relative}
+.story-heading{position:sticky;top:var(--pin);font-size:5vw;line-height:1;letter-spacing:-.055em;font-weight:430;margin:0 0 6.25vw;overflow:clip}
+.story-heading-type{display:block;transform:translate3d(0,var(--heading-shift,0%),0)}
+.story-stack{position:relative;display:flex;flex-direction:column;gap:var(--gap)}
+.story-panel{position:sticky;top:var(--pin);z-index:var(--order);border-radius:1.25vw;overflow:hidden;background:#000;transform:scale(var(--recede-scale,1));transform-origin:center;flex:none}
+.panel-shell{display:grid;grid-template-columns:minmax(0,1fr) 28.125vw;gap:3.4583vw;padding:.5vw;background:#35434d;opacity:var(--panel-light,1)}
+.panel-copy{display:flex;flex-direction:column;justify-content:space-between;min-width:0;padding:1.875vw}
+.panel-header{display:flex;align-items:center;gap:1.25vw;min-height:2.5vw}
+.panel-brand{font-size:1.5vw;font-weight:660;letter-spacing:-.065em;white-space:nowrap}.panel-brand span{color:#a6e4eb}
+.panel-dot{width:.42vw;height:.42vw;border-radius:50%;background:#bdccd03d;flex:none}
+.panel-header h3{margin:0;font-size:1.15vw;font-weight:400;line-height:1.25}
+.panel-description{font-size:1.25vw;line-height:1.4;letter-spacing:-.015em;margin:2.5vw 0 0;color:#f1f5f7}
+.panel-description strong{font-weight:400}
+.panel-visual{background:#0b111c;height:28.125vw;min-width:0;border-radius:.85vw;position:relative;overflow:hidden;isolation:isolate}
+
+.panel-visual img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* The next section rises naturally over the dark background; no blank scrolling tail. */
+.finale{position:relative;z-index:6;border-radius:5vw 5vw 0 0;background:#f3f6f7;color:#15212b;min-height:65svh;padding:9.375vw 15vw;display:flex;flex-direction:column;justify-content:space-between;gap:4.5vw}
+.finale-meta{display:flex;justify-content:space-between;gap:20px;color:#607481;border-bottom:1px solid #293b4a39;padding-bottom:20px}
+.finale h2{font-size:5vw;line-height:1.08;letter-spacing:-.055em;font-weight:430;margin:0}.finale h2 em{color:#708797}
+.finale>a{align-self:flex-start;color:#172838;text-decoration:none;padding:0 0 12px;border-bottom:1px solid #172838}.finale>a span{font-size:17px;margin-left:12px}
+@media(min-width:768px) and (max-height:600px){:root{--pin:6vh}.panel-shell{grid-template-columns:minmax(0,1fr) min(28.125vw,65vh)}.panel-visual{height:min(28.125vw,65vh)}.panel-description{font-size:clamp(15px,1.375vw,20px)}}
+/* Cuberto's narrow-screen version is a readable vertical sequence, without sticky or dimming. */
+@media(max-width:767px){
+ :root{--story-width:92%;--gap:2.1333vw}
+ .topbar{height:66px}.opening{min-height:83svh;padding-top:75px}.opening-meta span:last-child{display:none}.opening-main{grid-template-columns:1fr;margin:45px 0;gap:35px}.opening h1{font-size:clamp(43px,10vw,64px)}.opening-main>p{font-size:16px;max-width:610px}
+ .story{background:#f3f6f7;padding:10.6667vw 0;border-radius:0}.story-heading{position:static;font-size:12vw;line-height:1.02;margin-bottom:10.6667vw;color:#15212b}
+ .story-panel{position:relative;top:auto;transform:none;border-radius:2.1333vw}
+ .panel-shell{display:flex;flex-direction:column;gap:0;padding:2.6667vw;opacity:1}
+ .panel-copy{padding:5.3333vw 5.3333vw 6.6667vw;gap:8vw}.panel-header{gap:4vw;min-height:9.6vw}.panel-brand{font-size:5.2vw}.panel-dot{width:1.5vw;height:1.5vw}.panel-header h3{font-size:4.5vw}
+ .panel-description{font-size:5.3333vw;line-height:1.4;margin:0}.panel-visual{height:auto;aspect-ratio:1;border-radius:1.5vw}
+ .finale{border-radius:0;padding:10.6667vw 4vw;min-height:70svh;gap:12vw}.finale h2{font-size:12vw}.finale-meta{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.story-heading{position:relative;top:auto}.story-heading-type{transform:none!important}.story-panel{position:relative;top:auto;transform:none!important}.panel-shell{opacity:1!important}*{animation:none!important;transition:none!important}}
+
+</style>
+  <script type="module" src="./servicios/historia.js?v=be0273685529fc14"></script>
+  <style data-jg-source="servicios/integrado.css" data-jg-version="be0273685529fc14">
+/* G2-C20-P5: an editorial surface joins the approved 2.1 exit to 2.2.
+   Only this integrated preview owns the bridge; no changes to either standalone section. */
+.services-integrated .chapter-bridge{
+  position:relative;isolation:isolate;
+  --bridge-inset:0%;--bridge-shift:0px;
+}
+.services-integrated .chapter-bridge::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:#151b24;
+  border-radius:clamp(28px,5vw,78px) clamp(28px,5vw,78px) 0 0;
+  clip-path:inset(0 var(--bridge-inset) 0 round clamp(28px,5vw,78px) clamp(28px,5vw,78px) 0 0);
+}
+.services-integrated .chapter-bridge .opening-meta,
+.services-integrated .chapter-bridge .discover{
+  translate:0 var(--bridge-shift);
+}
+.services-integrated .chapter-bridge:focus-within{
+  --bridge-inset:0%!important;--bridge-shift:0px!important;
+}
+/* Preserve the mobile vertical flow while making its dark-to-light boundary editorial. */
+@media(max-width:767px){
+  .services-integrated .story{border-radius:clamp(22px,6vw,40px) clamp(22px,6vw,40px) 0 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .services-integrated .chapter-bridge::before{clip-path:none}
+  .services-integrated .chapter-bridge .opening-meta,
+    .services-integrated .chapter-bridge .discover{translate:none}
+}
+
+/* P6 — editorial kinetic typography: stable masks, moving glyphs, no fade. */
+.chapter-bridge .kinetic-mask{display:block;overflow:clip;overflow-clip-margin:0px;padding-block:.075em;margin-block:-.075em}
+.chapter-bridge .kinetic-type{display:block;transform:translate3d(0,var(--type-shift,0%),0)}
+.chapter-bridge #opening-heading .kinetic-mask + .kinetic-mask{margin-top:0}
+.chapter-bridge:focus-within .kinetic-type{transform:none}
+@media(prefers-reduced-motion:reduce){.chapter-bridge .kinetic-type{transform:none}}
+
+</style>
+  <script type="module" src="./servicios/integrado.js?v=be0273685529fc14"></script>
+  <style>
+    :root{color-scheme:dark}
+    .introduction{color:#151b24}
+    .opening{color:var(--white);min-height:65svh;padding-top:clamp(36px,5vw,72px)}
+    .opening h2{font-size:clamp(46px,6.6vw,116px);letter-spacing:-.077em;line-height:1.02;font-weight:430;margin:0}
+    .opening h2 em{color:#a0a9ba}
+    .story-heading{color:#f4f7ff}
+    .otto-intro{min-height:80svh;background:#e9ebed;color:#151b24}
+    .otto-intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:center;gap:5vw}
+    .otto-intro-copy p{font-size:clamp(16px,1.4vw,20px);line-height:1.6;max-width:35ch;color:#475561}
+    .otto-intro-art{display:grid;place-items:center;min-width:0;aspect-ratio:1;border-radius:clamp(18px,2vw,30px);background:radial-gradient(ellipse at center,#37414d,#0b111c 68%);overflow:hidden}
+    .otto-intro-art img{display:block;width:100%;height:100%;object-fit:contain}
+    @media(max-width:767px){.opening h2{font-size:clamp(43px,10vw,64px)}.story-heading{color:#151b24}.otto-intro-grid{grid-template-columns:1fr;gap:28px}}
+  </style>
+<link rel="preload" as="image" href="./assets/boot/g2-c17/frame-000.avif"><style>.final-nav{position:fixed;z-index:10;top:0;inset-inline:0;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 5vw;border-bottom:1px solid #ffffff12;background:#070b16d9;backdrop-filter:blur(16px);font-size:12px}.final-nav strong{letter-spacing:.09em}.final-nav .status{color:#83cfd7;white-space:nowrap}#reel{height:700svh}#reel .stage{position:sticky;top:0;height:100svh;overflow:hidden;background:#070b16}#reel .frame{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}#reel .frame #sharpPoster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block}#reel .frame canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;visibility:hidden}#reel .shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#070b16 0%,#070b16e4 19%,#070b168c 42%,#070b1600 71%)}#reel .copy{position:absolute;left:5vw;top:25%;z-index:2;width:min(52vw,740px);pointer-events:none;isolation:isolate;text-wrap:balance}#reel .kicker{font:11px ui-monospace,SFMono-Regular,monospace;color:#00d9e8;letter-spacing:.17em}#reel h1{font-weight:400;font-size:clamp(52px,6.15vw,104px);letter-spacing:-.078em;line-height:1.035;margin:17px 0 22px;max-width:13ch;text-wrap:balance}#reel .copy > p{max-width:32rem;font-size:clamp(16px,1.25vw,21px);line-height:1.6}#reel .copy .kicker{font-weight:500}#reel p{line-height:1.6;color:#b2becd}#reel .meta{position:absolute;z-index:2;bottom:26px;left:5vw;right:5vw;display:flex;align-items:flex-end;gap:18px;justify-content:space-between;font:11px ui-monospace,SFMono-Regular,monospace;color:#afc7d2}#reel .core-story{height:min(63svh,570px);overflow:visible}#reel .story-layer{position:absolute;inset:0 auto auto 0;width:100%;opacity:0;transform:translate3d(0,8px,0);will-change:opacity,transform;backface-visibility:hidden}#reel .story-layer:first-child{opacity:1;transform:translate3d(0,0,0)}#reel .story-layer h1{font-size:inherit}#reel .core-story .story-layer h1{font-size:clamp(52px,6.15vw,104px)}#reel .story-layer p{font-size:clamp(16px,1.25vw,21px);line-height:1.6;color:#b2becd;max-width:32rem}
+@media(max-width:750px){#reel .core-story{height:57svh}#reel .core-story .story-layer h1{font-size:clamp(43px,10vw,70px)}#reel .frame canvas,#reel .frame #sharpPoster{width:100%;height:100%;transform:translateY(10%) scale(.92)}#reel .shade{background:linear-gradient(180deg,#070b16c4 0%,#070b16bb 26%,transparent 63%,#070b16c4 100%)}#reel .copy{top:16%;left:6vw;width:88vw}#reel h1{font-size:clamp(43px,10vw,70px);max-width:12ch}#reel .meta{left:6vw;right:6vw;bottom:27px;flex-direction:column;align-items:flex-start;gap:7px}.final-nav{padding:14px 6vw}}
+@media(prefers-reduced-motion:reduce){#reel{height:100svh}#reel .copy *{animation:none!important;transition:none!important}}
+
+
+#reel{background:#070b16;color:#f3f7fb}
+.final-nav{color:#f4f7ff;font-family:Inter,-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.final-nav nav{display:flex;align-items:center;gap:clamp(10px,2vw,25px)}.final-nav nav a{color:#b5cbd7;font-size:11px;text-decoration:none}.final-nav nav a:hover{color:#00d9e8}
+html{scroll-behavior:auto;scroll-padding-top:64px}.final-nav .status{color:#83cfd7}.final-nav .identity{white-space:nowrap}
+#servicios{position:relative;border-radius:clamp(24px,5vw,80px) clamp(24px,5vw,80px) 0 0}
+#service-title{margin:0;font-size:clamp(45px,5.5vw,104px);letter-spacing:-.072em;font-weight:400;line-height:1.04}#service-title span{color:#888f97}
+@media(max-width:720px){#service-title{font-size:clamp(40px,9vw,65px)}.final-nav .status{display:none}.final-nav nav{gap:10px}.final-nav nav a{font-size:10px}.final-nav nav a:nth-child(2){display:none}}
+@media(max-width:360px){.final-nav nav a{font-size:9px}.final-nav{gap:8px}}
+</style><style data-jg-source="nextgen/transition.css" data-jg-version="be0273685529fc14">
+/* FIN-01: reversible handoff, confined to the generated integration page. */
+#servicios.core-handoff{
+  isolation:isolate;
+  background:transparent;
+  --handoff-inset:0%;
+  --handoff-radius:clamp(24px,5vw,80px);
+}
+#servicios.core-handoff::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:var(--paper);
+  clip-path:inset(0 var(--handoff-inset) 0 round var(--handoff-radius) var(--handoff-radius) 0 0);
+}
+#servicios.core-handoff .handoff-mask{
+  display:block;overflow:clip;padding-block:.08em;margin-block:-.08em;
+}
+#servicios.core-handoff .handoff-text{
+  display:block;transform:translate3d(0,var(--handoff-type,0%),0);
+}
+#service-title .handoff-mask:first-child,#service-title .handoff-mask:first-child .handoff-text{color:var(--ink)}
+#service-title .handoff-mask:last-child,#service-title .handoff-mask:last-child .handoff-text{color:#888f97}
+#servicios.core-handoff:focus-within{--handoff-inset:0%!important}
+#servicios.core-handoff:focus-within .handoff-text{transform:none}
+@media(prefers-reduced-motion:reduce){
+ #servicios.core-handoff::before{clip-path:none;border-radius:var(--handoff-radius) var(--handoff-radius) 0 0}
+ #servicios.core-handoff .handoff-text{transform:none}
+}
+
+</style><script type="module" src="./nextgen/transition.js?v=be0273685529fc14"></script><style data-jg-source="nextgen/typography.css" data-jg-version="be0273685529fc14">
+/* FIN-01 — shared editorial typography, integration only.
+   Reuse these roles for OTTO and the approved contact block in FIN-02. */
+:root{
+ --jg-font:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+ --jg-display:clamp(46px,6vw,104px);
+ --jg-heading:clamp(38px,5vw,82px);
+ --jg-body:clamp(16px,1.35vw,20px);
+ --jg-title-weight:400;
+ --jg-title-track:-.072em;
+ --jg-title-leading:1.055;
+ --jg-title-dark:#f4f7ff;
+ --jg-accent-dark:#a0a9ba;
+ --jg-title-light:#151b24;
+ --jg-accent-light:#6f7882;
+ --jg-copy-dark:#b2becd;
+ --jg-copy-light:#475561;
+}
+body.services-integrated{font-family:var(--jg-font)}
+#reel .core-story .story-layer h1,
+#servicios #service-title,
+#chapter-bridge #opening-heading,
+#otto #otto-heading,
+#contacto #contact-title{
+ font-family:var(--jg-font);font-size:var(--jg-display);
+ font-weight:var(--jg-title-weight);letter-spacing:var(--jg-title-track);
+ line-height:var(--jg-title-leading);
+}
+#reel .core-story .story-layer h1,#chapter-bridge #opening-heading,#contacto #contact-title{color:var(--jg-title-dark)}
+#servicios #service-title,#otto #otto-heading{color:var(--jg-title-light)}
+#reel .core-story .story-layer h1 .jg-title-accent,
+#chapter-bridge #opening-heading em,
+#contacto #contact-title span,
+#services-heading .jg-title-accent,
+#story-heading .jg-title-accent{color:var(--jg-accent-dark);font-style:normal}
+#servicios #service-title .handoff-mask:first-child,
+#servicios #service-title .handoff-mask:first-child .handoff-text{color:var(--jg-title-light)}
+#servicios #service-title .handoff-mask:last-child,
+#servicios #service-title .handoff-mask:last-child .handoff-text,
+#otto #otto-heading em{color:var(--jg-accent-light);font-style:normal}
+#services-heading,#story-heading{
+ font-family:var(--jg-font);font-size:var(--jg-heading);
+ font-weight:var(--jg-title-weight);letter-spacing:var(--jg-title-track);
+ line-height:var(--jg-title-leading);
+}
+#reel .story-layer p,#chapter-bridge .opening-main>p,
+#servicios .intro-copy p:first-child,#otto .otto-intro-copy p,
+.services-heading>p:last-child,#contacto .contact-copy{
+ font-family:var(--jg-font);font-size:var(--jg-body);line-height:1.6;
+}
+#reel .story-layer p,#chapter-bridge .opening-main>p,.services-heading>p:last-child{color:var(--jg-copy-dark)}
+#servicios .intro-copy p:first-child,#otto .otto-intro-copy p{color:var(--jg-copy-light)}
+@media(max-width:767px){
+ :root{--jg-display:clamp(38px,10vw,65px);--jg-heading:clamp(35px,9vw,58px)}
+ #story-heading .jg-title-accent{color:var(--jg-accent-light)}
+}
+
+</style><script type="module" src="./nextgen/typography.js?v=be0273685529fc14"></script><style data-jg-source="nextgen/final-sections.css" data-jg-version="be0273685529fc14">
+/* FIN-02 — continuous story-to-OTTO handoff, lateral greeting and interaction runway. */
+#otto.otto-chapter{--pin-top:50px;--pin-height:calc(100svh - var(--pin-top));--entry-travel:85svh;--interaction-travel:110svh;--otto-copy-shift:0%;--otto-name-scale:1;--otto-bridge-inset:0%;position:relative;z-index:6;margin-top:calc(-9.375vw - 24px);height:calc(var(--pin-height) + var(--entry-travel) + var(--interaction-travel));background:transparent;color:var(--jg-title-dark);border-radius:clamp(24px,5vw,80px) clamp(24px,5vw,80px) 0 0}
+#otto .otto-pin{position:sticky;top:var(--pin-top);height:var(--pin-height);isolation:isolate;overflow:clip;border-radius:inherit;background:#090a0c}
+#otto.otto-bridging .otto-pin{clip-path:inset(0 var(--otto-bridge-inset) 0 round clamp(24px,5vw,80px) clamp(24px,5vw,80px) 0 0)}
+#otto:focus-within .otto-pin{clip-path:none}
+#otto-interactivo{position:absolute;inset:0;background:#090a0c}
+#otto-runtime{display:block;width:100%;height:100%;--otto-dock-reveal:100%;--otto-scale:1}
+#otto .otto-cinematic-copy{position:absolute;z-index:3;left:max(var(--pad,5vw),calc(var(--otto-bridge-inset) + 3vw));top:clamp(25px,7vh,75px);max-width:min(36vw,520px);pointer-events:none;overflow:clip;padding:0 0 .12em}
+#otto .otto-copy-mask{overflow:clip}
+#otto .otto-kicker{font:11px ui-monospace,monospace;letter-spacing:.1em;color:#a0a9ba;margin:0 0 20px;transform:translateY(var(--otto-copy-shift))}
+#otto #otto-heading{color:var(--jg-title-dark);margin:0;line-height:var(--jg-title-leading)}
+#otto #otto-heading em{color:var(--jg-accent-dark);font-style:normal}
+#otto .otto-line{display:block;overflow:clip;padding-block:.075em;margin-block:-.075em}
+#otto .otto-line>span,#otto .otto-line>em{display:block}
+#otto .otto-line>span{transform:translate3d(0,var(--otto-name-first,0%),0)}
+#otto .otto-line>em{transform:translate3d(0,var(--otto-name-second,0%),0)}
+#otto:focus-within .otto-line>span,#otto:focus-within .otto-line>em{transform:none}
+#otto #otto-heading{transform:scale(var(--otto-name-scale));transform-origin:left top}
+#otto .otto-description{font-size:var(--jg-body);line-height:1.6;max-width:32ch;color:var(--jg-copy-dark);transform:translateY(var(--otto-copy-shift))}
+#otto .otto-skip{font:11px ui-monospace,monospace;letter-spacing:.04em;color:#a0a9ba;text-decoration:none;pointer-events:auto;display:inline-block;transform:translateY(var(--otto-copy-shift));border-bottom:1px solid #a0a9ba55;padding-bottom:5px}
+#otto.otto-copy-out .otto-copy-mask{visibility:hidden}
+#otto-controls{position:absolute;top:calc(var(--entry-travel) + 64px - var(--pin-top));height:1px;width:1px;scroll-margin-top:0}
+@media(max-width:770px){
+ #otto.otto-chapter{--pin-top:47px;--entry-travel:78svh;--interaction-travel:100svh;margin-top:calc(-10.6667vw - 8px)}
+ #otto .otto-cinematic-copy{left:max(5vw,calc(var(--otto-bridge-inset) + 2vw));right:max(5vw,calc(var(--otto-bridge-inset) + 2vw));top:16px;max-width:none;text-align:center}
+ #otto .otto-kicker{font-size:9px;margin-bottom:8px}
+ #otto #otto-heading{font-size:var(--jg-display);transform-origin:center top}
+ #otto .otto-line{display:inline-block;vertical-align:top}
+ #otto .otto-line+.otto-line{margin-left:.14em}
+ #otto .otto-description{font-size:14px;margin:8px auto 0;max-width:38ch}
+ #otto .otto-skip{margin-top:10px;font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ #otto.otto-chapter{height:auto;margin-top:0}
+ #otto .otto-pin{position:relative;top:auto;height:auto;display:flex;flex-direction:column}
+ #otto .otto-cinematic-copy{position:relative;inset:auto;order:-1;max-width:none;padding:36px var(--pad);visibility:visible}
+ #otto-interactivo{position:relative;height:max(600px,var(--pin-height))}
+ #otto .otto-cinematic-copy .otto-line>span,#otto .otto-cinematic-copy .otto-line>em,#otto .otto-kicker,#otto .otto-description,#otto #otto-heading{transform:none}
+ #otto.otto-interaction .otto-copy-mask:not(:first-child){visibility:visible}
+ #otto .otto-skip{display:none}
+ #otto-controls{top:auto;bottom:0}
+ #otto.otto-bridging .otto-pin{clip-path:none}
+}
+@media(max-width:770px) and (max-height:700px){#otto .otto-description{font-size:12px;line-height:1.35}#otto .otto-kicker{margin-bottom:4px}#otto .otto-cinematic-copy{top:8px}#otto #otto-heading{font-size:clamp(32px,9vw,45px)}}
+/* FIN-02 — one fixed headline footprint, two masked editorial phases. */
+#otto #otto-heading{display:grid;align-items:start}
+#otto .otto-title-phase{display:block;grid-area:1/1;min-width:0}
+#otto .otto-title-intro .otto-line>span{transform:translate3d(0,calc(var(--otto-name-first,0%) + var(--otto-intro-exit,0%)),0)}
+#otto .otto-title-intro .otto-line>em{transform:translate3d(0,calc(var(--otto-name-second,0%) + var(--otto-intro-exit,0%)),0)}
+#otto .otto-title-play .otto-line>span{transform:translate3d(0,var(--otto-play-first,112%),0)}
+#otto .otto-title-play .otto-line>em{transform:translate3d(0,var(--otto-play-second,112%),0)}
+#otto .otto-play-mask{overflow:clip;position:absolute;top:calc(100% - 1px);left:0;right:0}
+#otto .otto-play-description{margin:0;color:var(--jg-copy-dark);font-size:var(--jg-body);line-height:1.6;max-width:32ch;transform:translate3d(0,var(--otto-play-copy,-112%),0)}
+/* Overlay guidance in the former introduction copy area; never reserve extra scroll. */
+#otto .otto-cinematic-copy{display:grid;grid-template-columns:minmax(0,1fr)}
+#otto .otto-cinematic-copy>.otto-copy-mask:first-child{grid-row:1;grid-column:1}
+#otto #otto-heading{grid-row:2;grid-column:1}
+#otto .otto-cinematic-copy>.otto-copy-mask:last-child{grid-row:4;grid-column:1}
+#otto .otto-play-mask,#otto .otto-cinematic-copy>.otto-copy-mask:nth-last-child(2){grid-column:1;grid-row:3;position:relative;top:auto;left:auto;right:auto}
+#otto .otto-play-mask{align-self:start;margin:1em 0;overflow:clip}
+#otto .otto-play-description{margin:0}
+@media(max-width:770px){
+ #otto .otto-title-phase{white-space:normal}
+ #otto .otto-play-mask{margin:5px 0 0}
+ #otto .otto-play-description{font-size:12px;line-height:1.35;margin:0 auto;max-width:36ch}
+}
+@media(prefers-reduced-motion:reduce){
+ #otto .otto-title-intro,#otto .otto-cinematic-copy>.otto-copy-mask:nth-last-child(2){display:none}
+ #otto .otto-title-play .otto-line>span,#otto .otto-title-play .otto-line>em,#otto .otto-play-description{transform:none}
+}
+#contacto{position:relative;overflow:clip;background:#070b16;color:#f4f7ff;padding:clamp(5rem,11vw,10rem) var(--pad) 2rem;min-height:85svh}
+#contacto .section-label{display:flex;justify-content:space-between;border-bottom:1px solid #ffffff41;padding-bottom:1.5rem;color:#a0a9ba}
+#contacto>.eyebrow{margin-top:6rem;color:#8196a3;font:11px ui-monospace,monospace;letter-spacing:.12em}
+#contacto #contact-title{margin:0;max-width:1200px}
+#contacto #contact-title>.end-mask:first-child,#contacto #contact-title>.end-mask:first-child>span{color:var(--jg-title-dark)}
+#contacto #contact-title>.end-mask:last-child,#contacto #contact-title>.end-mask:last-child>span{color:var(--jg-accent-dark)}
+#contacto .contact-lead{color:#a7b6c4;margin:2.4rem 0 3rem;font-size:var(--jg-body);line-height:1.6}
+.end-mask{display:block;overflow:clip;padding-block:.075em;margin-block:-.075em}
+.end-mask>span{display:block;transform:translate3d(0,var(--end-shift,0%),0)}
+#contacto .contact-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid transparent;border-left:1px solid transparent}
+#contacto .contact-grid::before,#contacto .contact-grid::after{content:"";position:absolute;pointer-events:none;background:#ffffff41;top:-1px;left:-1px}
+#contacto .contact-grid::before{height:1px;width:var(--grid-line,100%)}
+#contacto .contact-grid::after{width:1px;height:var(--grid-line,100%)}
+#contacto .contact-grid :is(a,button){min-height:145px;padding:1.4rem 1.7rem;text-decoration:none;color:inherit;border-right:1px solid #ffffff41;border-bottom:1px solid #ffffff41;display:grid;grid-template-columns:1fr auto;align-content:space-between;transition:background .2s;clip-path:inset(var(--cell-top,0%) var(--cell-right,0%) var(--cell-bottom,0%) var(--cell-left,0%));translate:var(--cell-x,0px) var(--cell-y,0px)}
+#contacto .contact-grid :is(a,button):hover{background:#ffffff0b}
+#contacto .contact-grid small{grid-column:1/-1;color:#899ba9;font:11px ui-monospace,monospace}
+#contacto .contact-grid strong{font-size:clamp(1.3rem,2vw,2rem);font-weight:400;letter-spacing:-.04em}
+#contacto .contact-grid :is(a,button)>span{font-size:1.5rem;align-self:end;transition:transform .2s}
+#contacto .contact-grid :is(a,button):hover>span,#contacto .contact-grid :is(a,button):focus-visible>span{transform:translate(3px,-3px)}
+#contacto .footer{display:flex;justify-content:space-between;gap:1rem;color:#8695a4;margin-top:clamp(3rem,7vw,7rem);padding-top:1.4rem;border-top:1px solid #ffffff30;font:11px ui-monospace,monospace}
+#contacto .footer a{text-decoration:none;color:inherit}
+#contacto:focus-within .end-mask>span{transform:none}
+#contacto .contact-grid :is(a,button):focus-visible{clip-path:none;translate:none}
+@media(max-width:680px){#contacto .contact-grid{grid-template-columns:1fr}#contacto .contact-grid :is(a,button){min-height:125px}#contacto .footer{flex-wrap:wrap;font-size:9px}}
+@media(prefers-reduced-motion:reduce){#otto-runtime,#contacto .contact-grid :is(a,button){clip-path:none;translate:none}#contacto .end-mask>span{transform:none}#contacto .contact-grid :is(a,button)>span{transition:none}}
+
+#contacto .footer{clip-path:inset(0 var(--footer-cut,0%) 0 0);translate:0 var(--footer-y,0px)}
+#contacto .footer:focus-within{clip-path:none;translate:none}
+@media(prefers-reduced-motion:reduce){#contacto .footer{clip-path:none;translate:none}#otto .end-mask>span{transform:none}}
+
+
+/* FIN-03 — consultation dialog, isolated from every scroll-driven section. */
+#contacto .contact-grid #jg-consulta-open{appearance:none;background:transparent;border:0;border-right:1px solid #ffffff41;border-bottom:1px solid #ffffff41;text-align:left;font:inherit;cursor:pointer}
+#contacto .contact-grid #jg-consulta-open:hover{background:#ffffff0b}
+html.jg-consulta-open{overflow:hidden}
+#jg-consulta-dialog{position:fixed;inset:0;margin:auto;padding:0;width:min(640px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain;border:1px solid #a0a9ba52;border-radius:24px;background:#151922;color:#f4f7ff;color-scheme:dark;box-shadow:0 24px 90px #0008;font-family:Inter,-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+#jg-consulta-dialog::backdrop{background:#03060bba}
+#jg-consulta-dialog .jg-consulta-shell{position:relative;padding:clamp(20px,4vw,40px)}
+#jg-consulta-dialog[open]{animation:jg-consulta-enter .24s cubic-bezier(.2,.75,.25,1) both}
+@keyframes jg-consulta-enter{from{transform:translateY(18px);opacity:0}to{transform:translateY(0);opacity:1}}
+#jg-consulta-dialog #jg-consulta-close{position:absolute;top:14px;right:14px;width:44px;height:44px;border:1px solid #a0a9ba45;border-radius:50%;background:#ffffff08;color:inherit;font:26px/1 system-ui;cursor:pointer}
+#jg-consulta-dialog .jg-consulta-kicker{font:10px/1.5 ui-monospace,monospace;letter-spacing:.08em;color:#a0a9ba;margin:0 50px 12px 0}
+#jg-consulta-dialog #jg-consulta-title{font-size:clamp(36px,6vw,55px);font-weight:400;letter-spacing:-.065em;line-height:1.05;margin:0;color:#f4f7ff}
+#jg-consulta-dialog #jg-consulta-title span{color:#a0a9ba}
+#jg-consulta-dialog #jg-consulta-description{font-size:15px;line-height:1.5;color:#b2becc;margin:12px 0 24px}
+#jg-consulta-dialog .jg-consulta-fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+#jg-consulta-dialog .jg-consulta-fields label{display:grid;align-content:start;gap:7px;font-size:13px;line-height:1.4;color:#d7dde7;min-width:0}
+#jg-consulta-dialog .jg-consulta-fields label small{font-size:12px;color:#a0a9ba;display:contents}
+#jg-consulta-dialog .jg-consulta-fields label:last-child{grid-column:1/-1}
+#jg-consulta-dialog :is(input,textarea){display:block;width:100%;min-width:0;border:1px solid #a0a9ba55;border-radius:9px;background:#080c15;color:#f4f7ff;padding:11px 12px;font-family:inherit;font-size:16px;line-height:1.4}
+#jg-consulta-dialog textarea{min-height:100px;resize:vertical}
+#jg-consulta-dialog :is(input,textarea):focus-visible,#jg-consulta-dialog button:focus-visible{outline:2px solid #82dcf2;outline-offset:3px}
+#jg-consulta-dialog #jg-consulta-send{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:20px;padding:14px 16px;border:0;border-radius:9px;background:#e6e9ed;color:#151b24;font:inherit;cursor:pointer}
+#jg-consulta-dialog #jg-consulta-send:disabled{opacity:.65;cursor:wait}
+#jg-consulta-dialog #jg-consulta-status{color:#b2becc;font-size:13px;line-height:1.5;margin:0}
+#jg-consulta-dialog #jg-consulta-status:not(:empty){margin-top:14px}
+@media(max-width:520px){#jg-consulta-dialog .jg-consulta-fields{grid-template-columns:1fr;gap:12px}#jg-consulta-dialog{max-height:calc(100dvh - 24px);width:calc(100% - 24px);border-radius:18px}}
+@media(prefers-reduced-motion:reduce){#jg-consulta-dialog[open]{animation:none}}
+
+</style><script type="module" src="./nextgen/final-sections.js?v=be0273685529fc14"></script><script type="module" src="./nextgen/otto/mount.js?v=be0273685529fc14"></script><meta name="jg-dev-revision" content="be0273685529fc14"><link rel="canonical" href="https://javiergz28.github.io/JG-Soluciones-Informaticas/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="JG Soluciones Informáticas">
+<meta property="og:title" content="JG Soluciones Informáticas | Soporte técnico y reparación de PC en Montevideo">
+<meta property="og:description" content="Diagnóstico y reparación de PC y notebooks, mantenimiento, optimización y respaldo de información en Montevideo. Consultanos por WhatsApp o correo.">
+<meta property="og:url" content="https://javiergz28.github.io/JG-Soluciones-Informaticas/">
+<meta property="og:image" content="https://javiergz28.github.io/JG-Soluciones-Informaticas/Logo.png">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://javiergz28.github.io/JG-Soluciones-Informaticas/#business","name":"JG Soluciones Informáticas","url":"https://javiergz28.github.io/JG-Soluciones-Informaticas/","description":"Diagnóstico y reparación de PC y notebooks, mantenimiento, optimización y respaldo de información en Montevideo. Consultanos por WhatsApp o correo.","image":"https://javiergz28.github.io/JG-Soluciones-Informaticas/Logo.png","telephone":"+59898335277","areaServed":{"@type":"City","name":"Montevideo"},"sameAs":["https://www.linkedin.com/in/javier-gutierrez-433096106/"]}</script>
 </head>
-<body>
-<a class="skip-link" href="#main">Saltar al contenido</a>
+<body class="services-integrated"><a class="skip" href="#servicios">Saltar a servicios</a><header class="final-nav"><a class="identity" href="#reel" aria-label="Volver al inicio">JG <span>/</span> NEXT GEN</a><span class="status" id="status" aria-live="off">DISEÑAMOS POSIBILIDADES</span><nav aria-label="Navegación de página"><a href="#servicios">Servicios</a><a href="#nuestra-mirada">Nuestra mirada</a><a href="#otto">OTTO</a><a href="#contacto">Contacto</a></nav></header>
+<main><section class="reel" id="reel" aria-label="Recorrido 3D CORE-01 sincronizado al desplazamiento"><div class="stage">
+<div class="frame"><img id="sharpPoster" src="./assets/boot/g2-c17/frame-000.avif" alt="" aria-hidden="true" fetchpriority="high" decoding="async"><canvas id="filmCanvas" width="1440" height="810" role="img" aria-label="Secuencia cinematográfica CORE-01 renderizada con Cycles"></canvas></div>
+<div class="shade"></div>
+<div class="copy core-story" id="story" aria-label="Mensajes del recorrido">
+<div class="story-layer" id="story-a" aria-hidden="false"><div class="kicker">01 / EL COMIENZO</div><h1>Todo empieza con una idea.</h1><p>La tecnología cobra sentido cuando transforma lo que imaginamos en algo real.</p></div>
+<div class="story-layer" id="story-b" aria-hidden="true"><div class="kicker"></div><h1></h1><p></p></div>
+</div>
+<div class="meta"><span><span id="frame">01 / 05</span> · <span id="phase">DESCUBRÍ EL RECORRIDO</span></span><span id="perf">DESLIZÁ PARA DESCUBRIR ↓</span></div>
 
-<!-- Sprite de iconos (Lucide, stroke 1.75) -->
-<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
-  <defs>
-    <g id="i-whatsapp"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Z"/><path d="M8.5 8.7c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.8 1.8c.1.3 0 .5-.1.7l-.4.5c-.1.2-.2.4 0 .7a7 7 0 0 0 3.1 2.6c.3.1.5.1.7-.1l.5-.6c.2-.2.4-.2.6-.1l1.7.8c.3.1.4.3.4.5v.6c0 .5-.5 1.1-1 1.3-.5.2-1.2.3-3.2-.5a11 11 0 0 1-5.2-4.6c-.7-1.2-.8-2.3-.6-2.9Z"/></g>
-    <g id="i-phone"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.8 2.1Z"/></g>
-    <g id="i-monitor"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></g>
-    <g id="i-network"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4M5 16v-2h14v2"/></g>
-    <g id="i-cloud"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.6 1.4A3.8 3.8 0 0 0 7 19Z"/></g>
-    <g id="i-shield"><path d="M12 22s8-3.4 8-10V5l-8-3-8 3v7c0 6.6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></g>
-    <g id="i-tool"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 21H3l7.5-9a4 4 0 0 1 4.2-5.7Z"/></g>
-    <g id="i-check"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></g>
-    <g id="i-clock"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></g>
-    <g id="i-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g>
-    <g id="i-file"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></g>
-    <g id="i-plus"><path d="M12 5v14M5 12h14"/></g>
-    <g id="i-arrow-right"><path d="M5 12h14m-6-7 7 7-7 7"/></g>
-    <g id="i-menu"><path d="M4 7h16M4 12h16M4 17h16"/></g>
-    <g id="i-mail"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></g>
-    <g id="i-linkedin"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4"/></g>
-    <g id="i-alert"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16v.01"/></g>
-  </defs>
-</svg>
-
-<header class="site-header" id="top">
-  <div class="container site-header__inner">
-    <a class="site-header__logo" href="#top" aria-label="JG Soluciones Informáticas — Inicio">
-      <img src="Logo.png" alt="JG Soluciones Informáticas" width="106" height="34">
-    </a>
-
-    <div class="nav">
-      <button class="nav__toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Abrir menú de navegación">
-        <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-menu"/></svg>
-      </button>
-
-      <ul class="nav__list" id="navList">
-        <li><a class="nav__link" href="#servicios">Servicios</a></li>
-        <li><a class="nav__link" href="#tarifas">Tarifas</a></li>
-        <li><a class="nav__link" href="#proceso">Cómo trabajamos</a></li>
-        <li><a class="nav__link" href="#zona">Zona</a></li>
-        <li><a class="nav__link" href="#faq">Preguntas</a></li>
-        <li><a class="nav__link" href="#contacto">Contacto</a></li>
-        <li><a class="nav__link" href="tel:+59898335277">098 335 277</a></li>
-      </ul>
-
-      <a class="btn btn--whatsapp nav__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">
-        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-        Escribinos por WhatsApp
-      </a>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- 1. HERO -->
-  <section class="hero">
-    <div class="container">
-      <p class="hero__badge"><span class="dot"></span> Tarifas publicadas, sin sorpresas</p>
-      <h1>Tu PC funcionando de nuevo, sin vueltas</h1>
-      <p class="hero__lead">
-        Trabajo a domicilio en Montevideo, para hogares y empresas: reparación, redes, backup y mantenimiento.
-        Las tarifas están <strong>publicadas más abajo</strong>: sabés lo que cuesta antes de escribir.
-      </p>
-      <div class="btn-row">
-        <a class="btn btn--whatsapp" href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20un%20presupuesto.%20Mi%20problema%20es%3A%20" target="_blank" rel="noopener">
-          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-          Pedir presupuesto por WhatsApp
-        </a>
-        <a class="btn btn--on-dark" href="tel:+59898335277">
-          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-phone"/></svg>
-          Llamar ahora
-        </a>
-      </div>
-      <p class="hero__note">A domicilio en Montevideo · Hogares y empresas</p>
-    </div>
-  </section>
-
-  <!-- 2. TRUST BAR -->
-  <section class="trustbar" aria-label="Por qué elegirnos">
-    <div class="container">
-      <ul class="trustbar__list">
-        <li class="trustbar__item">
-          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-file"/></svg>
-          <span><span class="trustbar__value">Tarifas publicadas</span><span class="trustbar__label">Diagnóstico desde $800</span></span>
-        </li>
-        <li class="trustbar__item">
-          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-shield"/></svg>
-          <span><span class="trustbar__value">Todo con garantía</span><span class="trustbar__label">El plazo se confirma al coordinar</span></span>
-        </li>
-        <li class="trustbar__item">
-          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-clock"/></svg>
-          <span><span class="trustbar__value">48 a 72 horas</span><span class="trustbar__label">Tiempo de resolución habitual</span></span>
-        </li>
-        <li class="trustbar__item">
-          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-map-pin"/></svg>
-          <span><span class="trustbar__value">A domicilio</span><span class="trustbar__label">Montevideo, hogares y empresas</span></span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 3. SERVICIOS -->
-  <section class="section" id="servicios">
-    <div class="container">
-      <div class="section__head reveal">
-        <p class="section__eyebrow">Servicios</p>
-        <h2>En qué te podemos ayudar</h2>
-        <p class="section__lead">Trabajamos con equipos de casa y con la infraestructura de pymes. Si no estás seguro de qué necesitás, escribinos y lo vemos juntos.</p>
-      </div>
-
-      <div class="grid grid--3">
-        <article class="card reveal">
-          <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-monitor"/></svg></span>
-          <h3>Reparación de PC y notebooks</h3>
-          <p>Diagnóstico de hardware, cambio de componentes, formateo, instalación de software y recuperación de datos.</p>
-          <a class="card__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20consulto%20por%20reparaci%C3%B3n%20de%20PC%2Fnotebook." target="_blank" rel="noopener">Consultar por este servicio
-            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          </a>
-        </article>
-
-        <article class="card reveal">
-          <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-network"/></svg></span>
-          <h3>Instalación de redes</h3>
-          <p>Redes domésticas y empresariales: WiFi, cableado estructurado, routers, repetidores y segmentación de invitados.</p>
-          <a class="card__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20consulto%20por%20instalaci%C3%B3n%20de%20redes." target="_blank" rel="noopener">Consultar por este servicio
-            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          </a>
-        </article>
-
-        <article class="card reveal">
-          <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-cloud"/></svg></span>
-          <h3>Soporte en la nube</h3>
-          <p>Microsoft 365 y Google Workspace: altas de usuarios, correo corporativo, migraciones y sincronización de archivos.</p>
-          <a class="card__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20consulto%20por%20soporte%20en%20la%20nube%20(Microsoft%20365%20%2F%20Google%20Workspace)." target="_blank" rel="noopener">Consultar por este servicio
-            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          </a>
-        </article>
-
-        <article class="card reveal">
-          <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-shield"/></svg></span>
-          <h3>Backup y respaldo de datos</h3>
-          <p>Copias de seguridad de tus archivos antes de cualquier intervención, y respaldos periódicos configurados para que no dependas de la suerte.</p>
-          <a class="card__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20consulto%20por%20backup%20y%20respaldo%20de%20datos." target="_blank" rel="noopener">Consultar por este servicio
-            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          </a>
-        </article>
-
-        <article class="card reveal">
-          <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-tool"/></svg></span>
-          <h3>Mantenimiento preventivo</h3>
-          <p>Limpieza física, cambio de pasta térmica, actualizaciones y optimización. Para que el equipo no falle justo cuando lo necesitás.</p>
-          <a class="card__cta" href="https://wa.me/59898335277?text=Hola%20JG%2C%20consulto%20por%20mantenimiento%20preventivo." target="_blank" rel="noopener">Consultar por este servicio
-            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          </a>
-        </article>
-
-     </div>
-    </div>
-  </section>
-
-  <!-- 4. PROCESO -->
-  <section class="section section--muted" id="proceso">
-    <div class="container">
-      <div class="section__head reveal">
-        <p class="section__eyebrow">Cómo trabajamos</p>
-        <h2>Tres pasos, sin sorpresas</h2>
-      </div>
-      <div class="grid grid--3 steps">
-        <div class="step reveal">
-          <h3>Contanos qué pasa</h3>
-          <p>Por WhatsApp o teléfono. Con una descripción del problema ya te podemos orientar y coordinar la visita a domicilio.</p>
-        </div>
-        <div class="step reveal">
-          <h3>Diagnóstico y presupuesto</h3>
-          <p>Revisamos el equipo y te confirmamos qué tiene y cuánto cuesta. La tarifa de diagnóstico es $800 y está publicada, igual que el resto.</p>
-        </div>
-        <div class="step reveal">
-          <h3>Reparación y entrega</h3>
-          <p>Aprobás y trabajamos. El plazo habitual de resolución es de 48 a 72 horas según la complejidad, y el trabajo sale con garantía.</p>
-        </div>
-      </div>
-      <div class="btn-row" style="margin-top: var(--space-xl)">
-        <a class="btn btn--accent" href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20empezar%20el%20diagn%C3%B3stico." target="_blank" rel="noopener">
-          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          Empezar el diagnóstico
-        </a>
-      </div>
-    </div>
-  </section>
+</div></section>
 
 
-  <!-- 5. TARIFAS (precios reales, tomados de la versión publicada) -->
-  <section class="section" id="tarifas">
-    <div class="container">
-      <div class="section__head reveal">
-        <p class="section__eyebrow">Tarifas</p>
-        <h2>Lo que sale cada servicio</h2>
-        <p class="section__lead">Precios de referencia en pesos uruguayos. Si el trabajo requiere repuestos o sale de lo habitual, te lo confirmo antes de empezar.</p>
-      </div>
-
-      <ul class="pricing reveal">
-        <li class="pricing__row">
-          <span class="pricing__name">Diagnóstico / revisión general</span>
-          <span class="pricing__dots" aria-hidden="true"></span>
-          <span class="pricing__price">$800</span>
-        </li>
-        <li class="pricing__row">
-          <span class="pricing__name">Mantenimiento preventivo</span>
-          <span class="pricing__dots" aria-hidden="true"></span>
-          <span class="pricing__price">$1.000</span>
-        </li>
-        <li class="pricing__row">
-          <span class="pricing__name">Limpieza física interna</span>
-          <span class="pricing__dots" aria-hidden="true"></span>
-          <span class="pricing__price">$1.200</span>
-        </li>
-        <li class="pricing__row">
-          <span class="pricing__name">Backup / respaldo de datos</span>
-          <span class="pricing__dots" aria-hidden="true"></span>
-          <span class="pricing__price">$1.200</span>
-        </li>
-        <li class="pricing__row">
-          <span class="pricing__name">Formateo + instalación de sistema operativo</span>
-          <span class="pricing__dots" aria-hidden="true"></span>
-          <span class="pricing__price">$1.500</span>
-        </li>
-        <li class="pricing__row">
-          <span class="pricing__name">Instalación y configuración de red WiFi</span>
-          <span class="pricing__dots" aria-hidden="true"></span>
-          <span class="pricing__price">$1.500</span>
-        </li>
-      </ul>
-
-      <p class="pricing__note reveal">Formas de pago: efectivo, transferencia bancaria y Mercado Pago.</p>
-
-      <div class="btn-row" style="margin-top: var(--space-lg)">
-        <a class="btn btn--accent" href="https://wa.me/59898335277?text=Hola%20JG%2C%20vi%20las%20tarifas%20y%20quiero%20coordinar%20una%20visita." target="_blank" rel="noopener">
-          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-          Coordinar una visita
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. GARANTÍA -->
-  <section class="section section--muted" id="garantia">
-    <div class="container">
-      <div class="section__head reveal">
-        <p class="section__eyebrow">Garantía y respaldo</p>
-        <h2>Por qué podés dejarnos tu equipo</h2>
-        <p class="section__lead">Dejar una computadora en manos de alguien que no conocés es un riesgo. Estas son las condiciones con las que trabajamos.</p>
-      </div>
-      <div class="guarantee">
-        <div class="guarantee__item reveal">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-shield"/></svg>
-          <div><h3>Todo con garantía</h3><p>Todos los trabajos tienen garantía. El plazo depende del tipo de servicio y te lo confirmo al coordinar.</p></div>
-        </div>
-        <div class="guarantee__item reveal">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-file"/></svg>
-          <div><h3>Tarifas a la vista</h3><p>Los precios de cada servicio están publicados en esta misma página. Nada se repara sin tu aprobación.</p></div>
-        </div>
-        <div class="guarantee__item reveal">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg>
-          <div><h3>Tus datos, tuyos</h3><p>No accedemos a tu información personal salvo que la tarea lo requiera, y nunca sin avisarte antes.</p></div>
-        </div>
-        <div class="guarantee__item reveal">
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-linkedin"/></svg>
-          <div><h3>Perfil verificable</h3><p>Detrás de JG hay una persona con nombre y trayectoria pública. <a href="https://www.linkedin.com/in/javier-gutierrez-433096106/" target="_blank" rel="noopener">Ver perfil en LinkedIn</a>.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--
-    TESTIMONIOS — bloque listo para cuando tengas reseñas reales.
-    El motor marca "Hidden reviews" como anti-patrón: publicá testimonios con
-    nombre, empresa y problema resuelto. No pongas testimonios inventados.
-
-    <section class="section section--muted" id="testimonios">
-      <div class="container">
-        <div class="section__head"><p class="section__eyebrow">Clientes</p><h2>Qué dicen de nuestro trabajo</h2></div>
-        <div class="grid grid--3">
-          <blockquote class="card"><p>"..."</p><footer><strong>Nombre</strong><br><span>Cargo, Empresa</span></footer></blockquote>
+    <section class="introduction core-handoff" id="servicios" aria-labelledby="service-title">
+      <div class="section-label"><span>02 / SOLUCIONES</span><span>EL PUNTO DE PARTIDA</span></div>
+      <div class="split">
+        <h2 id="service-title"><span class="handoff-mask" data-handoff-text><span class="handoff-text">Entender el sistema.</span></span> <span class="handoff-mask" data-handoff-text><span class="handoff-text">Resolver el problema.</span></span></h2>
+        <div class="intro-copy">
+          <p class="handoff-mask" data-handoff-text><span class="handoff-text">Diagnóstico y reparación de PC y notebooks, mantenimiento y respaldo de información. Tecnología que funciona sin complicaciones.</span></p>
+          <p class="explore-label">CUATRO FORMAS DE AYUDARTE <span aria-hidden="true">↓</span></p>
         </div>
       </div>
     </section>
-  -->
-
-  <!-- 6. ZONA -->
-  <section class="section" id="zona">
-    <div class="container">
-      <div class="section__head reveal">
-        <p class="section__eyebrow">Cobertura</p>
-        <h2>¿Llegamos a tu zona?</h2>
-        <p class="section__lead">Trabajo a domicilio en Montevideo, para hogares y empresas. Si estás fuera de Montevideo, escribime igual y vemos si podemos coordinar.</p>
+    <section class="services-section" aria-labelledby="services-heading">
+      <div class="services-heading">
+        <p class="overline">SERVICIOS / EXPLORÁ LAS OPCIONES</p>
+        <h2 id="services-heading" aria-live="polite" aria-atomic="true">Primero, entender.</h2>
+        <p>Seleccioná un servicio para conocer qué hacemos y su precio orientativo.</p>
       </div>
-      <ul class="zone__list reveal">
-        <li class="zone__tag">Montevideo — todos los barrios</li>
-        <li class="zone__tag">Hogares</li>
-        <li class="zone__tag">Empresas</li>
-        <li class="zone__tag">Atención a domicilio</li>
-      </ul>
-      <div class="btn-row" style="margin-top: var(--space-lg)">
-        <a class="btn btn--ghost" href="https://wa.me/59898335277?text=Hola%20JG%2C%20%C2%BFllegan%20a%20mi%20zona%3F%20Estoy%20en%3A%20" target="_blank" rel="noopener">
-          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-map-pin"/></svg>
-          ¿Llegamos a tu zona? Preguntanos
-        </a>
+      <div class="service-grid" id="service-grid" data-active="0" aria-label="Servicios interactivos">
+        <article class="service-card is-active" data-card="0">
+          <button class="service-trigger" type="button" aria-controls="service-detail-0" aria-expanded="true">
+            <span class="card-meta"><span>01 / DIAGNÓSTICO</span><span class="card-icon" aria-hidden="true">−</span></span>
+            <span class="card-title">Diagnóstico</span>
+          </button>
+          <div class="service-detail" id="service-detail-0">
+            <p>Cuando algo falla, el primer paso es comprender qué está pasando. Revisamos el equipo, encontramos la causa y te explicamos qué conviene hacer antes de intervenir.</p>
+            <div class="service-footer">
+              <div class="service-price"><span>PRECIO ORIENTATIVO</span><strong>$800 UYU</strong><small>A domicilio: $1.200 UYU</small></div>
+              <a href="https://wa.me/59898335277?text=Hola%2C%20quiero%20consultar%20por%20un%20diagn%C3%B3stico." target="_blank" rel="noopener noreferrer" aria-label="Consultar diagnóstico por WhatsApp">CONSULTAR <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="service-card" data-card="1">
+          <button class="service-trigger" type="button" aria-controls="service-detail-1" aria-expanded="false">
+            <span class="card-meta"><span>02 / CUIDADO PREVENTIVO</span><span class="card-icon" aria-hidden="true">+</span></span>
+            <span class="card-title">Mantenimiento</span>
+          </button>
+          <div class="service-detail" id="service-detail-1" hidden>
+            <p>El polvo, el calor y el uso diario afectan el rendimiento. Limpiamos y revisamos tu equipo para prevenir problemas y prolongar su vida útil.</p>
+            <div class="service-footer">
+              <div class="service-price"><span>PRECIO ORIENTATIVO</span><strong>$1.000–$2.500 UYU</strong><small>Estimación según equipo; pendiente de confirmar.</small></div>
+              <a href="https://wa.me/59898335277?text=Hola%2C%20quiero%20consultar%20por%20mantenimiento." target="_blank" rel="noopener noreferrer" aria-label="Consultar mantenimiento por WhatsApp">CONSULTAR <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="service-card" data-card="2">
+          <button class="service-trigger" type="button" aria-controls="service-detail-2" aria-expanded="false">
+            <span class="card-meta"><span>03 / SOLUCIÓN DE FALLAS</span><span class="card-icon" aria-hidden="true">+</span></span>
+            <span class="card-title">Reparación</span>
+          </button>
+          <div class="service-detail" id="service-detail-2" hidden>
+            <p>No siempre hace falta reemplazar una computadora que dejó de funcionar. Evaluamos el problema y buscamos una reparación razonable para cada situación.</p>
+            <div class="service-footer">
+              <div class="service-price"><span>PRECIO ORIENTATIVO</span><strong>Desde $1.500 UYU</strong><small>Mano de obra estimada; repuestos aparte.</small></div>
+              <a href="https://wa.me/59898335277?text=Hola%2C%20quiero%20consultar%20por%20una%20reparaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Consultar reparación por WhatsApp">CONSULTAR <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="service-card" data-card="3">
+          <button class="service-trigger" type="button" aria-controls="service-detail-3" aria-expanded="false">
+            <span class="card-meta"><span>04 / RENDIMIENTO Y ARCHIVOS</span><span class="card-icon" aria-hidden="true">+</span></span>
+            <span class="card-title">Optimización y respaldo</span>
+          </button>
+          <div class="service-detail" id="service-detail-3" hidden>
+            <p>Si el equipo responde lento o necesitás cuidar tus archivos, buscamos la causa, mejoramos su funcionamiento y organizamos un respaldo acorde a tus necesidades.</p>
+            <div class="service-footer">
+              <div class="service-price"><span>PRECIO ORIENTATIVO</span><strong>$1.000–$1.500 UYU</strong><small>Estimación; recuperación compleja aparte.</small></div>
+              <a href="https://wa.me/59898335277?text=Hola%2C%20quiero%20consultar%20por%20optimizaci%C3%B3n%20y%20respaldo." target="_blank" rel="noopener noreferrer" aria-label="Consultar optimización y respaldo por WhatsApp">CONSULTAR <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  <section class="opening chapter-bridge" id="chapter-bridge" aria-labelledby="opening-heading">
+    <div class="opening-meta"><span>02.2 / NUESTRA MIRADA</span><span>DE LA IDEA A LA REALIDAD</span></div>
+    <div class="opening-main">
+      <h2 id="opening-heading"><span class="kinetic-mask" data-kinetic="first"><span class="kinetic-type">No solo resolvemos.</span></span><span class="kinetic-mask" data-kinetic="second"><em class="kinetic-type">Hacemos que suceda.</em></span></h2>
+      <p class="kinetic-mask" data-kinetic="copy"><span class="kinetic-type">La tecnología, el diseño y las buenas ideas pueden transformar una necesidad en algo extraordinario.</span></p>
+    </div>
+    <a class="discover" href="#nuestra-mirada">DESCUBRÍ NUESTRO ENFOQUE <span aria-hidden="true">↓</span></a>
+  </section>
+  <section class="story" id="nuestra-mirada" aria-labelledby="story-heading">
+    <div class="story-inner">
+      <h2 class="story-heading" id="story-heading"><span class="story-heading-type">Nuestra <span class="jg-title-accent">mirada.</span></span></h2>
+      <div class="story-stack" id="story-stack">
+        <article class="story-panel tone-1" data-panel="0" style="--order:1" aria-labelledby="story-1-title">
+          <div class="panel-shell">
+            <div class="panel-copy">
+              <div class="panel-header">
+                <span class="panel-brand" aria-hidden="true">JG <span>/</span> NEXT GEN</span><span class="panel-dot" aria-hidden="true"></span>
+                <h3 id="story-1-title">IMAGINAR</h3>
+              </div>
+              <p class="panel-description"><strong>Todo comienza con una idea.</strong> Escuchamos lo que necesitás, exploramos posibilidades y encontramos una dirección clara para avanzar.</p>
+            </div>
+            <div class="panel-visual" aria-hidden="true"><img src="./servicios/art/01-imaginar.webp" alt="" width="1024" height="1024" loading="lazy" decoding="async"></div>
+          </div>
+        </article>
+        <article class="story-panel tone-2" data-panel="1" style="--order:2" aria-labelledby="story-2-title">
+          <div class="panel-shell">
+            <div class="panel-copy">
+              <div class="panel-header">
+                <span class="panel-brand" aria-hidden="true">JG <span>/</span> NEXT GEN</span><span class="panel-dot" aria-hidden="true"></span>
+                <h3 id="story-2-title">DISEÑAR</h3>
+              </div>
+              <p class="panel-description"><strong>Cada identidad merece ser única.</strong> Diseñamos marcas, interfaces y contenido visual que cuentan una historia propia y generan una conexión real.</p>
+            </div>
+            <div class="panel-visual" aria-hidden="true"><img src="./servicios/art/02-disenar.webp" alt="" width="1024" height="1024" loading="lazy" decoding="async"></div>
+          </div>
+        </article>
+        <article class="story-panel tone-3" data-panel="2" style="--order:3" aria-labelledby="story-3-title">
+          <div class="panel-shell">
+            <div class="panel-copy">
+              <div class="panel-header">
+                <span class="panel-brand" aria-hidden="true">JG <span>/</span> NEXT GEN</span><span class="panel-dot" aria-hidden="true"></span>
+                <h3 id="story-3-title">CONSTRUIR</h3>
+              </div>
+              <p class="panel-description"><strong>Experiencias que se pueden vivir.</strong> Desarrollo web, interacción, animación y experiencias 3D: transformamos conceptos en productos digitales concretos.</p>
+            </div>
+            <div class="panel-visual" aria-hidden="true"><img src="./servicios/art/03-construir.webp" alt="" width="1024" height="1024" loading="lazy" decoding="async"></div>
+          </div>
+        </article>
+        <article class="story-panel tone-4" data-panel="3" style="--order:4" aria-labelledby="story-4-title">
+          <div class="panel-shell">
+            <div class="panel-copy">
+              <div class="panel-header">
+                <span class="panel-brand" aria-hidden="true">JG <span>/</span> NEXT GEN</span><span class="panel-dot" aria-hidden="true"></span>
+                <h3 id="story-4-title">CONECTAR</h3>
+              </div>
+              <p class="panel-description"><strong>Todo funciona mejor cuando conecta.</strong> Integramos tecnología, equipos y personas. Desde una red confiable hasta un ecosistema digital pensado para crecer.</p>
+            </div>
+            <div class="panel-visual" aria-hidden="true"><img src="./servicios/art/04-conectar.webp" alt="" width="1024" height="1024" loading="lazy" decoding="async"></div>
+          </div>
+        </article>
+        <article class="story-panel tone-5" data-panel="4" style="--order:5" aria-labelledby="story-5-title">
+          <div class="panel-shell">
+            <div class="panel-copy">
+              <div class="panel-header">
+                <span class="panel-brand" aria-hidden="true">JG <span>/</span> NEXT GEN</span><span class="panel-dot" aria-hidden="true"></span>
+                <h3 id="story-5-title">EVOLUCIONAR</h3>
+              </div>
+              <p class="panel-description"><strong>No solo resolvemos. Creamos lo que viene.</strong> Mejoramos, acompañamos y buscamos nuevas posibilidades. Porque un buen proyecto nunca deja de evolucionar.</p>
+            </div>
+            <div class="panel-visual" aria-hidden="true"><img src="./servicios/art/05-evolucionar.webp" alt="" width="1024" height="1024" loading="lazy" decoding="async"></div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- 7. FAQ -->
-  <section class="section section--muted" id="faq">
-    <div class="container">
-      <div class="section__head reveal">
-        <p class="section__eyebrow">Preguntas frecuentes</p>
-        <h2>Lo que más nos preguntan</h2>
-      </div>
-      <div class="faq reveal">
-        <details class="faq__item" name="faq">
-          <summary>¿Cuánto sale el diagnóstico?
-            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
-          </summary>
-          <div><p>El diagnóstico o revisión general sale $800. Las tarifas de todos los servicios están publicadas más arriba, así que no hay sorpresas al final.</p></div>
-        </details>
-        <details class="faq__item" name="faq">
-          <summary>¿Cuánto tarda una reparación?
-            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
-          </summary>
-          <div><p>El tiempo de resolución habitual es de 48 a 72 horas, dependiendo de la complejidad del trabajo. Si hace falta un repuesto puntual, te aviso el plazo antes de que apruebes.</p></div>
-        </details>
-        <details class="faq__item" name="faq">
-          <summary>¿En qué zona trabajás?
-            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
-          </summary>
-          <div><p>Trabajo a domicilio en Montevideo, para hogares y empresas. Coordinamos día y horario por WhatsApp.</p></div>
-        </details>
-        <details class="faq__item" name="faq">
-          <summary>¿Qué formas de pago aceptás?
-            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
-          </summary>
-          <div><p>Efectivo, transferencia bancaria y Mercado Pago.</p></div>
-        </details>
-        <details class="faq__item" name="faq">
-          <summary>¿Se pierden mis archivos si formatean?
-            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
-          </summary>
-          <div><p>No. Antes de cualquier formateo hago el respaldo de tus datos y te lo confirmo. Si el disco está dañado, te aviso qué se puede recuperar antes de avanzar.</p></div>
-        </details>
-        <details class="faq__item" name="faq">
-          <summary>¿Atienden urgencias?
-            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-plus"/></svg>
-          </summary>
-          <div><p>Si tu empresa quedó sin operar, escribime por WhatsApp con la palabra <strong>URGENTE</strong> y priorizo el caso.</p></div>
-        </details>
-      </div>
-      <div class="btn-row" style="margin-top: var(--space-lg)">
-        <a class="btn btn--ghost" href="https://wa.me/59898335277?text=Hola%20JG%2C%20sigo%20con%20dudas%3A%20" target="_blank" rel="noopener">Sigo con dudas: escribir por WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. CONTACTO -->
-  <section class="section" id="contacto">
-    <div class="container">
-      <div class="section__head reveal">
-        <p class="section__eyebrow">Contacto</p>
-        <h2>Escribinos y lo resolvemos</h2>
-        <p class="section__lead">La vía más rápida es WhatsApp. Si preferís dejarnos el detalle por escrito, usá el formulario y te respondemos por correo.</p>
-      </div>
-
-      <div class="contact-grid">
-        <form class="form reveal" id="contactForm" action="https://formspree.io/f/mvgkwlvj" method="POST" novalidate>
-          <div class="field">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" autocomplete="name" required aria-describedby="err-nombre">
-            <p class="error" id="err-nombre">
-              <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-alert"/></svg>
-              Necesitamos tu nombre para responderte.
-            </p>
+<section id="otto" class="otto-chapter" aria-labelledby="otto-heading"><div class="otto-pin"><div id="otto-interactivo" class="otto-interactive" aria-label="OTTO interactivo"><div id="otto-runtime"></div><template id="otto-workspace-template"><div class="app"><div class="workspace">
+      <section class="scene-panel" aria-label="Visor tridimensional de OTTO">
+        <div id="viewport" class="viewport">
+          <div class="liquid-atmosphere" aria-hidden="true">
+            <div class="glass-diffuse"></div>
+            <div class="glass-sheet-main"></div>
+            <div class="glass-soft-reflection"></div>
           </div>
-
-          <div class="field">
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="err-email">
-            <p class="error" id="err-email">
-              <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-alert"/></svg>
-              Revisá el correo: falta el @ o el dominio.
-            </p>
-          </div>
-
-          <div class="field">
-            <label for="telefono">Teléfono <span class="hint">(opcional, acelera la respuesta)</span></label>
-            <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel">
-          </div>
-
-          <div class="field">
-            <label for="mensaje">¿Qué le pasa a tu equipo?</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required aria-describedby="err-mensaje" placeholder="Ej.: la notebook enciende pero la pantalla queda en negro"></textarea>
-            <p class="error" id="err-mensaje">
-              <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><use href="#i-alert"/></svg>
-              Contanos brevemente el problema.
-            </p>
-          </div>
-
-          <button class="btn btn--primary" type="submit">Enviar consulta</button>
-
-          <p class="form__status" id="formStatus" role="status" hidden>
-            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg>
-            <span id="formStatusText"></span>
-          </p>
-        </form>
-
-        <div class="contact-aside reveal">
-          <div class="contact-aside__item">
-            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-            <div><strong>WhatsApp</strong>
-              <a href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">098 335 277</a>
-              <span>La vía más rápida. Respondemos en el día.</span>
+          <img id="otto-poster" class="otto-fallback-poster" src="./servicios/otto-fallback.png" width="413" height="378" alt="" aria-hidden="true" decoding="async" loading="lazy">
+          <div class="vignette"></div>
+          <div class="scene-label"><span class="eyebrow">JG NEXT GEN / ASISTENTE DIGITAL</span><span class="scene-title">Hola, soy <em>OTTO.</em></span><span class="scene-desc">Una nueva forma de conectar tecnología y personalidad.</span></div>
+          <div id="progress" class="load-message" aria-live="polite"><span class="loading-orb"></span><strong id="load-title">OTTO está por llegar</strong><small id="load-subtitle">El modelo se carga al acercarte.</small><button id="retry-otto" type="button" hidden >Reintentar 3D</button></div>
+          <div class="visor-badges"><span class="tag"><span class="blue-dot"></span> MODELO 3D</span><span class="tag">GLB + SHADER</span></div>
+          <div class="viewport-footer"><div class="hint"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="7"/><path d="M12 4v16M4 12h16"/></svg> Arrastrá para girar · activá el zoom si querés acercarte</div><div id="fps" class="fps">— FPS</div></div>
+        </div>
+      <aside class="control-panel otto-dock" aria-label="Dock de controles de OTTO">
+        <div class="dock-shell">
+          <div class="dock-topline">
+            <div class="mood-now" id="mood-now" data-mood="idle">
+              <div class="mood-face" aria-hidden="true"><span class="mood-eye"></span><span class="mood-eye"></span><span class="mood-smile"></span></div>
+              <div class="mood-now-copy"><span class="mood-kicker">OTTO SE SIENTE</span><strong id="mode-name" class="mode-name" aria-live="polite">REPOSO</strong><p id="mode-description" class="mode-description">Está tranquilo y atento.</p></div>
+            </div>
+            <div class="dock-top-actions">
+              <button id="dock-mood-toggle" data-dock-toggle="mood" aria-expanded="false" aria-controls="dock-mood-panel" type="button">Ánimos <span aria-hidden="true">◡</span></button>
+              <button id="dock-settings-toggle" data-dock-toggle="settings" aria-expanded="false" aria-controls="dock-settings-panel" type="button">Datos <span aria-hidden="true">···</span></button>
             </div>
           </div>
-          <div class="contact-aside__item">
-            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-phone"/></svg>
-            <div><strong>Teléfono</strong>
-              <a href="tel:+59898335277">+598 98 335 277</a>
-              <span>Lunes a viernes, 9:00 a 19:00.</span>
+          <div class="dock-modules" role="group" aria-label="Luz, energía, movimiento, carga, flujo y fusión de OTTO">
+            <div class="dock-module dock-module-light" id="dock-light">
+              <button type="button" id="dock-light-toggle" data-dock-toggle="light" aria-expanded="false" aria-controls="dock-light-panel" aria-label="Elegir luz de OTTO">
+                <span class="dock-orb-well" aria-hidden="true"><span class="dock-light-orb" id="dock-light-orb"></span></span>
+                <span class="dock-module-title">Luz</span><small id="dock-light-label">Cian</small>
+              </button>
             </div>
-          </div>
-          <div class="contact-aside__item">
-            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-linkedin"/></svg>
-            <div><strong>LinkedIn</strong>
-              <a href="https://www.linkedin.com/in/javier-gutierrez-433096106/" target="_blank" rel="noopener">Javier Gutiérrez</a>
-              <span>Perfil profesional y trayectoria.</span>
+            <div class="dock-module dock-module-gauge" id="dock-energy" style="--dial-pct:42%">
+              <label class="dock-dial" for="energy">
+                <input type="range" min="0" max="100" value="42" id="energy" aria-label="Energía de OTTO">
+                <span class="dock-dial-ring" aria-hidden="true"><span class="dock-dial-core"><strong id="energy-value">42%</strong></span></span>
+              </label>
+              <span class="dock-module-title">Energía</span><small id="energy-feel" class="dock-module-state" aria-live="polite">Estable</small>
             </div>
-          </div>
-          <div class="contact-aside__item">
-            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-map-pin"/></svg>
-            <div><strong>Zona</strong>
-              <span>A domicilio en Montevideo, para hogares y empresas.</span>
+            <div class="dock-module dock-module-gauge dock-module-motion" id="dock-motion" style="--dial-pct:100%">
+              <label class="dock-dial" for="tentacle-motion">
+                <input type="range" min="0" max="100" value="100" id="tentacle-motion" aria-label="Movimiento de tentáculos de OTTO">
+                <span class="dock-dial-ring" aria-hidden="true"><span class="dock-dial-core"><strong id="tentacle-motion-value">100%</strong></span></span>
+              </label>
+              <span class="dock-module-title">Movimiento</span><small id="motion-feel" class="dock-module-state" aria-live="polite">Expresivo</small>
+            </div>
+            <div class="dock-module dock-module-gauge dock-module-charge" id="dock-charge" style="--dial-pct:0%">
+              <label class="dock-dial" for="charge">
+                <input type="range" min="0" max="100" value="0" id="charge" aria-label="Nivel de carga de OTTO">
+                <span class="dock-dial-ring" aria-hidden="true"><span class="dock-dial-core"><strong id="charge-value">0%</strong></span></span>
+              </label>
+              <span class="dock-module-title">Carga</span><small id="charge-feel" class="dock-module-state" aria-live="polite">Sin carga</small>
+            </div>
+            <div class="dock-module dock-module-gauge dock-module-flow" id="dock-flow" style="--dial-pct:24%">
+              <label class="dock-dial" for="flow">
+                <input type="range" min="0" max="250" value="60" id="flow" aria-label="Velocidad del fluido de OTTO">
+                <span class="dock-dial-ring" aria-hidden="true"><span class="dock-dial-core"><strong id="flow-value">0.6×</strong></span></span>
+              </label>
+              <span class="dock-module-title">Flujo</span><small id="flow-feel" class="dock-module-state" aria-live="polite">Suave</small>
+            </div>
+            <div class="dock-module dock-module-gauge dock-module-fusion" id="dock-fusion" style="--dial-pct:37%">
+              <label class="dock-dial" for="fusion">
+                <input type="range" min="0" max="100" value="37" id="fusion" aria-label="Fusión del fluido de OTTO">
+                <span class="dock-dial-ring" aria-hidden="true"><span class="dock-dial-core"><strong id="fusion-value">37%</strong></span></span>
+              </label>
+              <span class="dock-module-title">Fusión</span><small id="fusion-feel" class="dock-module-state" aria-live="polite">Suave</small>
             </div>
           </div>
         </div>
-      </div>
+        <section id="dock-light-panel" class="dock-popover dock-popover-light" aria-label="Elegir luz de OTTO" hidden>
+          <div class="dock-popover-head"><strong>Su propia luz</strong><button type="button" class="dock-close" data-dock-close aria-label="Cerrar selector de luz">×</button></div>
+          <div class="color-picker-row"><div id="color-preview" class="color-preview" aria-hidden="true"></div><div class="color-info"><strong id="color-label">Cian JG Next Gen V3.1</strong><small id="hex-label">#00D9E8</small></div><label class="color-input-wrap" title="Seleccionar color personalizado"><input id="color-picker" type="color" value="#00d9e8" aria-label="Color de energía personalizado"><span>EDITAR</span></label></div>
+          <div class="swatches" role="group" aria-label="Colores sugeridos">
+            <button type="button" class="swatch active" data-color="#00d9e8" title="Cian JG Next Gen V3.1" aria-label="Cian"></button>
+            <button type="button" class="swatch" data-color="#4d86ff" title="Azul eléctrico" aria-label="Azul"></button>
+            <button type="button" class="swatch" data-color="#a079ff" title="Violeta" aria-label="Violeta"></button>
+            <button type="button" class="swatch" data-color="#44e7a8" title="Verde" aria-label="Verde"></button>
+            <button type="button" class="swatch" data-color="#ffb35e" title="Ámbar" aria-label="Ámbar"></button>
+            <button type="button" class="swatch" data-color="#ff6581" title="Rojo" aria-label="Rojo"></button>
+          </div>
+        </section>
+        <section id="dock-mood-panel" class="dock-popover dock-popover-moods" aria-label="Elegir ánimo de OTTO" hidden>
+          <div class="dock-popover-head"><strong>¿Qué ánimo le damos?</strong><button type="button" class="dock-close" data-dock-close aria-label="Cerrar ánimos">×</button></div>
+          <div class="mode-grid" id="mode-grid" role="group" aria-label="Elegir estado de OTTO">
+            <button type="button" data-mode="idle" class="mode-card selected" aria-pressed="true"><span class="mode-symbol idle" aria-hidden="true"></span><span>Reposo</span></button>
+            <button type="button" data-mode="greeting" class="mode-card" aria-pressed="false"><span class="mode-symbol greeting" aria-hidden="true"></span><span>Saludo</span></button>
+            <button type="button" data-mode="processing" class="mode-card" aria-pressed="false"><span class="mode-symbol processing" aria-hidden="true"></span><span>Procesar</span></button>
+            <button type="button" data-mode="charging" class="mode-card" aria-pressed="false"><span class="mode-symbol charging" aria-hidden="true"></span><span>Cargando</span></button>
+            <button type="button" data-mode="complete" class="mode-card" aria-pressed="false"><span class="mode-symbol complete" aria-hidden="true"></span><span>Completo</span></button>
+            <button type="button" data-mode="failed" class="mode-card" aria-pressed="false"><span class="mode-symbol failed" aria-hidden="true"></span><span>Falló</span></button>
+            <button type="button" data-mode="auto" class="mode-card" aria-pressed="false"><span class="mode-symbol auto" aria-hidden="true"></span><span class="mode-demo-copy"><strong>Conocé todas sus facetas</strong><small>Demo automática de 10 segundos</small></span></button>
+          </div>
+          <div class="eye-control"><div><small>SU MIRADA</small><strong id="eye-state-label">00 · atento</strong></div><label class="eye-switch"><input id="eye-expressions" type="checkbox" checked><span>Ojos reactivos</span></label></div>
+        </section>
+        <section id="dock-settings-panel" class="dock-popover dock-popover-settings" aria-label="Más ajustes de OTTO" hidden>
+          <div class="dock-popover-head"><strong>Información de OTTO</strong><button type="button" class="dock-close" data-dock-close aria-label="Cerrar ajustes">×</button></div>
+          <p class="dock-info-note">Los seis controles ya están en el panel principal. Acá podés consultar el rendimiento del modelo.</p>
+          <div class="metrics-panel"><div class="section-heading"><h2>Diagnóstico</h2><span class="section-meta">LAB / DEV</span></div><div class="metric-grid"><div><span>Draw calls</span><strong id="metric-calls">—</strong></div><div><span>Triángulos</span><strong id="metric-tris">—</strong></div><div><span>Animación</span><strong id="metric-time">— / 10s</strong></div><div><span>GLB</span><strong id="metric-size">1.89 MiB</strong></div></div><div id="runtime-status" class="runtime-status">Iniciando WebGL…</div></div>
+        </section>
+      </aside>
+        <div class="scene-toolbar">
+          <div class="toolbar-title"><span class="eyebrow">MODELO</span><strong>OTTO · O6T-D4.1N-P2F</strong><small id="asset-info">Preparando geometría</small></div>
+          <div class="toolbar-actions"><button id="otto-zoom" class="ghost-button" type="button" aria-pressed="false">Activar zoom</button><button id="reset-camera" class="ghost-button" type="button" title="Restablecer cámara">Restablecer cámara</button><button id="toggle-play" class="primary-button" type="button" aria-pressed="true">Pausar animación</button></div>
+        </div>
+      </section>
+
+
+    </div></div>
+</template></div><div class="otto-cinematic-copy"><div class="otto-copy-mask"><p class="otto-kicker">03 / CONOCÉ A OTTO</p></div><h2 id="otto-heading" aria-label="Hola, soy OTTO."><span class="otto-title-phase otto-title-intro" aria-hidden="true"><span class="otto-line"><span>Hola, soy</span></span><span class="otto-line"><em>OTTO.</em></span></span><span class="otto-title-phase otto-title-play" aria-hidden="true"><span class="otto-line"><span>Jugá</span></span><span class="otto-line"><em>conmigo.</em></span></span></h2><div class="otto-play-mask" aria-hidden="true"><p class="otto-play-description">Usá los controles y descubrí cómo reacciono.</p></div><div class="otto-copy-mask"><p class="otto-description">Curiosidad en movimiento. Una nueva forma de explorar la tecnología, el diseño y la creatividad.</p></div><div class="otto-copy-mask"><a class="otto-skip" href="#otto-controls">CONOCÉ SUS POSIBILIDADES ↓</a></div></div></div><div id="otto-controls" aria-hidden="true"></div></section><section id="contacto" class="section contact" aria-labelledby="contact-title">
+    <div class="section-label"><span>05 / HABLEMOS</span><span>EL SIGUIENTE PASO</span></div>
+    <p class="eyebrow">LA TECNOLOGÍA EVOLUCIONA.</p>
+    <h2 id="contact-title"><span class="end-mask" data-end-text><span>La solución empieza</span></span><span class="end-mask" data-end-text><span>con una conversación.</span></span></h2>
+    <p class="contact-lead end-mask" data-end-text><span>¿Tenés una consulta o un proyecto? Elegí cómo comunicarte.</span></p>
+    <div class="contact-grid">
+      <a href="https://wa.me/59898335277" target="_blank" rel="noopener noreferrer"><small>01 / CONTACTO DIRECTO</small><strong>WhatsApp</strong><span aria-hidden="true">↗</span></a>
+      <a href="tel:+59898335277"><small>02 / LLAMADA</small><strong>098 335 277</strong><span aria-hidden="true">↗</span></a>
+      <button type="button" id="jg-consulta-open" aria-haspopup="dialog" aria-controls="jg-consulta-dialog"><small>03 / CORREO ELECTRÓNICO</small><strong>Enviar consulta</strong><span aria-hidden="true">↗</span></button>
+      <a href="https://www.linkedin.com/in/javier-gutierrez-433096106/" target="_blank" rel="noopener noreferrer"><small>04 / PERFIL PROFESIONAL</small><strong>LinkedIn</strong><span aria-hidden="true">↗</span></a>
     </div>
-  </section>
+    <footer class="footer"><span>© 2026 JG SOLUCIONES INFORMÁTICAS</span><a href="#reel">VOLVER ARRIBA ↑</a><span>JG NEXT GEN · MONTEVIDEO</span></footer>
+  </section></main>
+<dialog id="jg-consulta-dialog" aria-labelledby="jg-consulta-title" aria-describedby="jg-consulta-description"><div class="jg-consulta-shell"><button type="button" id="jg-consulta-close" aria-label="Cerrar formulario">×</button><p class="jg-consulta-kicker">JG SOLUCIONES INFORMÁTICAS / CONTACTO</p><h2 id="jg-consulta-title">Contanos <span>tu idea.</span></h2><p id="jg-consulta-description">Enviá tu consulta y te respondemos por correo.</p><form id="jg-consulta-form" action="https://formspree.io/f/mvgkwlvj" method="POST"><div class="jg-consulta-fields"><label for="jg-consulta-name">Nombre<input id="jg-consulta-name" name="nombre" autocomplete="name" required maxlength="120" autofocus></label><label for="jg-consulta-email">Correo electrónico<input type="email" id="jg-consulta-email" name="email" autocomplete="email" required maxlength="254"></label><label for="jg-consulta-phone">Teléfono <small>(opcional)</small><input type="tel" id="jg-consulta-phone" name="telefono" autocomplete="tel" maxlength="40"></label><label for="jg-consulta-message">¿En qué podemos ayudarte?<textarea id="jg-consulta-message" name="mensaje" rows="4" required maxlength="4000" placeholder="Contanos sobre tu consulta o proyecto."></textarea></label></div><button id="jg-consulta-send" type="submit">Enviar consulta <span aria-hidden="true">↗</span></button><p id="jg-consulta-status" role="status" aria-live="polite" aria-atomic="true"></p></form></div></dialog>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const chapters=[
+{start:1,k:'01 / EL COMIENZO',h:'Todo empieza con una idea.',d:'La tecnología cobra sentido cuando transforma lo que imaginamos en algo real.'},
+{start:100,k:'02 / LA ENERGÍA',h:'Las ideas cobran vida.',d:'Cada detalle cuenta. Y cada conexión nos impulsa a ir más lejos.'},
+{start:205,k:'03 / MÁS CERCA',h:'La diferencia está en los detalles.',d:'Nos acercamos para descubrir lo que hace posible cada solución.'},
+{start:300,k:'04 / MÁS ALLÁ',h:'Miramos más allá de lo evidente.',d:'Exploramos el interior para encontrar nuevas posibilidades.'},
+{start:401,k:'05 / EL CORAZÓN',h:'Todo conecta. Todo evoluciona.',d:'Detrás de cada gran experiencia, hay ideas que funcionan juntas.'}
+];
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const stage=$('reel'),canvas=$('filmCanvas'),ctx=canvas.getContext('2d',{alpha:false,desynchronized:true});
+let frames=[],position=0,target=0,shown=-1,last=-1,raf=0,ready=false,cache=new Map(),active=new Map(),direction=1,loadErrors=0,cachePeak=0,blend=0,lastPaintIndex=-1,paintCount=0,blankPaints=0,holdCount=0,requestEpoch=0,headlineTransitions=0,storyMix=0,storyChapter=0,storyPair=[-1,-1],storyFrame=1;
+const CACHE_LIMIT=12,PARALLEL=4,PREFETCH=3;
+// Keep the entire cinematic journey in original Full HD; never paint the 720p preview.
+const SHARP_OPENING_FRAMES=240;
+const bound=(n,lo,hi)=>Math.max(lo,Math.min(hi,n));
+const chapterOf=frame=>chapters.reduce((last,c,i)=>frame>=c.start?i:last,0);
+const pathFor=(i,fmt)=>`./assets/boot/g2-c17/frame-${String(i).padStart(3,'0')}.${fmt}`;
+// The player uses individual lossless-to-source AVIF files. No blurry fallback or duplicate frame pack.
+const packState='direct-fullhd',packMs=0,packBytesLoaded=0,packChunkLoads=0,chunkAborts=0,packErrors=0,packFallbacks=0;
+let previewState='disabled-full-hd',previewMs=0,previewErrors=0,previewBytes=null,drawQuality='none';
+const previewCache=new Map(),chunkCache=new Map(),chunkRequests=new Map();
 
-  <!-- 9. CTA FINAL -->
-  <section class="section cta-final">
-    <div class="container">
-      <h2>Contanos qué pasa y te decimos qué cuesta</h2>
-      <p>Diagnóstico $800 y tarifas publicadas. Sin sorpresas al final del trabajo.</p>
-      <div class="btn-row">
-        <a class="btn btn--whatsapp" href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20contactarlos." target="_blank" rel="noopener">
-          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-          Contactar a JG Soluciones
-        </a>
-        <a class="btn btn--on-dark" href="tel:+59898335277">
-          <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-phone"/></svg>
-          Llamar al 098 335 277
-        </a>
-      </div>
-    </div>
-  </section>
+const storyLayers=[$('story-a'),$('story-b')];
+const STORY_WINDOW=12; // Blender frames on each side of a chapter handoff; driven by scroll, not elapsed time.
+function smooth(t){t=bound(t,0,1);return t*t*(3-2*t)}
+function renderStory(frame){
+ storyFrame=frame;
+ let chapter=chapterOf(frame),from=chapter,to=chapter,t=0;
+ if(!reduced){
+  for(let i=1;i<chapters.length;i++){
+   const boundary=chapters[i].start;
+   if(frame>=boundary-STORY_WINDOW&&frame<=boundary+STORY_WINDOW){
+    from=i-1;to=i;
+    t=smooth((frame-(boundary-STORY_WINDOW))/(STORY_WINDOW*2));
+    break;
+   }
+  }
+ }
+ if(from===to)t=0;
+ // Replace the hidden layer before revealing it. Reverse scroll computes the exact same state.
+ [from,to].forEach((index,slot)=>{
+  if(storyPair[slot]!==index){
+   storyPair[slot]=index;
+   const data=chapters[index],el=storyLayers[slot];
+   el.querySelector('.kicker').textContent=data.k;
+   el.querySelector('h1').textContent=data.h;
+   el.querySelector('p').textContent=data.d;
+   headlineTransitions++;
+  }
+ });
+ // Editorial handoff: the old headline finishes leaving before the next begins.
+ // No simultaneous half-opacity large text, no ghosted glyphs.
+ // Editorial handoff: one sharp, legible headline at a time; scroll controls position.
+ const weights=[t<.5?1:0,t<.5?0:1];
+ storyLayers.forEach((el,i)=>{
+  const weight=weights[i];
+  el.style.opacity=String(weight);
+  el.style.clipPath='none';
+  el.style.transform=`translate3d(0,${(i===0?-9:9)*(i===0?t:1-t)}px,0)`;
+  el.setAttribute('aria-hidden',i===(t>=.5?1:0)?'false':'true');
+ });
+ storyChapter=t>=.5?to:from;storyMix=t;
+ $('frame').textContent=`${String(storyChapter+1).padStart(2,'0')} / 05`;
+ $('phase').textContent=storyChapter===4?'EL CORAZÓN DE TODO':storyChapter===3?'UN NUEVO PUNTO DE VISTA':'SEGUÍ DESCUBRIENDO';
+}
+function resizeCanvas(){const w=Math.min(1920,Math.round(canvas.clientWidth*Math.min(devicePixelRatio||1,1.5))),h=Math.min(1080,Math.round(canvas.clientHeight*Math.min(devicePixelRatio||1,1.5)));if(w>0&&h>0&&(canvas.width!==w||canvas.height!==h)){canvas.width=w;canvas.height=h;if(lastPaintIndex>=0){shown=-1;drawQuality='none';draw()}}}
+function drawBitmap(bitmap,alpha=1){const w=canvas.width,h=canvas.height,ratio=Math.min(w/bitmap.width,h/bitmap.height),dw=bitmap.width*ratio,dh=bitmap.height*ratio;ctx.globalAlpha=alpha;ctx.drawImage(bitmap,(w-dw)/2,(h-dh)/2,dw,dh);ctx.globalAlpha=1}
+function draw(){
+ if(!ready)return;
+ const requested=Math.round(position),lo=Math.floor(position),hi=Math.min(frames.length-1,lo+1);
+ let selected=-1,bitmap=null,quality='none';
+ if(cache.has(requested))selected=requested;
+ else if(cache.has(lo)&&cache.has(hi))selected=(position-lo)>=.5?hi:lo;
+ else if(cache.has(lo))selected=lo;
+ else if(cache.has(hi))selected=hi;
+ if(selected>=0){bitmap=cache.get(selected);quality='full'}
 
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="site-footer__grid">
-      <div>
-        <img src="Logo.png" alt="JG Soluciones Informáticas" width="119" height="38" style="margin-bottom: var(--space-xs)">
-        <p>Soporte técnico, reparación y mantenimiento informático a domicilio en Montevideo, para hogares y empresas.</p>
-      </div>
-      <nav aria-labelledby="f-serv">
-        <h2 id="f-serv">Servicios</h2>
-        <ul>
-          <li><a href="#servicios">Reparación de PC y notebooks</a></li>
-          <li><a href="#servicios">Instalación de redes</a></li>
-          <li><a href="#servicios">Soporte en la nube</a></li>
-          <li><a href="#servicios">Backup y respaldo de datos</a></li>
-          <li><a href="#servicios">Mantenimiento preventivo</a></li>
-        </ul>
-      </nav>
-      <nav aria-labelledby="f-sitio">
-        <h2 id="f-sitio">Sitio</h2>
-        <ul>
-          <li><a href="#proceso">Cómo trabajamos</a></li>
-          <li><a href="#tarifas">Tarifas</a></li>
-          <li><a href="#garantia">Garantía</a></li>
-          <li><a href="#zona">Zona de cobertura</a></li>
-          <li><a href="#faq">Preguntas frecuentes</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h2>Contacto</h2>
-        <ul>
-          <li><a href="https://wa.me/59898335277" target="_blank" rel="noopener">WhatsApp 098 335 277</a></li>
-          <li><a href="tel:+59898335277">Teléfono +598 98 335 277</a></li>
-          <li><a href="https://www.linkedin.com/in/javier-gutierrez-433096106/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li>Lunes a viernes, 9:00 a 19:00</li>
-        </ul>
-      </div>
-    </div>
-    <div class="site-footer__bottom">
-      <p>&copy; <span id="year">2026</span> JG Soluciones Informáticas. Todos los derechos reservados.</p>
-      <p>Montevideo, Uruguay</p>
-    </div>
-  </div>
-</footer>
-
-<!-- Barra fija mobile: contacto siempre a un toque (contra-antipatrón "Hidden contact info") -->
-<div class="mobile-bar">
-  <a class="btn btn--whatsapp" href="https://wa.me/59898335277?text=Hola%20JG%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">
-    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-    WhatsApp
-  </a>
-  <a class="btn btn--primary" href="tel:+59898335277">
-    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-phone"/></svg>
-    Llamar
-  </a>
-</div>
-
-<script src="script.js" defer></script>
-</body>
-</html>
+ if(!bitmap?.width){
+  // Keep the last fully decoded Full HD image while fetching the requested frame.
+  if(drawQuality==='preview'){
+   canvas.style.visibility='hidden';drawQuality='poster';shown=0;
+  }
+  return;
+ }
+ if(shown===selected&&drawQuality===quality)return;
+ canvas.style.visibility='visible';
+ ctx.globalAlpha=1;ctx.fillStyle='#070b16';ctx.fillRect(0,0,canvas.width,canvas.height);drawBitmap(bitmap);
+ paintCount++;shown=selected;lastPaintIndex=selected;drawQuality=quality;
+}
+function prune(){let keep=new Set([shown,lastPaintIndex,target,target+1,target-1]);const distant=[...cache.keys()].filter(i=>!keep.has(i)).sort((a,b)=>Math.abs(b-target)-Math.abs(a-target));while(cache.size>CACHE_LIMIT&&distant.length){const i=distant.shift(),bitmap=cache.get(i);cache.delete(i);bitmap?.close?.()}cachePeak=Math.max(cachePeak,cache.size)}
+async function decode(index,signal){
+ let failure;
+ // Each AVIF is 1920×1080. Fetch the requested frame directly rather than
+ // waiting for a half-megabyte range that could be invalidated during scroll.
+ for(const fmt of ['avif','webp']){
+  try{
+   const response=await fetch(pathFor(index,fmt),{signal,cache:'force-cache'});
+   if(!response.ok)throw Error(`${fmt} HTTP ${response.status}`);
+   const blob=await response.blob();
+   if(signal.aborted)throw new DOMException('Aborted','AbortError');
+   const bitmap=await createImageBitmap(blob);
+   if(signal.aborted){bitmap.close();throw new DOMException('Aborted','AbortError')}
+   return bitmap;
+  }catch(err){if(signal.aborted||err.name==='AbortError')throw err;failure=err}
+ }
+ throw failure||Error('No available image codec');
+}
+function priorities(){const list=[Math.round(position),target,target+1,target-1];for(let i=1;i<=PREFETCH;i++){list.push(target+i*direction,target+1+i*direction,target-i*direction)}return [...new Set(list)].filter(i=>i>=0&&i<frames.length)}
+function pump(){if(!ready)return;
+ const wanted=reduced?[target]:priorities();for(const [index,controller] of active){if(Math.abs(index-target)>PREFETCH+6){controller.abort();active.delete(index)}}
+ for(const index of wanted){if(active.size>=PARALLEL)break;if(cache.has(index)||active.has(index))continue;
+  const controller=new AbortController();active.set(index,controller);
+  decode(index,controller.signal).then(bitmap=>{if(controller.signal.aborted||Math.abs(index-target)>PREFETCH+6){bitmap.close();return}cache.set(index,bitmap);prune();draw()}).catch(error=>{if(!controller.signal.aborted&&error.name!=='AbortError'){loadErrors++;console.warn('FRAME LOAD FAILED',index,error);$('status').textContent='EXPLORÁ NUESTRAS SOLUCIONES'}}).finally(()=>{if(active.get(index)===controller)active.delete(index);pump()});
+ }
+}
+function select(next){if(!ready)return;next=bound(next,0,frames.length-1);const nextTarget=Math.floor(next);if(nextTarget!==target)direction=nextTarget>target?1:-1;target=nextTarget;position=next;requestEpoch++;draw();pump()}
+function positionForFrame(frame){let lo=0,hi=frames.length-1;while(lo<hi){const mid=(lo+hi)>>1;if(frames[mid]<frame)lo=mid+1;else hi=mid}if(lo===0)return 0;const low=lo-1;return low+bound((frame-frames[low])/(frames[lo]-frames[low]),0,1)}
+function paint(){raf=0;if(!ready||reduced)return;const rect=stage.getBoundingClientRect(),distance=Math.max(1,rect.height-innerHeight),progress=bound(-rect.top/distance,0,1);const nextFrame=1+progress*449;if(nextFrame===storyFrame)return;renderStory(nextFrame);select(positionForFrame(nextFrame))}
+function schedule(){if(!raf)raf=requestAnimationFrame(paint)}
+async function init(){try{const r=await fetch('./assets/boot/g2-c17/manifest.json',{cache:'no-store'});if(!r.ok)throw Error('manifest HTTP '+r.status);const m=await r.json();frames=m.source_blender_frames;if(frames.length!==240||frames[0]!==1||frames[239]!==450)throw Error('Manifiesto de 240 cuadros inválido');ready=true;resizeCanvas();$('status').textContent='DISEÑAMOS POSIBILIDADES';renderStory(reduced?450:1);select(reduced?239:0);if(reduced)previewState='skipped-reduced-motion';schedule()}catch(error){$('status').textContent='NO SE PUDO CARGAR LA EXPERIENCIA';console.error(error)}}
+addEventListener('scroll',schedule,{passive:true});addEventListener('resize',()=>{resizeCanvas();schedule()},{passive:true});
+window.__g2c16=()=>({ready,reduced,target,shown,blenderTarget:frames[target],blenderShown:frames[shown],cache:cache.size,pending:active.size,cachePeak,errors:loadErrors,scrollY,sourceCount:frames.length,blend:position-Math.floor(position),paintCount,blankPaints,holdCount,headlineTransitions,chapter:storyChapter,storyMix,storyFrame,storyPair:[...storyPair],canvasWidth:canvas.width,canvasHeight:canvas.height,packState,packMs,packBytes:packBytesLoaded,packChunkLoads,packChunks:chunkCache.size,packInFlight:chunkRequests.size,chunkAborts,packErrors,packFallbacks,previewState,previewMs,previewBytes:previewBytes?.byteLength||0,previewErrors,previewCache:previewCache.size,drawQuality,sharpOpeningFrames:SHARP_OPENING_FRAMES,posterLoaded:$('sharpPoster').complete&&$('sharpPoster').naturalWidth>0,sections:[...document.querySelectorAll('main > section.section')].map(s=>s.id)});
+init();
+</script>
+<script>(()=>{const aliases={"top":"reel","main":"reel","proceso":"nuestra-mirada","tarifas":"service-grid","garantia":"contacto","testimonios":"nuestra-mirada","zona":"contacto","faq":"contacto"};function route(){const target=aliases[location.hash.slice(1)];if(!target)return;const el=document.getElementById(target);if(!el)return;history.replaceState(history.state,"","#"+target);el.scrollIntoView({block:"start",behavior:"instant"})}addEventListener("hashchange",route);if(location.hash)requestAnimationFrame(route)})();</script>
+</body></html>
