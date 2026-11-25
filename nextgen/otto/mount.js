@@ -18,8 +18,9 @@ const css=document.createElement('link');css.rel='stylesheet';css.href=assetURL(
 const styleReady=new Promise((resolve,reject)=>{css.addEventListener('load',resolve,{once:true});css.addEventListener('error',()=>reject(Error('No se cargaron los estilos de OTTO')),{once:true})});
 root.append(css,document.getElementById('otto-workspace-template').content.cloneNode(true));
 const $=id=>root.getElementById(id);
-let started=false;
+let started=false,bootStartedAt=0,bootReadyAt=0;
 window.__OTTO_BOOT_READY__=()=>{
+ if(!bootReadyAt)bootReadyAt=performance.now();
  host.classList.add('otto-live');host.classList.remove('otto-3d-unavailable');
  $('retry-otto').hidden=true;$('progress').classList.add('hidden');
 };
@@ -31,14 +32,18 @@ window.__OTTO_BOOT_ERROR__=message=>{
  $('retry-otto').hidden=false;
 };
 $('retry-otto').addEventListener('click',()=>location.reload());
-const observer=new IntersectionObserver(entries=>{
- if(started||!entries.some(e=>e.isIntersecting))return;
- started=true;observer.disconnect();
+function prepareOtto(){
+ if(started)return;
+ started=true;bootStartedAt=performance.now();observer.disconnect();serviceObserver.disconnect();
  $('load-title').textContent='Inicializando experiencia';$('load-subtitle').textContent='Cargando modelo 3D y animaciones…';
  styleReady.then(()=>import(assetURL('./main.js'))).catch(e=>window.__OTTO_BOOT_ERROR__(e.message));
-},{rootMargin:'450px 0px'});
+}
+const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting))prepareOtto()},{rootMargin:'2400px 0px'});
+// Prepare on entering Services, while the actual WebGL loop stays offscreen.
+const serviceObserver=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting))prepareOtto()},{threshold:0.01});
+serviceObserver.observe(document.getElementById('servicios'));
 observer.observe(host);
-window.__OTTO_MOUNT_QA__=()=>({started,live:host.classList.contains('otto-live'),failed:host.classList.contains('otto-3d-unavailable')});
+window.__OTTO_MOUNT_QA__=()=>({started,bootStartedAt,bootReadyAt,live:host.classList.contains('otto-live'),failed:host.classList.contains('otto-3d-unavailable')});
 
 // A single scroll-driven camera approach. No model copies and no change to rig.
 const chapter=document.getElementById('otto'),pin=chapter.querySelector('.otto-pin');
